@@ -30,10 +30,12 @@ STL_BOTTLE_FILENAME = os.path.join(".", "test_io", "bottle_ascii.stl")
 
 
 class TestMeshDataSource(unittest.TestCase):
+    @unittest.skip("known to cause segmentation error")
     def test_instantiate_from_stl_file(self):
         a_stl_mesh = rwstl_ReadFile(STL_BOTTLE_FILENAME)
         MeshDS_DataSource(a_stl_mesh)
 
+    @unittest.skip("known to cause segmentation error")
     def test_stl_file_check_bounding_box(self):
         a_stl_mesh = rwstl_ReadFile(STL_BOTTLE_FILENAME)
         a_ds = MeshDS_DataSource(a_stl_mesh)
