@@ -64,3 +64,14 @@ _build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# written testfiles
+test/test_io/box_shape_generated.brep
+test/test_io/sample.igs
+test/test_io/sample_214.stp
+test/test_io/sample_242.stp
+test/test_io/sample_ap_203.stp
+test/test_io/sample_ascii.stl
+test/test_io/sample_binary.stl
+test/test_io/test_ocaf_generated.stp
+
