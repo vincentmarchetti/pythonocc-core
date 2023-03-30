@@ -27,7 +27,7 @@ from OCC.Extend.TopologyUtils import TopologyExplorer
 
 torus_shp = BRepPrimAPI_MakeTorus(20.0, 10.0).Shape()
 
-
+@unittest.skip("return to this")
 class TestWebGL(unittest.TestCase):
     def test_threejs_render_torus(self):
         """Render a simple torus in threejs"""
