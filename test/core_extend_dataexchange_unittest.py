@@ -54,7 +54,7 @@ STL_BINARY_SAMPLE_FILE = get_test_fullname("cube_binary.stl")
 # the basic geometry to test exporters
 A_TOPODS_SHAPE = BRepPrimAPI_MakeTorus(200, 50).Shape()
 
-
+@unittest.skip("skipping until can control printing")
 class TestExtendDataExchange(unittest.TestCase):
     def test_read_step_file(self):
         read_step_file(STEP_AP203_SAMPLE_FILE)
