@@ -43,6 +43,7 @@ class BRepOffset_Error(IntEnum):
     BRepOffset_CannotFuseVertices: int = ...
     BRepOffset_CannotExtentEdge: int = ...
     BRepOffset_UserBreak: int = ...
+    BRepOffset_MixedConnectivity: int = ...
 
 BRepOffset_NoError = BRepOffset_Error.BRepOffset_NoError
 BRepOffset_UnknownError = BRepOffset_Error.BRepOffset_UnknownError
@@ -54,6 +55,7 @@ BRepOffset_CannotTrimEdges = BRepOffset_Error.BRepOffset_CannotTrimEdges
 BRepOffset_CannotFuseVertices = BRepOffset_Error.BRepOffset_CannotFuseVertices
 BRepOffset_CannotExtentEdge = BRepOffset_Error.BRepOffset_CannotExtentEdge
 BRepOffset_UserBreak = BRepOffset_Error.BRepOffset_UserBreak
+BRepOffset_MixedConnectivity = BRepOffset_Error.BRepOffset_MixedConnectivity
 
 class BRepOffsetSimple_Status(IntEnum):
     BRepOffsetSimple_OK: int = ...
@@ -212,7 +214,7 @@ class BRepOffset_MakeSimpleOffset:
     def Generated(self, theShape: TopoDS_Shape) -> TopoDS_Shape: ...
     def GetBuildSolidFlag(self) -> bool: ...
     def GetError(self) -> False: ...
-    def GetErrorMessage(self) -> TCollection_AsciiString: ...
+    def GetErrorMessage(self) -> str: ...
     def GetOffsetValue(self) -> float: ...
     def GetResultShape(self) -> TopoDS_Shape: ...
     def GetTolerance(self) -> float: ...
@@ -307,28 +309,3 @@ class BRepOffset_Tool:
 # harray2 classes
 # hsequence classes
 
-brepoffset_CollapseSingularities = brepoffset.CollapseSingularities
-brepoffset_Surface = brepoffset.Surface
-BRepOffset_Inter2d_Compute = BRepOffset_Inter2d.Compute
-BRepOffset_Inter2d_ConnexIntByInt = BRepOffset_Inter2d.ConnexIntByInt
-BRepOffset_Inter2d_ConnexIntByIntInVert = BRepOffset_Inter2d.ConnexIntByIntInVert
-BRepOffset_Inter2d_ExtentEdge = BRepOffset_Inter2d.ExtentEdge
-BRepOffset_Inter2d_FuseVertices = BRepOffset_Inter2d.FuseVertices
-BRepOffset_Tool_BuildNeighbour = BRepOffset_Tool.BuildNeighbour
-BRepOffset_Tool_CheckBounds = BRepOffset_Tool.CheckBounds
-BRepOffset_Tool_CheckPlanesNormals = BRepOffset_Tool.CheckPlanesNormals
-BRepOffset_Tool_CorrectOrientation = BRepOffset_Tool.CorrectOrientation
-BRepOffset_Tool_Deboucle3D = BRepOffset_Tool.Deboucle3D
-BRepOffset_Tool_EdgeVertices = BRepOffset_Tool.EdgeVertices
-BRepOffset_Tool_EnLargeFace = BRepOffset_Tool.EnLargeFace
-BRepOffset_Tool_ExtentFace = BRepOffset_Tool.ExtentFace
-BRepOffset_Tool_FindCommonShapes = BRepOffset_Tool.FindCommonShapes
-BRepOffset_Tool_FindCommonShapes = BRepOffset_Tool.FindCommonShapes
-BRepOffset_Tool_Gabarit = BRepOffset_Tool.Gabarit
-BRepOffset_Tool_Inter2d = BRepOffset_Tool.Inter2d
-BRepOffset_Tool_Inter3D = BRepOffset_Tool.Inter3D
-BRepOffset_Tool_InterOrExtent = BRepOffset_Tool.InterOrExtent
-BRepOffset_Tool_MapVertexEdges = BRepOffset_Tool.MapVertexEdges
-BRepOffset_Tool_OrientSection = BRepOffset_Tool.OrientSection
-BRepOffset_Tool_PipeInter = BRepOffset_Tool.PipeInter
-BRepOffset_Tool_TryProject = BRepOffset_Tool.TryProject

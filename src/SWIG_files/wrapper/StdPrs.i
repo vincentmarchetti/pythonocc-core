@@ -304,7 +304,7 @@ opencascade::handle<Font_FTFont>
 
 Parameters
 ----------
-theFontName: TCollection_AsciiString
+theFontName: str
 theFontAspect: Font_FontAspect
 theSize: float
 theStrictLevel: Font_StrictLevel,optional
@@ -314,7 +314,7 @@ Returns
 -------
 opencascade::handle<StdPrs_BRepFont>
 ") FindAndCreate;
-		static opencascade::handle<StdPrs_BRepFont> FindAndCreate(const TCollection_AsciiString & theFontName, const Font_FontAspect theFontAspect, const Standard_Real theSize, const Font_StrictLevel theStrictLevel = Font_StrictLevel_Any);
+		static opencascade::handle<StdPrs_BRepFont> FindAndCreate(TCollection_AsciiString theFontName, const Font_FontAspect theFontAspect, const Standard_Real theSize, const Font_StrictLevel theStrictLevel = Font_StrictLevel_Any);
 
 		/****************** FindAndInit ******************/
 		/**** md5 signature: 33bf264db4f7fb13be769117703cf8e4 ****/
@@ -323,7 +323,7 @@ opencascade::handle<StdPrs_BRepFont>
 
 Parameters
 ----------
-theFontName: TCollection_AsciiString
+theFontName: str
 theFontAspect: Font_FontAspect
 theSize: float
 theStrictLevel: Font_StrictLevel,optional
@@ -333,7 +333,7 @@ Returns
 -------
 bool
 ") FindAndInit;
-		bool FindAndInit(const TCollection_AsciiString & theFontName, const Font_FontAspect theFontAspect, const Standard_Real theSize, const Font_StrictLevel theStrictLevel = Font_StrictLevel_Any);
+		bool FindAndInit(TCollection_AsciiString theFontName, const Font_FontAspect theFontAspect, const Standard_Real theSize, const Font_StrictLevel theStrictLevel = Font_StrictLevel_Any);
 
 		/****************** Init ******************/
 		/**** md5 signature: 14deab12f664b3e6a0b208965809fe62 ****/
@@ -1220,7 +1220,7 @@ int
 class StdPrs_ShadedShape : public Prs3d_Root {
 	public:
 		/****************** Add ******************/
-		/**** md5 signature: 4361c97ebfd2d178620c977d5eabb386 ****/
+		/**** md5 signature: eb25cffb7e72ca49100cdcc43a05ee8c ****/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Shades <theshape>. @param thevolumetype defines the way how to interpret input shapes - as closed volumes (to activate back-face culling and capping plane algorithms), as open volumes (shells or solids with holes) or to perform autodetection (would split input shape into two groups).
 
@@ -1231,15 +1231,17 @@ theShape: TopoDS_Shape
 theDrawer: Prs3d_Drawer
 theVolume: StdPrs_Volume,optional
 	default value is StdPrs_Volume_Autodetection
+theGroup: Graphic3d_Group,optional
+	default value is NULL
 
 Returns
 -------
 None
 ") Add;
-		static void Add(const opencascade::handle<Prs3d_Presentation> & thePresentation, const TopoDS_Shape & theShape, const opencascade::handle<Prs3d_Drawer> & theDrawer, const StdPrs_Volume theVolume = StdPrs_Volume_Autodetection);
+		static void Add(const opencascade::handle<Prs3d_Presentation> & thePresentation, const TopoDS_Shape & theShape, const opencascade::handle<Prs3d_Drawer> & theDrawer, const StdPrs_Volume theVolume = StdPrs_Volume_Autodetection, const opencascade::handle<Graphic3d_Group> & theGroup = NULL);
 
 		/****************** Add ******************/
-		/**** md5 signature: c21dc028b4eb82bb3707a6e95d6e5c3b ****/
+		/**** md5 signature: c2784d9b78f332340fcb1d6c9293a2a1 ****/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Shades <theshape> with texture coordinates. @param thevolumetype defines the way how to interpret input shapes - as closed volumes (to activate back-face culling and capping plane algorithms), as open volumes (shells or solids with holes) or to perform autodetection (would split input shape into two groups).
 
@@ -1254,12 +1256,14 @@ theUVRepeat: gp_Pnt2d
 theUVScale: gp_Pnt2d
 theVolume: StdPrs_Volume,optional
 	default value is StdPrs_Volume_Autodetection
+theGroup: Graphic3d_Group,optional
+	default value is NULL
 
 Returns
 -------
 None
 ") Add;
-		static void Add(const opencascade::handle<Prs3d_Presentation> & thePresentation, const TopoDS_Shape & theShape, const opencascade::handle<Prs3d_Drawer> & theDrawer, const Standard_Boolean theHasTexels, const gp_Pnt2d & theUVOrigin, const gp_Pnt2d & theUVRepeat, const gp_Pnt2d & theUVScale, const StdPrs_Volume theVolume = StdPrs_Volume_Autodetection);
+		static void Add(const opencascade::handle<Prs3d_Presentation> & thePresentation, const TopoDS_Shape & theShape, const opencascade::handle<Prs3d_Drawer> & theDrawer, const Standard_Boolean theHasTexels, const gp_Pnt2d & theUVOrigin, const gp_Pnt2d & theUVRepeat, const gp_Pnt2d & theUVScale, const StdPrs_Volume theVolume = StdPrs_Volume_Autodetection, const opencascade::handle<Graphic3d_Group> & theGroup = NULL);
 
 		/****************** AddWireframeForFacesWithoutTriangles ******************/
 		/**** md5 signature: 2399101e036cd3b0540bfa37732d6fc1 ****/
@@ -2626,4 +2630,267 @@ class StdPrs_DeflectionCurve:
 /* class aliases */
 %pythoncode {
 StdPrs_BndBox=OCC.Core.Prs3d.Prs3d_BndBox
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def StdPrs_BRepFont_FindAndCreate(*args):
+	return StdPrs_BRepFont.FindAndCreate(*args)
+
+@deprecated
+def StdPrs_Curve_Add(*args):
+	return StdPrs_Curve.Add(*args)
+
+@deprecated
+def StdPrs_Curve_Add(*args):
+	return StdPrs_Curve.Add(*args)
+
+@deprecated
+def StdPrs_Curve_Add(*args):
+	return StdPrs_Curve.Add(*args)
+
+@deprecated
+def StdPrs_Curve_Add(*args):
+	return StdPrs_Curve.Add(*args)
+
+@deprecated
+def StdPrs_Curve_Match(*args):
+	return StdPrs_Curve.Match(*args)
+
+@deprecated
+def StdPrs_Curve_Match(*args):
+	return StdPrs_Curve.Match(*args)
+
+@deprecated
+def StdPrs_Curve_Match(*args):
+	return StdPrs_Curve.Match(*args)
+
+@deprecated
+def StdPrs_Curve_Match(*args):
+	return StdPrs_Curve.Match(*args)
+
+@deprecated
+def StdPrs_Isolines_Add(*args):
+	return StdPrs_Isolines.Add(*args)
+
+@deprecated
+def StdPrs_Isolines_Add(*args):
+	return StdPrs_Isolines.Add(*args)
+
+@deprecated
+def StdPrs_Isolines_AddOnSurface(*args):
+	return StdPrs_Isolines.AddOnSurface(*args)
+
+@deprecated
+def StdPrs_Isolines_AddOnSurface(*args):
+	return StdPrs_Isolines.AddOnSurface(*args)
+
+@deprecated
+def StdPrs_Isolines_AddOnSurface(*args):
+	return StdPrs_Isolines.AddOnSurface(*args)
+
+@deprecated
+def StdPrs_Isolines_AddOnTriangulation(*args):
+	return StdPrs_Isolines.AddOnTriangulation(*args)
+
+@deprecated
+def StdPrs_Isolines_AddOnTriangulation(*args):
+	return StdPrs_Isolines.AddOnTriangulation(*args)
+
+@deprecated
+def StdPrs_Isolines_AddOnTriangulation(*args):
+	return StdPrs_Isolines.AddOnTriangulation(*args)
+
+@deprecated
+def StdPrs_Isolines_UVIsoParameters(*args):
+	return StdPrs_Isolines.UVIsoParameters(*args)
+
+@deprecated
+def StdPrs_Plane_Add(*args):
+	return StdPrs_Plane.Add(*args)
+
+@deprecated
+def StdPrs_Plane_Match(*args):
+	return StdPrs_Plane.Match(*args)
+
+@deprecated
+def StdPrs_PoleCurve_Add(*args):
+	return StdPrs_PoleCurve.Add(*args)
+
+@deprecated
+def StdPrs_PoleCurve_Match(*args):
+	return StdPrs_PoleCurve.Match(*args)
+
+@deprecated
+def StdPrs_PoleCurve_Pick(*args):
+	return StdPrs_PoleCurve.Pick(*args)
+
+@deprecated
+def StdPrs_ShadedShape_Add(*args):
+	return StdPrs_ShadedShape.Add(*args)
+
+@deprecated
+def StdPrs_ShadedShape_Add(*args):
+	return StdPrs_ShadedShape.Add(*args)
+
+@deprecated
+def StdPrs_ShadedShape_AddWireframeForFacesWithoutTriangles(*args):
+	return StdPrs_ShadedShape.AddWireframeForFacesWithoutTriangles(*args)
+
+@deprecated
+def StdPrs_ShadedShape_AddWireframeForFreeElements(*args):
+	return StdPrs_ShadedShape.AddWireframeForFreeElements(*args)
+
+@deprecated
+def StdPrs_ShadedShape_ExploreSolids(*args):
+	return StdPrs_ShadedShape.ExploreSolids(*args)
+
+@deprecated
+def StdPrs_ShadedShape_FillFaceBoundaries(*args):
+	return StdPrs_ShadedShape.FillFaceBoundaries(*args)
+
+@deprecated
+def StdPrs_ShadedShape_FillTriangles(*args):
+	return StdPrs_ShadedShape.FillTriangles(*args)
+
+@deprecated
+def StdPrs_ShadedShape_FillTriangles(*args):
+	return StdPrs_ShadedShape.FillTriangles(*args)
+
+@deprecated
+def StdPrs_ShadedSurface_Add(*args):
+	return StdPrs_ShadedSurface.Add(*args)
+
+@deprecated
+def StdPrs_ShapeTool_IsPlanarFace(*args):
+	return StdPrs_ShapeTool.IsPlanarFace(*args)
+
+@deprecated
+def StdPrs_ToolPoint_Coord(*args):
+	return StdPrs_ToolPoint.Coord(*args)
+
+@deprecated
+def StdPrs_ToolTriangulatedShape_ClearOnOwnDeflectionChange(*args):
+	return StdPrs_ToolTriangulatedShape.ClearOnOwnDeflectionChange(*args)
+
+@deprecated
+def StdPrs_ToolTriangulatedShape_GetDeflection(*args):
+	return StdPrs_ToolTriangulatedShape.GetDeflection(*args)
+
+@deprecated
+def StdPrs_ToolTriangulatedShape_IsClosed(*args):
+	return StdPrs_ToolTriangulatedShape.IsClosed(*args)
+
+@deprecated
+def StdPrs_ToolTriangulatedShape_IsTessellated(*args):
+	return StdPrs_ToolTriangulatedShape.IsTessellated(*args)
+
+@deprecated
+def StdPrs_ToolTriangulatedShape_IsTriangulated(*args):
+	return StdPrs_ToolTriangulatedShape.IsTriangulated(*args)
+
+@deprecated
+def StdPrs_ToolTriangulatedShape_Tessellate(*args):
+	return StdPrs_ToolTriangulatedShape.Tessellate(*args)
+
+@deprecated
+def StdPrs_ToolVertex_Coord(*args):
+	return StdPrs_ToolVertex.Coord(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_Add(*args):
+	return StdPrs_WFDeflectionRestrictedFace.Add(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_Add(*args):
+	return StdPrs_WFDeflectionRestrictedFace.Add(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_AddUIso(*args):
+	return StdPrs_WFDeflectionRestrictedFace.AddUIso(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_AddVIso(*args):
+	return StdPrs_WFDeflectionRestrictedFace.AddVIso(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_Match(*args):
+	return StdPrs_WFDeflectionRestrictedFace.Match(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_Match(*args):
+	return StdPrs_WFDeflectionRestrictedFace.Match(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_MatchUIso(*args):
+	return StdPrs_WFDeflectionRestrictedFace.MatchUIso(*args)
+
+@deprecated
+def StdPrs_WFDeflectionRestrictedFace_MatchVIso(*args):
+	return StdPrs_WFDeflectionRestrictedFace.MatchVIso(*args)
+
+@deprecated
+def StdPrs_WFDeflectionSurface_Add(*args):
+	return StdPrs_WFDeflectionSurface.Add(*args)
+
+@deprecated
+def StdPrs_WFPoleSurface_Add(*args):
+	return StdPrs_WFPoleSurface.Add(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_Add(*args):
+	return StdPrs_WFRestrictedFace.Add(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_Add(*args):
+	return StdPrs_WFRestrictedFace.Add(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_AddUIso(*args):
+	return StdPrs_WFRestrictedFace.AddUIso(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_AddVIso(*args):
+	return StdPrs_WFRestrictedFace.AddVIso(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_Match(*args):
+	return StdPrs_WFRestrictedFace.Match(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_Match(*args):
+	return StdPrs_WFRestrictedFace.Match(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_MatchUIso(*args):
+	return StdPrs_WFRestrictedFace.MatchUIso(*args)
+
+@deprecated
+def StdPrs_WFRestrictedFace_MatchVIso(*args):
+	return StdPrs_WFRestrictedFace.MatchVIso(*args)
+
+@deprecated
+def StdPrs_WFShape_Add(*args):
+	return StdPrs_WFShape.Add(*args)
+
+@deprecated
+def StdPrs_WFShape_AddAllEdges(*args):
+	return StdPrs_WFShape.AddAllEdges(*args)
+
+@deprecated
+def StdPrs_WFShape_AddEdgesOnTriangulation(*args):
+	return StdPrs_WFShape.AddEdgesOnTriangulation(*args)
+
+@deprecated
+def StdPrs_WFShape_AddEdgesOnTriangulation(*args):
+	return StdPrs_WFShape.AddEdgesOnTriangulation(*args)
+
+@deprecated
+def StdPrs_WFShape_AddVertexes(*args):
+	return StdPrs_WFShape.AddVertexes(*args)
+
+@deprecated
+def StdPrs_WFSurface_Add(*args):
+	return StdPrs_WFSurface.Add(*args)
+
 }

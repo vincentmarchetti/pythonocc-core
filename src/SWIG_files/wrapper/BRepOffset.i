@@ -131,6 +131,7 @@ enum BRepOffset_Error {
 	BRepOffset_CannotFuseVertices = 7,
 	BRepOffset_CannotExtentEdge = 8,
 	BRepOffset_UserBreak = 9,
+	BRepOffset_MixedConnectivity = 10,
 };
 
 enum BRepOffsetSimple_Status {
@@ -171,6 +172,7 @@ class BRepOffset_Error(IntEnum):
 	BRepOffset_CannotFuseVertices = 7
 	BRepOffset_CannotExtentEdge = 8
 	BRepOffset_UserBreak = 9
+	BRepOffset_MixedConnectivity = 10
 BRepOffset_NoError = BRepOffset_Error.BRepOffset_NoError
 BRepOffset_UnknownError = BRepOffset_Error.BRepOffset_UnknownError
 BRepOffset_BadNormalsOnGeometry = BRepOffset_Error.BRepOffset_BadNormalsOnGeometry
@@ -181,6 +183,7 @@ BRepOffset_CannotTrimEdges = BRepOffset_Error.BRepOffset_CannotTrimEdges
 BRepOffset_CannotFuseVertices = BRepOffset_Error.BRepOffset_CannotFuseVertices
 BRepOffset_CannotExtentEdge = BRepOffset_Error.BRepOffset_CannotExtentEdge
 BRepOffset_UserBreak = BRepOffset_Error.BRepOffset_UserBreak
+BRepOffset_MixedConnectivity = BRepOffset_Error.BRepOffset_MixedConnectivity
 
 class BRepOffsetSimple_Status(IntEnum):
 	BRepOffsetSimple_OK = 0
@@ -2562,4 +2565,107 @@ bool
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def brepoffset_CollapseSingularities(*args):
+	return brepoffset.CollapseSingularities(*args)
+
+@deprecated
+def brepoffset_Surface(*args):
+	return brepoffset.Surface(*args)
+
+@deprecated
+def BRepOffset_Inter2d_Compute(*args):
+	return BRepOffset_Inter2d.Compute(*args)
+
+@deprecated
+def BRepOffset_Inter2d_ConnexIntByInt(*args):
+	return BRepOffset_Inter2d.ConnexIntByInt(*args)
+
+@deprecated
+def BRepOffset_Inter2d_ConnexIntByIntInVert(*args):
+	return BRepOffset_Inter2d.ConnexIntByIntInVert(*args)
+
+@deprecated
+def BRepOffset_Inter2d_ExtentEdge(*args):
+	return BRepOffset_Inter2d.ExtentEdge(*args)
+
+@deprecated
+def BRepOffset_Inter2d_FuseVertices(*args):
+	return BRepOffset_Inter2d.FuseVertices(*args)
+
+@deprecated
+def BRepOffset_Tool_BuildNeighbour(*args):
+	return BRepOffset_Tool.BuildNeighbour(*args)
+
+@deprecated
+def BRepOffset_Tool_CheckBounds(*args):
+	return BRepOffset_Tool.CheckBounds(*args)
+
+@deprecated
+def BRepOffset_Tool_CheckPlanesNormals(*args):
+	return BRepOffset_Tool.CheckPlanesNormals(*args)
+
+@deprecated
+def BRepOffset_Tool_CorrectOrientation(*args):
+	return BRepOffset_Tool.CorrectOrientation(*args)
+
+@deprecated
+def BRepOffset_Tool_Deboucle3D(*args):
+	return BRepOffset_Tool.Deboucle3D(*args)
+
+@deprecated
+def BRepOffset_Tool_EdgeVertices(*args):
+	return BRepOffset_Tool.EdgeVertices(*args)
+
+@deprecated
+def BRepOffset_Tool_EnLargeFace(*args):
+	return BRepOffset_Tool.EnLargeFace(*args)
+
+@deprecated
+def BRepOffset_Tool_ExtentFace(*args):
+	return BRepOffset_Tool.ExtentFace(*args)
+
+@deprecated
+def BRepOffset_Tool_FindCommonShapes(*args):
+	return BRepOffset_Tool.FindCommonShapes(*args)
+
+@deprecated
+def BRepOffset_Tool_FindCommonShapes(*args):
+	return BRepOffset_Tool.FindCommonShapes(*args)
+
+@deprecated
+def BRepOffset_Tool_Gabarit(*args):
+	return BRepOffset_Tool.Gabarit(*args)
+
+@deprecated
+def BRepOffset_Tool_Inter2d(*args):
+	return BRepOffset_Tool.Inter2d(*args)
+
+@deprecated
+def BRepOffset_Tool_Inter3D(*args):
+	return BRepOffset_Tool.Inter3D(*args)
+
+@deprecated
+def BRepOffset_Tool_InterOrExtent(*args):
+	return BRepOffset_Tool.InterOrExtent(*args)
+
+@deprecated
+def BRepOffset_Tool_MapVertexEdges(*args):
+	return BRepOffset_Tool.MapVertexEdges(*args)
+
+@deprecated
+def BRepOffset_Tool_OrientSection(*args):
+	return BRepOffset_Tool.OrientSection(*args)
+
+@deprecated
+def BRepOffset_Tool_PipeInter(*args):
+	return BRepOffset_Tool.PipeInter(*args)
+
+@deprecated
+def BRepOffset_Tool_TryProject(*args):
+	return BRepOffset_Tool.TryProject(*args)
+
 }

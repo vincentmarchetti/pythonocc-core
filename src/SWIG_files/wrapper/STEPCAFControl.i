@@ -1224,7 +1224,7 @@ TCollection_AsciiString
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theDocument: TDocStd_Document
 theWS: XSControl_WorkSession
 theProgress: Message_ProgressRange,optional
@@ -1234,7 +1234,7 @@ Returns
 -------
 bool
 ") Read;
-		virtual bool Read(const TCollection_AsciiString & thePath, const opencascade::handle<TDocStd_Document> & theDocument, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Read(TCollection_AsciiString thePath, const opencascade::handle<TDocStd_Document> & theDocument, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Read ******************/
 		/**** md5 signature: ec9914af037216c0502c72d0c8784072 ****/
@@ -1243,7 +1243,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theDocument: TDocStd_Document
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -1252,7 +1252,7 @@ Returns
 -------
 bool
 ") Read;
-		virtual bool Read(const TCollection_AsciiString & thePath, const opencascade::handle<TDocStd_Document> & theDocument, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Read(TCollection_AsciiString thePath, const opencascade::handle<TDocStd_Document> & theDocument, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Read ******************/
 		/**** md5 signature: f5c487132f5fe207a43ed7a7e7ce6afc ****/
@@ -1261,7 +1261,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theShape: TopoDS_Shape
 theWS: XSControl_WorkSession
 theProgress: Message_ProgressRange,optional
@@ -1271,7 +1271,7 @@ Returns
 -------
 bool
 ") Read;
-		virtual bool Read(const TCollection_AsciiString & thePath, TopoDS_Shape & theShape, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Read(TCollection_AsciiString thePath, TopoDS_Shape & theShape, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Read ******************/
 		/**** md5 signature: 25ccf35b1d33bce5d3311fc0dff44615 ****/
@@ -1280,7 +1280,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theShape: TopoDS_Shape
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -1289,7 +1289,7 @@ Returns
 -------
 bool
 ") Read;
-		virtual bool Read(const TCollection_AsciiString & thePath, TopoDS_Shape & theShape, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Read(TCollection_AsciiString thePath, TopoDS_Shape & theShape, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Write ******************/
 		/**** md5 signature: d1d3f520ef648333a2d1d51e7ecf7636 ****/
@@ -1298,7 +1298,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theDocument: TDocStd_Document
 theWS: XSControl_WorkSession
 theProgress: Message_ProgressRange,optional
@@ -1308,7 +1308,7 @@ Returns
 -------
 bool
 ") Write;
-		virtual bool Write(const TCollection_AsciiString & thePath, const opencascade::handle<TDocStd_Document> & theDocument, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Write(TCollection_AsciiString thePath, const opencascade::handle<TDocStd_Document> & theDocument, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Write ******************/
 		/**** md5 signature: 5d65a8a954decd50174318516f7bc4f8 ****/
@@ -1317,7 +1317,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theDocument: TDocStd_Document
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -1326,7 +1326,7 @@ Returns
 -------
 bool
 ") Write;
-		virtual bool Write(const TCollection_AsciiString & thePath, const opencascade::handle<TDocStd_Document> & theDocument, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Write(TCollection_AsciiString thePath, const opencascade::handle<TDocStd_Document> & theDocument, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Write ******************/
 		/**** md5 signature: 0d58c2b5e69c703850ad85ac36436410 ****/
@@ -1335,7 +1335,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theShape: TopoDS_Shape
 theWS: XSControl_WorkSession
 theProgress: Message_ProgressRange,optional
@@ -1345,7 +1345,7 @@ Returns
 -------
 bool
 ") Write;
-		virtual bool Write(const TCollection_AsciiString & thePath, const TopoDS_Shape & theShape, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Write(TCollection_AsciiString thePath, const TopoDS_Shape & theShape, opencascade::handle<XSControl_WorkSession> & theWS, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Write ******************/
 		/**** md5 signature: 2e3eef7d4e677163a76bbbdf8a15c79f ****/
@@ -1354,7 +1354,7 @@ bool
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theShape: TopoDS_Shape
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -1363,7 +1363,7 @@ Returns
 -------
 bool
 ") Write;
-		virtual bool Write(const TCollection_AsciiString & thePath, const TopoDS_Shape & theShape, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		virtual bool Write(TCollection_AsciiString thePath, const TopoDS_Shape & theShape, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 };
 
@@ -1425,14 +1425,14 @@ STEPControl_Reader
 
 Parameters
 ----------
-name: char *
+name: str
 ef: STEPCAFControl_ExternFile
 
 Returns
 -------
 bool
 ") ExternFile;
-		Standard_Boolean ExternFile(const char * name, opencascade::handle<STEPCAFControl_ExternFile> & ef);
+		Standard_Boolean ExternFile(Standard_CString name, opencascade::handle<STEPCAFControl_ExternFile> & ef);
 
 		/****************** ExternFiles ******************/
 		/**** md5 signature: 1154c88bc3253c7291077317c11363ab ****/
@@ -1597,7 +1597,7 @@ int
 
 Parameters
 ----------
-filename: TCollection_AsciiString
+filename: str
 doc: TDocStd_Document
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -1606,7 +1606,7 @@ Returns
 -------
 bool
 ") Perform;
-		Standard_Boolean Perform(const TCollection_AsciiString & filename, const opencascade::handle<TDocStd_Document> & doc, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Perform(TCollection_AsciiString filename, const opencascade::handle<TDocStd_Document> & doc, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Perform ******************/
 		/**** md5 signature: a4a2998dbb462f3822a286fdffd32a42 ****/
@@ -1615,7 +1615,7 @@ bool
 
 Parameters
 ----------
-filename: char *
+filename: str
 doc: TDocStd_Document
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -1624,7 +1624,7 @@ Returns
 -------
 bool
 ") Perform;
-		Standard_Boolean Perform(const char * filename, const opencascade::handle<TDocStd_Document> & doc, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Perform(Standard_CString filename, const opencascade::handle<TDocStd_Document> & doc, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** ReadFile ******************/
 		/**** md5 signature: d86a92113a329cc8dabf010061f31392 ****/
@@ -1633,13 +1633,13 @@ bool
 
 Parameters
 ----------
-theFileName: char *
+theFileName: str
 
 Returns
 -------
 IFSelect_ReturnStatus
 ") ReadFile;
-		IFSelect_ReturnStatus ReadFile(const char * theFileName);
+		IFSelect_ReturnStatus ReadFile(Standard_CString theFileName);
 
 		/****************** ReadStream ******************/
 		/**** md5 signature: ee73b79142d0bdf122db2d304fa9d6f3 ****/
@@ -1648,14 +1648,14 @@ IFSelect_ReturnStatus
 
 Parameters
 ----------
-theName: char *
+theName: str
 theIStream: std::istream
 
 Returns
 -------
 IFSelect_ReturnStatus
 ") ReadStream;
-		IFSelect_ReturnStatus ReadStream(const char * theName, std::istream & theIStream);
+		IFSelect_ReturnStatus ReadStream(Standard_CString theName, std::istream & theIStream);
 
 		/****************** Reader ******************/
 		/**** md5 signature: c54201c04d6a5ca89c65eb2fb14b8396 ****/
@@ -1849,24 +1849,24 @@ None
 		 STEPCAFControl_Writer();
 
 		/****************** STEPCAFControl_Writer ******************/
-		/**** md5 signature: 70a513d4d628947fa1e98ed8e35359d9 ****/
+		/**** md5 signature: dedf68dbebf4d519616966632e9764a8 ****/
 		%feature("compactdefaultargs") STEPCAFControl_Writer;
 		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step clears the internal data structures.
 
 Parameters
 ----------
-WS: XSControl_WorkSession
-scratch: bool,optional
+theWS: XSControl_WorkSession
+theScratch: bool,optional
 	default value is Standard_True
 
 Returns
 -------
 None
 ") STEPCAFControl_Writer;
-		 STEPCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+		 STEPCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & theWS, const Standard_Boolean theScratch = Standard_True);
 
 		/****************** ChangeWriter ******************/
-		/**** md5 signature: 9719ebc8336482d007d450c0e3b00713 ****/
+		/**** md5 signature: acee09144e4dec42ed602fde52975129 ****/
 		%feature("compactdefaultargs") ChangeWriter;
 		%feature("autodoc", "Returns basic reader for root file.
 
@@ -1877,39 +1877,39 @@ STEPControl_Writer
 		STEPControl_Writer & ChangeWriter();
 
 		/****************** ExternFile ******************/
-		/**** md5 signature: 4f90b7104efa0649e14f70ad09ab8e61 ****/
+		/**** md5 signature: 0769b22e71152aabd75dace01164fc2b ****/
 		%feature("compactdefaultargs") ExternFile;
 		%feature("autodoc", "Returns data on external file by its original label returns false if no external file with given name is read.
 
 Parameters
 ----------
-L: TDF_Label
-ef: STEPCAFControl_ExternFile
+theLabel: TDF_Label
+theExtFile: STEPCAFControl_ExternFile
 
 Returns
 -------
 bool
 ") ExternFile;
-		Standard_Boolean ExternFile(const TDF_Label & L, opencascade::handle<STEPCAFControl_ExternFile> & ef);
+		Standard_Boolean ExternFile(const TDF_Label & theLabel, opencascade::handle<STEPCAFControl_ExternFile> & theExtFile);
 
 		/****************** ExternFile ******************/
-		/**** md5 signature: ad0d6b0b3be01575d180dd24c55cd264 ****/
+		/**** md5 signature: f77e0b8157371b505bc136b8bd33443e ****/
 		%feature("compactdefaultargs") ExternFile;
 		%feature("autodoc", "Returns data on external file by its name returns false if no external file with given name is read.
 
 Parameters
 ----------
-name: char *
-ef: STEPCAFControl_ExternFile
+theName: str
+theExtFile: STEPCAFControl_ExternFile
 
 Returns
 -------
 bool
 ") ExternFile;
-		Standard_Boolean ExternFile(const char * name, opencascade::handle<STEPCAFControl_ExternFile> & ef);
+		Standard_Boolean ExternFile(Standard_CString theName, opencascade::handle<STEPCAFControl_ExternFile> & theExtFile);
 
 		/****************** ExternFiles ******************/
-		/**** md5 signature: 1154c88bc3253c7291077317c11363ab ****/
+		/**** md5 signature: 08a0b41df731275c7119f8910e47970c ****/
 		%feature("compactdefaultargs") ExternFiles;
 		%feature("autodoc", "Returns data on external files returns null handle if no external files are read.
 
@@ -1920,7 +1920,7 @@ NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_
 		const NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>> & ExternFiles();
 
 		/****************** GetColorMode ******************/
-		/**** md5 signature: 010da6a8a0e8a61fdb607fd6faba2b56 ****/
+		/**** md5 signature: cddb885e605f1794a5a6486023f65736 ****/
 		%feature("compactdefaultargs") GetColorMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1931,7 +1931,7 @@ bool
 		Standard_Boolean GetColorMode();
 
 		/****************** GetDimTolMode ******************/
-		/**** md5 signature: 2eed8e0bb30a6f85d0c500a8d4b9e16c ****/
+		/**** md5 signature: 5f3c2fc2e581a2ea711f9607cd0a817a ****/
 		%feature("compactdefaultargs") GetDimTolMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1942,7 +1942,7 @@ bool
 		Standard_Boolean GetDimTolMode();
 
 		/****************** GetLayerMode ******************/
-		/**** md5 signature: d677385c303e067613f92bc738509727 ****/
+		/**** md5 signature: b6b1458608d2429d13e63a07c0b392d8 ****/
 		%feature("compactdefaultargs") GetLayerMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1953,7 +1953,7 @@ bool
 		Standard_Boolean GetLayerMode();
 
 		/****************** GetMaterialMode ******************/
-		/**** md5 signature: cda125e3ff8f835393b9894e3f229aea ****/
+		/**** md5 signature: 2057a4ef866086868ba91cb34e6ad09a ****/
 		%feature("compactdefaultargs") GetMaterialMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1964,7 +1964,7 @@ bool
 		Standard_Boolean GetMaterialMode();
 
 		/****************** GetNameMode ******************/
-		/**** md5 signature: 2dd32a893d6f5f4666ac3752ace2d12f ****/
+		/**** md5 signature: 1097f532a68b4625a0108cddc8366238 ****/
 		%feature("compactdefaultargs") GetNameMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1975,7 +1975,7 @@ bool
 		Standard_Boolean GetNameMode();
 
 		/****************** GetPropsMode ******************/
-		/**** md5 signature: 3b2f4c2b61084d1e067d83421e0ea81d ****/
+		/**** md5 signature: 99cee0ed60040ac88dbf6e950f82a10e ****/
 		%feature("compactdefaultargs") GetPropsMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1986,7 +1986,7 @@ bool
 		Standard_Boolean GetPropsMode();
 
 		/****************** GetSHUOMode ******************/
-		/**** md5 signature: 74c5f048b04741ef5abfe259b5c453cd ****/
+		/**** md5 signature: 4e3a3a7f89647ad6b4f35f24a42234d6 ****/
 		%feature("compactdefaultargs") GetSHUOMode;
 		%feature("autodoc", "No available documentation.
 
@@ -1997,31 +1997,31 @@ bool
 		Standard_Boolean GetSHUOMode();
 
 		/****************** Init ******************/
-		/**** md5 signature: 13544ae418c98602c6eaed6faea8f526 ****/
+		/**** md5 signature: e7d3f870615865a6686f75c3aa077ff3 ****/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Clears the internal data structures and attaches to a new session clears the session if it was not yet set for step.
 
 Parameters
 ----------
-WS: XSControl_WorkSession
-scratch: bool,optional
+theWS: XSControl_WorkSession
+theScratch: bool,optional
 	default value is Standard_True
 
 Returns
 -------
 None
 ") Init;
-		void Init(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+		void Init(const opencascade::handle<XSControl_WorkSession> & theWS, const Standard_Boolean theScratch = Standard_True);
 
 		/****************** Perform ******************/
-		/**** md5 signature: 82a9ff51a493dfcaea368ecaef792fdb ****/
+		/**** md5 signature: 624f8c3670df66af47c4a9af2967eb2a ****/
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "No available documentation.
 
 Parameters
 ----------
-doc: TDocStd_Document
-filename: TCollection_AsciiString
+theDoc: TDocStd_Document
+theFileName: str
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
 
@@ -2029,17 +2029,17 @@ Returns
 -------
 bool
 ") Perform;
-		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const TCollection_AsciiString & filename, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & theDoc, TCollection_AsciiString theFileName, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Perform ******************/
-		/**** md5 signature: 1ef00b1bd520cd3b05cc4f00e91c494d ****/
+		/**** md5 signature: 90b76d8d692f1926baa1d9dd3db9018b ****/
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Transfers a document and writes it to a step file returns true if translation is ok.
 
 Parameters
 ----------
-doc: TDocStd_Document
-filename: char *
+theDoc: TDocStd_Document
+theFileName: str
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
 
@@ -2047,124 +2047,124 @@ Returns
 -------
 bool
 ") Perform;
-		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const char * filename, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & theDoc, Standard_CString theFileName, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** SetColorMode ******************/
-		/**** md5 signature: e8d41838c31a9460a1c83d84b1f572a1 ****/
+		/**** md5 signature: f341158b4cc5262e2e5cb7b941cc9031 ****/
 		%feature("compactdefaultargs") SetColorMode;
 		%feature("autodoc", "Set colormode for indicate write colors or not.
 
 Parameters
 ----------
-colormode: bool
+theColorMode: bool
 
 Returns
 -------
 None
 ") SetColorMode;
-		void SetColorMode(const Standard_Boolean colormode);
+		void SetColorMode(const Standard_Boolean theColorMode);
 
 		/****************** SetDimTolMode ******************/
-		/**** md5 signature: 18d408609aea9a67d1d1e15d923773db ****/
+		/**** md5 signature: 08cd53498196841f3c3a5c0e281a464f ****/
 		%feature("compactdefaultargs") SetDimTolMode;
 		%feature("autodoc", "Set dimtolmode for indicate write d&gts or not.
 
 Parameters
 ----------
-dimtolmode: bool
+theDimTolMode: bool
 
 Returns
 -------
 None
 ") SetDimTolMode;
-		void SetDimTolMode(const Standard_Boolean dimtolmode);
+		void SetDimTolMode(const Standard_Boolean theDimTolMode);
 
 		/****************** SetLayerMode ******************/
-		/**** md5 signature: 3ec21c8de4b114a83bb0b34cb3b98662 ****/
+		/**** md5 signature: d164352478699d01fe5d59c680c2a74d ****/
 		%feature("compactdefaultargs") SetLayerMode;
 		%feature("autodoc", "Set layermode for indicate write layers or not.
 
 Parameters
 ----------
-layermode: bool
+theLayerMode: bool
 
 Returns
 -------
 None
 ") SetLayerMode;
-		void SetLayerMode(const Standard_Boolean layermode);
+		void SetLayerMode(const Standard_Boolean theLayerMode);
 
 		/****************** SetMaterialMode ******************/
-		/**** md5 signature: ef4abdfa06b076742a69b17150f91d88 ****/
+		/**** md5 signature: 932571d6d0df2e34fd2487f6025f4956 ****/
 		%feature("compactdefaultargs") SetMaterialMode;
 		%feature("autodoc", "Set dimtolmode for indicate write d&gts or not.
 
 Parameters
 ----------
-matmode: bool
+theMaterialMode: bool
 
 Returns
 -------
 None
 ") SetMaterialMode;
-		void SetMaterialMode(const Standard_Boolean matmode);
+		void SetMaterialMode(const Standard_Boolean theMaterialMode);
 
 		/****************** SetNameMode ******************/
-		/**** md5 signature: 43ccb5d3fb024d8191f251ee74d0f6ba ****/
+		/**** md5 signature: a24984c6ce274882f02601c13cf73b9a ****/
 		%feature("compactdefaultargs") SetNameMode;
 		%feature("autodoc", "Set namemode for indicate write name or not.
 
 Parameters
 ----------
-namemode: bool
+theNameMode: bool
 
 Returns
 -------
 None
 ") SetNameMode;
-		void SetNameMode(const Standard_Boolean namemode);
+		void SetNameMode(const Standard_Boolean theNameMode);
 
 		/****************** SetPropsMode ******************/
-		/**** md5 signature: 97f3b34eb7a1e38c6cf17d5c26f938a6 ****/
+		/**** md5 signature: fbb288fb7a76bf6b9cd3acd70d056a7f ****/
 		%feature("compactdefaultargs") SetPropsMode;
 		%feature("autodoc", "Propsmode for indicate write validation properties or not.
 
 Parameters
 ----------
-propsmode: bool
+thePropsMode: bool
 
 Returns
 -------
 None
 ") SetPropsMode;
-		void SetPropsMode(const Standard_Boolean propsmode);
+		void SetPropsMode(const Standard_Boolean thePropsMode);
 
 		/****************** SetSHUOMode ******************/
-		/**** md5 signature: ad06ed8b923731ee7b75bf3d7074f299 ****/
+		/**** md5 signature: 39955bf97fe8d6a6d6b3b211a859f216 ****/
 		%feature("compactdefaultargs") SetSHUOMode;
 		%feature("autodoc", "Set shuo mode for indicate write shuo or not.
 
 Parameters
 ----------
-shuomode: bool
+theSHUOMode: bool
 
 Returns
 -------
 None
 ") SetSHUOMode;
-		void SetSHUOMode(const Standard_Boolean shuomode);
+		void SetSHUOMode(const Standard_Boolean theSHUOMode);
 
 		/****************** Transfer ******************/
-		/**** md5 signature: 2616e7e1bc1f8548fb5e464651c0f720 ****/
+		/**** md5 signature: dd7ebbdc1c22d7845ad531885273adee ****/
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Transfers a document (or single label) to a step model the mode of translation of shape is asis if multi is not null pointer, it switches to multifile mode (with external refs), and string pointed by <multi> gives prefix for names of extern files (can be empty string) returns true if translation is ok.
 
 Parameters
 ----------
-doc: TDocStd_Document
-mode: STEPControl_StepModelType,optional
+theDoc: TDocStd_Document
+theMode: STEPControl_StepModelType,optional
 	default value is STEPControl_AsIs
-multi: char *,optional
+theIsMulti: str,optional
 	default value is 0
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -2173,19 +2173,19 @@ Returns
 -------
 bool
 ") Transfer;
-		Standard_Boolean Transfer(const opencascade::handle<TDocStd_Document> & doc, const STEPControl_StepModelType mode = STEPControl_AsIs, const char * multi = 0, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Transfer(const opencascade::handle<TDocStd_Document> & theDoc, const STEPControl_StepModelType theMode = STEPControl_AsIs, Standard_CString theIsMulti = 0, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Transfer ******************/
-		/**** md5 signature: 3230c3763f234bd8211762a290f20e3d ****/
+		/**** md5 signature: 40f710aeab310ab1eff9bbdbe733b162 ****/
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Method to transfer part of the document specified by label.
 
 Parameters
 ----------
-L: TDF_Label
-mode: STEPControl_StepModelType,optional
+theLabel: TDF_Label
+theMode: STEPControl_StepModelType,optional
 	default value is STEPControl_AsIs
-multi: char *,optional
+theIsMulti: str,optional
 	default value is 0
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -2194,19 +2194,19 @@ Returns
 -------
 bool
 ") Transfer;
-		Standard_Boolean Transfer(const TDF_Label & L, const STEPControl_StepModelType mode = STEPControl_AsIs, const char * multi = 0, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Transfer(const TDF_Label & theLabel, const STEPControl_StepModelType theMode = STEPControl_AsIs, Standard_CString theIsMulti = 0, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Transfer ******************/
-		/**** md5 signature: 7533cb05eb0d45c4c5142f45de14069a ****/
+		/**** md5 signature: 4e3f0900d966cc07a5e2191b2b4ba7a6 ****/
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Mehod to writing sequence of root assemblies or part of the file specified by use by one label .
 
 Parameters
 ----------
-L: TDF_LabelSequence
-mode: STEPControl_StepModelType,optional
+theLabelSeq: TDF_LabelSequence
+theMode: STEPControl_StepModelType,optional
 	default value is STEPControl_AsIs
-multi: char *,optional
+theIsMulti: str,optional
 	default value is 0
 theProgress: Message_ProgressRange,optional
 	default value is Message_ProgressRange()
@@ -2215,7 +2215,7 @@ Returns
 -------
 bool
 ") Transfer;
-		Standard_Boolean Transfer(const TDF_LabelSequence & L, const STEPControl_StepModelType mode = STEPControl_AsIs, const char * multi = 0, const Message_ProgressRange & theProgress = Message_ProgressRange());
+		Standard_Boolean Transfer(const TDF_LabelSequence & theLabelSeq, const STEPControl_StepModelType theMode = STEPControl_AsIs, Standard_CString theIsMulti = 0, const Message_ProgressRange & theProgress = Message_ProgressRange());
 
 		/****************** Write ******************/
 		/**** md5 signature: 14544d6ececf228a5871ef6afa0279ae ****/
@@ -2224,13 +2224,13 @@ bool
 
 Parameters
 ----------
-theFileName: char *
+theFileName: str
 
 Returns
 -------
 IFSelect_ReturnStatus
 ") Write;
-		IFSelect_ReturnStatus Write(const char * theFileName);
+		IFSelect_ReturnStatus Write(Standard_CString theFileName);
 
 		/****************** WriteStream ******************/
 		/**** md5 signature: e58591412136b10e3743cbf1ab89de94 ****/
@@ -2248,7 +2248,7 @@ IFSelect_ReturnStatus
 		IFSelect_ReturnStatus WriteStream(std::ostream & theStream);
 
 		/****************** Writer ******************/
-		/**** md5 signature: 70b6d632350a5ba6ff972c4b437432a0 ****/
+		/**** md5 signature: 056d4f3221d283b7d58d92ddd5c40dd7 ****/
 		%feature("compactdefaultargs") Writer;
 		%feature("autodoc", "Returns basic reader as const.
 
@@ -2272,4 +2272,95 @@ STEPControl_Writer
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def STEPCAFControl_Controller_Init(*args):
+	return STEPCAFControl_Controller.Init(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDatumRefModifiers(*args):
+	return STEPCAFControl_GDTProperty.GetDatumRefModifiers(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDatumTargetName(*args):
+	return STEPCAFControl_GDTProperty.GetDatumTargetName(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDatumTargetType(*args):
+	return STEPCAFControl_GDTProperty.GetDatumTargetType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimClassOfTolerance(*args):
+	return STEPCAFControl_GDTProperty.GetDimClassOfTolerance(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimModifierName(*args):
+	return STEPCAFControl_GDTProperty.GetDimModifierName(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimModifiers(*args):
+	return STEPCAFControl_GDTProperty.GetDimModifiers(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimQualifierName(*args):
+	return STEPCAFControl_GDTProperty.GetDimQualifierName(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimQualifierType(*args):
+	return STEPCAFControl_GDTProperty.GetDimQualifierType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimType(*args):
+	return STEPCAFControl_GDTProperty.GetDimType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetDimTypeName(*args):
+	return STEPCAFControl_GDTProperty.GetDimTypeName(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetGeomTolerance(*args):
+	return STEPCAFControl_GDTProperty.GetGeomTolerance(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetGeomToleranceModifier(*args):
+	return STEPCAFControl_GDTProperty.GetGeomToleranceModifier(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetGeomToleranceType(*args):
+	return STEPCAFControl_GDTProperty.GetGeomToleranceType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetGeomToleranceType(*args):
+	return STEPCAFControl_GDTProperty.GetGeomToleranceType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetLimitsAndFits(*args):
+	return STEPCAFControl_GDTProperty.GetLimitsAndFits(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetTessellation(*args):
+	return STEPCAFControl_GDTProperty.GetTessellation(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetTolValueType(*args):
+	return STEPCAFControl_GDTProperty.GetTolValueType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_GetTolValueType(*args):
+	return STEPCAFControl_GDTProperty.GetTolValueType(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_IsDimensionalLocation(*args):
+	return STEPCAFControl_GDTProperty.IsDimensionalLocation(*args)
+
+@deprecated
+def STEPCAFControl_GDTProperty_IsDimensionalSize(*args):
+	return STEPCAFControl_GDTProperty.IsDimensionalSize(*args)
+
+@deprecated
+def STEPCAFControl_Reader_FindInstance(*args):
+	return STEPCAFControl_Reader.FindInstance(*args)
+
 }

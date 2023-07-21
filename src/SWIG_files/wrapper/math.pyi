@@ -521,7 +521,7 @@ class math_NewtonFunctionSetRoot:
     def SetTolerance(self, XTol: math_Vector) -> None: ...
 
 class math_NewtonMinimum:
-    def __init__(self, theFunction: math_MultipleVarFunctionWithHessian, theTolerance: Optional[float] = precision_Confusion(), theNbIterations: Optional[int] = 40, theConvexity: Optional[float] = 1.0e-6, theWithSingularity: Optional[bool] = True) -> None: ...
+    def __init__(self, theFunction: math_MultipleVarFunctionWithHessian, theTolerance: Optional[float] = Precision.Confusion(), theNbIterations: Optional[int] = 40, theConvexity: Optional[float] = 1.0e-6, theWithSingularity: Optional[bool] = True) -> None: ...
     def GetStatus(self) -> math_Status: ...
     @overload
     def Gradient(self) -> math_Vector: ...
@@ -704,10 +704,3 @@ class math_TrigonometricEquationFunction(math_FunctionWithDerivative):
 # harray2 classes
 # hsequence classes
 
-math_GaussPoints = math.GaussPoints
-math_GaussPointsMax = math.GaussPointsMax
-math_GaussWeights = math.GaussWeights
-math_KronrodPointsAndWeights = math.KronrodPointsAndWeights
-math_KronrodPointsMax = math.KronrodPointsMax
-math_OrderedGaussPointsAndWeights = math.OrderedGaussPointsAndWeights
-math_KronrodSingleIntegration_GKRule = math_KronrodSingleIntegration.GKRule

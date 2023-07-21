@@ -704,13 +704,13 @@ TCollection_AsciiString
 
 Parameters
 ----------
-theUnits: TCollection_AsciiString
+theUnits: str
 
 Returns
 -------
 None
 ") SetAngleUnits;
-		void SetAngleUnits(const TCollection_AsciiString & theUnits);
+		void SetAngleUnits(TCollection_AsciiString theUnits);
 
 		/****************** SetLengthUnits ******************/
 		/**** md5 signature: 8f235eea8c4da0d905edbe7271c0d8cd ****/
@@ -719,13 +719,13 @@ None
 
 Parameters
 ----------
-theUnits: TCollection_AsciiString
+theUnits: str
 
 Returns
 -------
 None
 ") SetLengthUnits;
-		void SetLengthUnits(const TCollection_AsciiString & theUnits);
+		void SetLengthUnits(TCollection_AsciiString theUnits);
 
 };
 
@@ -1737,13 +1737,13 @@ None
 
 Parameters
 ----------
-theUnits: TCollection_AsciiString
+theUnits: str
 
 Returns
 -------
 None
 ") SetDimAngleDisplayUnits;
-		void SetDimAngleDisplayUnits(const TCollection_AsciiString & theUnits);
+		void SetDimAngleDisplayUnits(TCollection_AsciiString theUnits);
 
 		/****************** SetDimAngleModelUnits ******************/
 		/**** md5 signature: 93b2a30875cdc23219e463c5d2ab0bfe ****/
@@ -1752,13 +1752,13 @@ None
 
 Parameters
 ----------
-theUnits: TCollection_AsciiString
+theUnits: str
 
 Returns
 -------
 None
 ") SetDimAngleModelUnits;
-		void SetDimAngleModelUnits(const TCollection_AsciiString & theUnits);
+		void SetDimAngleModelUnits(TCollection_AsciiString theUnits);
 
 		/****************** SetDimLengthDisplayUnits ******************/
 		/**** md5 signature: 7f89e9c7683b8fa3924af494b833fef5 ****/
@@ -1767,13 +1767,13 @@ None
 
 Parameters
 ----------
-theUnits: TCollection_AsciiString
+theUnits: str
 
 Returns
 -------
 None
 ") SetDimLengthDisplayUnits;
-		void SetDimLengthDisplayUnits(const TCollection_AsciiString & theUnits);
+		void SetDimLengthDisplayUnits(TCollection_AsciiString theUnits);
 
 		/****************** SetDimLengthModelUnits ******************/
 		/**** md5 signature: be6ef9d72701ad078664a2f567b1db09 ****/
@@ -1782,13 +1782,13 @@ None
 
 Parameters
 ----------
-theUnits: TCollection_AsciiString
+theUnits: str
 
 Returns
 -------
 None
 ") SetDimLengthModelUnits;
-		void SetDimLengthModelUnits(const TCollection_AsciiString & theUnits);
+		void SetDimLengthModelUnits(TCollection_AsciiString theUnits);
 
 		/****************** SetDimensionAspect ******************/
 		/**** md5 signature: 3cc8cbe992a4f857a78fc1aaa6580a19 ****/
@@ -2951,14 +2951,14 @@ Parameters
 ----------
 theGroup: Graphic3d_Group
 theAspect: Prs3d_TextAspect
-theText: TCollection_ExtendedString
+theText: str
 theAttachmentPoint: gp_Pnt
 
 Returns
 -------
 opencascade::handle<Graphic3d_Text>
 ") Draw;
-		static opencascade::handle<Graphic3d_Text> Draw(const opencascade::handle<Graphic3d_Group> & theGroup, const opencascade::handle<Prs3d_TextAspect> & theAspect, const TCollection_ExtendedString & theText, const gp_Pnt & theAttachmentPoint);
+		static opencascade::handle<Graphic3d_Text> Draw(const opencascade::handle<Graphic3d_Group> & theGroup, const opencascade::handle<Prs3d_TextAspect> & theAspect, TCollection_ExtendedString theText, const gp_Pnt & theAttachmentPoint);
 
 		/****************** Draw ******************/
 		/**** md5 signature: bffbe230252ee3e0d660a0f0a3cb5a41 ****/
@@ -2969,7 +2969,7 @@ Parameters
 ----------
 theGroup: Graphic3d_Group
 theAspect: Prs3d_TextAspect
-theText: TCollection_ExtendedString
+theText: str
 theOrientation: gp_Ax2
 theHasOwnAnchor: bool,optional
 	default value is Standard_True
@@ -2978,7 +2978,7 @@ Returns
 -------
 opencascade::handle<Graphic3d_Text>
 ") Draw;
-		static opencascade::handle<Graphic3d_Text> Draw(const opencascade::handle<Graphic3d_Group> & theGroup, const opencascade::handle<Prs3d_TextAspect> & theAspect, const TCollection_ExtendedString & theText, const gp_Ax2 & theOrientation, const Standard_Boolean theHasOwnAnchor = Standard_True);
+		static opencascade::handle<Graphic3d_Text> Draw(const opencascade::handle<Graphic3d_Group> & theGroup, const opencascade::handle<Prs3d_TextAspect> & theAspect, TCollection_ExtendedString theText, const gp_Ax2 & theOrientation, const Standard_Boolean theHasOwnAnchor = Standard_True);
 
 };
 
@@ -4123,13 +4123,13 @@ None
 
 Parameters
 ----------
-theFormat: TCollection_AsciiString
+theFormat: str
 
 Returns
 -------
 None
 ") SetValueStringFormat;
-		void SetValueStringFormat(const TCollection_AsciiString & theFormat);
+		void SetValueStringFormat(TCollection_AsciiString theFormat);
 
 		/****************** TextAspect ******************/
 		/**** md5 signature: cfcafff19dee0a33d3ad10bb73a9e0cf ****/
@@ -5119,13 +5119,13 @@ None
 
 Parameters
 ----------
-theFont: char *
+theFont: str
 
 Returns
 -------
 None
 ") SetFont;
-		void SetFont(const char * theFont);
+		void SetFont(Standard_CString theFont);
 
 		/****************** SetHeight ******************/
 		/**** md5 signature: 052437153b834706be1197300ee007be ****/
@@ -5675,4 +5675,139 @@ class Prs3d_ShapeTool:
 /* class aliases */
 %pythoncode {
 Prs3d_Presentation=OCC.Core.Graphic3d.Graphic3d_Structure
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def prs3d_AddFreeEdges(*args):
+	return prs3d.AddFreeEdges(*args)
+
+@deprecated
+def prs3d_AddPrimitivesGroup(*args):
+	return prs3d.AddPrimitivesGroup(*args)
+
+@deprecated
+def prs3d_GetDeflection(*args):
+	return prs3d.GetDeflection(*args)
+
+@deprecated
+def prs3d_GetDeflection(*args):
+	return prs3d.GetDeflection(*args)
+
+@deprecated
+def prs3d_MatchSegment(*args):
+	return prs3d.MatchSegment(*args)
+
+@deprecated
+def prs3d_PrimitivesFromPolylines(*args):
+	return prs3d.PrimitivesFromPolylines(*args)
+
+@deprecated
+def Prs3d_Arrow_Draw(*args):
+	return Prs3d_Arrow.Draw(*args)
+
+@deprecated
+def Prs3d_Arrow_DrawSegments(*args):
+	return Prs3d_Arrow.DrawSegments(*args)
+
+@deprecated
+def Prs3d_Arrow_DrawShaded(*args):
+	return Prs3d_Arrow.DrawShaded(*args)
+
+@deprecated
+def Prs3d_Point_Add(*args):
+	return Prs3d_Point.Add(*args)
+
+@deprecated
+def Prs3d_Point_Match(*args):
+	return Prs3d_Point.Match(*args)
+
+@deprecated
+def Prs3d_Root_CurrentGroup(*args):
+	return Prs3d_Root.CurrentGroup(*args)
+
+@deprecated
+def Prs3d_Root_NewGroup(*args):
+	return Prs3d_Root.NewGroup(*args)
+
+@deprecated
+def Prs3d_Text_Draw(*args):
+	return Prs3d_Text.Draw(*args)
+
+@deprecated
+def Prs3d_Text_Draw(*args):
+	return Prs3d_Text.Draw(*args)
+
+@deprecated
+def Prs3d_ToolQuadric_TrianglesNb(*args):
+	return Prs3d_ToolQuadric.TrianglesNb(*args)
+
+@deprecated
+def Prs3d_ToolQuadric_VerticesNb(*args):
+	return Prs3d_ToolQuadric.VerticesNb(*args)
+
+@deprecated
+def Prs3d_BndBox_Add(*args):
+	return Prs3d_BndBox.Add(*args)
+
+@deprecated
+def Prs3d_BndBox_Add(*args):
+	return Prs3d_BndBox.Add(*args)
+
+@deprecated
+def Prs3d_BndBox_FillSegments(*args):
+	return Prs3d_BndBox.FillSegments(*args)
+
+@deprecated
+def Prs3d_BndBox_FillSegments(*args):
+	return Prs3d_BndBox.FillSegments(*args)
+
+@deprecated
+def Prs3d_BndBox_FillSegments(*args):
+	return Prs3d_BndBox.FillSegments(*args)
+
+@deprecated
+def Prs3d_BndBox_FillSegments(*args):
+	return Prs3d_BndBox.FillSegments(*args)
+
+@deprecated
+def Prs3d_BndBox_fillSegments(*args):
+	return Prs3d_BndBox.fillSegments(*args)
+
+@deprecated
+def Prs3d_DatumAspect_ArrowPartForAxis(*args):
+	return Prs3d_DatumAspect.ArrowPartForAxis(*args)
+
+@deprecated
+def Prs3d_ToolCylinder_Create(*args):
+	return Prs3d_ToolCylinder.Create(*args)
+
+@deprecated
+def Prs3d_ToolDisk_Create(*args):
+	return Prs3d_ToolDisk.Create(*args)
+
+@deprecated
+def Prs3d_ToolSector_Create(*args):
+	return Prs3d_ToolSector.Create(*args)
+
+@deprecated
+def Prs3d_ToolSphere_Create(*args):
+	return Prs3d_ToolSphere.Create(*args)
+
+@deprecated
+def Prs3d_ToolTorus_Create(*args):
+	return Prs3d_ToolTorus.Create(*args)
+
+@deprecated
+def Prs3d_ToolTorus_Create(*args):
+	return Prs3d_ToolTorus.Create(*args)
+
+@deprecated
+def Prs3d_ToolTorus_Create(*args):
+	return Prs3d_ToolTorus.Create(*args)
+
+@deprecated
+def Prs3d_ToolTorus_Create(*args):
+	return Prs3d_ToolTorus.Create(*args)
+
 }

@@ -474,9 +474,9 @@ opencascade::handle<Standard_Type>
 
 Returns
 -------
-char *
+str
 ") ResultTypeName;
-		const char * ResultTypeName();
+		Standard_CString ResultTypeName();
 
 		/****************** SetResult ******************/
 		/**** md5 signature: b581a5ff3d4839af932b887a85802930 ****/
@@ -568,9 +568,9 @@ opencascade::handle<Standard_Type>
 
 Returns
 -------
-char *
+str
 ") ValueTypeName;
-		virtual const char * ValueTypeName();
+		virtual Standard_CString ValueTypeName();
 
 };
 
@@ -1048,9 +1048,9 @@ ent: TopoDS_Shape
 
 Returns
 -------
-char *
+str
 ") TypeName;
-		static const char * TypeName(const TopoDS_Shape & ent);
+		static Standard_CString TypeName(const TopoDS_Shape & ent);
 
 };
 
@@ -1218,9 +1218,9 @@ opencascade::handle<Standard_Type>
 
 Returns
 -------
-char *
+str
 ") ResultTypeName;
-		const char * ResultTypeName();
+		Standard_CString ResultTypeName();
 
 		/****************** SetResult ******************/
 		/**** md5 signature: ce058a0f2fb955a00dd16b642d73ddf3 ****/
@@ -1403,9 +1403,9 @@ opencascade::handle<Standard_Type>
 
 Returns
 -------
-char *
+str
 ") ValueTypeName;
-		virtual const char * ValueTypeName();
+		virtual Standard_CString ValueTypeName();
 
 };
 
@@ -1718,4 +1718,83 @@ class TransferBRep_HSequenceOfTransferResultInfo : public TransferBRep_SequenceO
 
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def transferbrep_CheckObject(*args):
+	return transferbrep.CheckObject(*args)
+
+@deprecated
+def transferbrep_Checked(*args):
+	return transferbrep.Checked(*args)
+
+@deprecated
+def transferbrep_CheckedShapes(*args):
+	return transferbrep.CheckedShapes(*args)
+
+@deprecated
+def transferbrep_PrintResultInfo(*args):
+	return transferbrep.PrintResultInfo(*args)
+
+@deprecated
+def transferbrep_ResultCheckList(*args):
+	return transferbrep.ResultCheckList(*args)
+
+@deprecated
+def transferbrep_ResultFromShape(*args):
+	return transferbrep.ResultFromShape(*args)
+
+@deprecated
+def transferbrep_SetShapeResult(*args):
+	return transferbrep.SetShapeResult(*args)
+
+@deprecated
+def transferbrep_SetTransientFromShape(*args):
+	return transferbrep.SetTransientFromShape(*args)
+
+@deprecated
+def transferbrep_ShapeMapper(*args):
+	return transferbrep.ShapeMapper(*args)
+
+@deprecated
+def transferbrep_ShapeResult(*args):
+	return transferbrep.ShapeResult(*args)
+
+@deprecated
+def transferbrep_ShapeResult(*args):
+	return transferbrep.ShapeResult(*args)
+
+@deprecated
+def transferbrep_ShapeState(*args):
+	return transferbrep.ShapeState(*args)
+
+@deprecated
+def transferbrep_Shapes(*args):
+	return transferbrep.Shapes(*args)
+
+@deprecated
+def transferbrep_Shapes(*args):
+	return transferbrep.Shapes(*args)
+
+@deprecated
+def transferbrep_TransferResultInfo(*args):
+	return transferbrep.TransferResultInfo(*args)
+
+@deprecated
+def transferbrep_TransferResultInfo(*args):
+	return transferbrep.TransferResultInfo(*args)
+
+@deprecated
+def transferbrep_TransientFromShape(*args):
+	return transferbrep.TransientFromShape(*args)
+
+@deprecated
+def TransferBRep_ShapeInfo_Type(*args):
+	return TransferBRep_ShapeInfo.Type(*args)
+
+@deprecated
+def TransferBRep_ShapeInfo_TypeName(*args):
+	return TransferBRep_ShapeInfo.TypeName(*args)
+
 }

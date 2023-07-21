@@ -50,7 +50,7 @@ class topods:
     def Wire(S: TopoDS_Shape) -> TopoDS_Wire: ...
 
 class TopoDS_AlertAttribute(Message_AttributeStream):
-    def __init__(self, theShape: TopoDS_Shape, theName: Optional[TCollection_AsciiString] = TCollection_AsciiString()) -> None: ...
+    def __init__(self, theShape: TopoDS_Shape, theName: Optional[str] = TCollection_AsciiString()) -> None: ...
     def GetShape(self) -> TopoDS_Shape: ...
     @staticmethod
     def Send(theMessenger: Message_Messenger, theShape: TopoDS_Shape) -> None: ...
@@ -262,20 +262,3 @@ class TopoDS_Wire(TopoDS_Shape):
 # harray2 classes
 # hsequence classes
 
-topods_CompSolid = topods.CompSolid
-topods_CompSolid = topods.CompSolid
-topods_Compound = topods.Compound
-topods_Compound = topods.Compound
-topods_Edge = topods.Edge
-topods_Edge = topods.Edge
-topods_Face = topods.Face
-topods_Face = topods.Face
-topods_Shell = topods.Shell
-topods_Shell = topods.Shell
-topods_Solid = topods.Solid
-topods_Solid = topods.Solid
-topods_Vertex = topods.Vertex
-topods_Vertex = topods.Vertex
-topods_Wire = topods.Wire
-topods_Wire = topods.Wire
-TopoDS_AlertAttribute_Send = TopoDS_AlertAttribute.Send

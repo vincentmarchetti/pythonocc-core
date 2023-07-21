@@ -211,13 +211,13 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 
 Parameters
 ----------
-theCopyright: TCollection_ExtendedString
+theCopyright: str
 
 Returns
 -------
 None
 ") XmlTObjDrivers_DocumentStorageDriver;
-		 XmlTObjDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
+		 XmlTObjDrivers_DocumentStorageDriver(TCollection_ExtendedString theCopyright);
 
 		/****************** AttributeDrivers ******************/
 		/**** md5 signature: 8f96c34c95c7e9b565e8874b99e9133c ****/
@@ -630,4 +630,19 @@ None
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def xmltobjdrivers_AddDrivers(*args):
+	return xmltobjdrivers.AddDrivers(*args)
+
+@deprecated
+def xmltobjdrivers_DefineFormat(*args):
+	return xmltobjdrivers.DefineFormat(*args)
+
+@deprecated
+def xmltobjdrivers_Factory(*args):
+	return xmltobjdrivers.Factory(*args)
+
 }

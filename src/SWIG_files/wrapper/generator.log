@@ -2,13 +2,13 @@
 ############################
 Running pythonocc-generator.
 ############################
-git revision : d684974
+git revision : 2528466
 
-operating system : Linux 64bit 5.4.0-132-generic
+operating system : Linux 64bit 5.4.0-146-generic
 
-occt version targeted : 7.7.0
+occt version targeted : 7.7.1
 
-date : 2022-11-29 05:19:23.050448
+date : 2023-04-18 19:01:18.341989
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -208,6 +208,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: IntTools_TopolTool
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: IntTools_WLineTool
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: IntTools_CurveRangeSample
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Processing toolkit TKBRep ===
@@ -322,6 +323,14 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: TopTools_ShapeSet
 [INFO ]  ## Processing module TopoDS
 [INFO ]  Class: TopoDS
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: TopoDS_AlertAttribute
 [INFO ]  Class: TopoDS_AlertWithShape
 [INFO ]  Class: TopoDS_Builder
@@ -469,6 +478,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: BRepAlgo_NormalProjection
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  ## Processing module BRepFill
+[INFO ]  Enum: BRepFill_ThruSectionErrorStatus
 [INFO ]  Enum: BRepFill_TypeOfContact
 [INFO ]  Enum: BRepFill_TransitionStyle
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
@@ -718,6 +728,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: TopOpeBRepDS_EdgeVertexInterference
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: TopOpeBRepDS_FaceEdgeInterference
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Enum passed by reference: TopOpeBRepDS_Config &c changed to TopOpeBRepDS_Config &OutValue
 [INFO ]  Enum passed by reference: TopOpeBRepDS_Config & c changed to TopOpeBRepDS_Config &OutValue
 [INFO ]  Enum passed by reference: TopOpeBRepDS_Config & c changed to TopOpeBRepDS_Config &OutValue
@@ -739,6 +750,14 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Enum passed by reference: TopOpeBRepDS_Kind & ST1 changed to TopOpeBRepDS_Kind &OutValue
 [INFO ]  Enum passed by reference: TopOpeBRepDS_Kind & GT1 changed to TopOpeBRepDS_Kind &OutValue
 [INFO ]  Enum passed by reference: TopOpeBRepDS_Kind & ST1 changed to TopOpeBRepDS_Kind &OutValue
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  ## Processing module TopOpeBRepTool
 [INFO ]  Enum: TopOpeBRepTool_OutCurveType
 [INFO ]  Class: TopOpeBRepTool
@@ -772,6 +791,7 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [INFO ]  Processing toolkit TKCAF ===
 [INFO ]  ## Processing module AppStd
@@ -1191,6 +1211,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  ## Processing module Adaptor3d
 [INFO ]  Class: Adaptor3d_Curve
 [INFO ]  Class: Adaptor3d_HSurfaceTool
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: Adaptor3d_HVertex
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Adaptor3d_InterFunc
@@ -1853,7 +1874,11 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Enum: IntImp_ConstIsoparametric
 [INFO ]  ## Processing module IntImpParGen
 [INFO ]  Class: IntImpParGen
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  ## Processing module IntPatch
 [INFO ]  Enum: IntPatch_SpecPntType
 [INFO ]  Enum: IntPatch_IType
@@ -2083,19 +2108,59 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: AdvApp2Var_ApproxAFunc2Var
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AdvApp2Var_ApproxF2var
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type const doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type const doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type const doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type const doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: AdvApp2Var_Context
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AdvApp2Var_Criterion
@@ -2116,47 +2181,40 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AdvApp2Var_MathBase
 [INFO ]      skipped method AdvApp2Var_MathBase::004b4d1f320ed3a3d5373d0e6c2dacb7
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type const doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
-[WARNI]      [TypeHint] Skipping type static doublereal, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type static doublereal, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type static doublereal, should contain _
-[WARNI]      [TypeHint] Skipping type doublereal *, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: AdvApp2Var_Network
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AdvApp2Var_Node
@@ -2165,31 +2223,18 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AdvApp2Var_SysBase
 [INFO ]      Wrap nested class AdvApp2Var_SysBase::mitem
-[WARNI]      [TypeHint] Skipping type int *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] Skipping unknown type, intptr not in module list
+[WARNI]      [TypeHint] Skipping unknown type, intptr not in module list
+[WARNI]      [TypeHint] Skipping unknown type, intptr not in module list
+[WARNI]      [TypeHint] Skipping unknown type, intptr not in module list
+[WARNI]      [TypeHint] Skipping type ftnlen, should contain _
+[WARNI]      [TypeHint] Skipping unknown type, intptr not in module list
+[WARNI]      [TypeHint] Skipping unknown type, intptr not in module list
 [WARNI]      [TypeHint] Skipping type ftnlen, should contain _
 [WARNI]      [TypeHint] Skipping type ftnlen, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
 [WARNI]      [TypeHint] Skipping type ftnlen, should contain _
-[WARNI]      [TypeHint] Skipping type integer *, should contain _
 [INFO ]  ## Processing module AppCont
 [INFO ]  Class: AppCont_Function
 [INFO ]      Class AppCont_Function is abstract, using %nodefaultctor.
@@ -3080,6 +3125,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: TDF
 [INFO ]  Class: TDF_Attribute
 [INFO ]      Class TDF_Attribute is abstract, using %nodefaultctor.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: TDF_AttributeDelta
 [INFO ]      Class TDF_AttributeDelta is abstract, using %nodefaultctor.
 [INFO ]  Class: TDF_AttributeIterator
@@ -3231,14 +3277,8 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type BVH_Box<T,, seems to be a template
 [WARNI]      [TypeHint] Skipping type NCollection_Mat4<T>, seems to be a template
 [INFO ]  Class: BVH_Tree<T,N,BVH_BinaryTree>
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type BVH_Box<T,, seems to be a template
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type BVH_Box<T,, seems to be a template
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type BVH_Tree<T,, seems to be a template
 [WARNI]      [TypeHint] Skipping type T, should contain _
 [INFO ]  Class: BVH_Tree<T,N,BVH_QuadTree>
@@ -3392,9 +3432,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: ExprIntrp_GenExp
 [INFO ]  Class: ExprIntrp_GenFct
 [INFO ]  Class: ExprIntrp_GenRel
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  ## Processing module GeomAbs
 [INFO ]  Enum: GeomAbs_IsoType
 [INFO ]  Enum: GeomAbs_JoinType
@@ -3424,30 +3461,17 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Poly_CoherentNode
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skip type Poly_CoherentTriPtr::Iterator, because of trailing :
 [INFO ]  Class: Poly_CoherentTriangle
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: Poly_Connect
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Poly_MergeNodesTool
 [INFO ]      Wrap nested class Poly_MergeNodesTool::Vec3AndNormal
 [INFO ]      Wrap nested class Poly_MergeNodesTool::MergedNodesMap
 [INFO ]      Wrap nested class Poly_MergeNodesTool::MergedElemHasher
-[WARNI]      [TypeHint] Skipping type const double, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type const double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [INFO ]  Class: Poly_Polygon2D
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Poly_Polygon3D
@@ -3618,6 +3642,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Class math_FunctionSet is abstract, using %nodefaultctor.
 [INFO ]  Class: math_FunctionSetRoot
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: math_Gauss
 [INFO ]  Class: math_GaussLeastSquare
 [INFO ]  Class: math_GaussMultipleIntegration
@@ -3754,6 +3779,7 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type const IMeshData::MapOfInteger &, should contain _
 [WARNI]      [TypeHint] Skipping type const IMeshData::MapOfInteger &, should contain _
 [WARNI]      [TypeHint] Skipping type const IMeshData::MapOfInteger &, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const IMeshData::MapOfInteger &, should contain _
 [INFO ]  Class: BRepMesh_ShapeTool
 [WARNI]      [TypeHint] Skipping type const IMeshData::IEdgeHandle &, should contain _
@@ -3973,16 +3999,17 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Enum passed by reference: MeshVS_EntityType & Type changed to MeshVS_EntityType &OutValue
 [INFO ]  Enum passed by reference: MeshVS_EntityType & Type changed to MeshVS_EntityType &OutValue
 [INFO ]  Class: MeshVS_ElementalColorPrsBuilder
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: MeshVS_MeshPrsBuilder
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: MeshVS_NodalColorPrsBuilder
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: MeshVS_TextPrsBuilder
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: MeshVS_VectorPrsBuilder
-[WARNI]      [TypeHint] Skipping type int, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Processing toolkit TKOffset ===
 [INFO ]  ## Processing module BRepOffset
 [INFO ]  Enum: BRepOffset_Error
@@ -4227,6 +4254,19 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: RWObj_CafReader
 [INFO ]  Class: RWObj_TriangulationReader
 [WARNI]      [TypeHint] Skipping type const char, should contain _
+[INFO ]  ## Processing module RWPly
+[INFO ]  Class: RWPly_CafWriter
+[INFO ]  Class: RWPly_ConfigurationNode
+[INFO ]      Wrap nested class RWPly_ConfigurationNode::RWPly_InternalSection
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] Skipping unknown type, DE not in module list
+[WARNI]      [TypeHint] Skipping unknown type, DE not in module list
+[WARNI]      [TypeHint] Skipping unknown type, DE not in module list
+[INFO ]  Class: RWPly_PlyWriterContext
+[WARNI]      [TypeHint] Skip type std::shared_ptr<std::ostream>, because of trailing :
+[INFO ]  Class: RWPly_Provider
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] Skipping unknown type, DE not in module list
 [INFO ]  Processing toolkit TKSTEP ===
 [INFO ]  ## Processing module GeomToStep
 [INFO ]  Class: GeomToStep_Root
@@ -4486,7 +4526,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: StepAP242_GeometricItemSpecificUsage
 [INFO ]  ## Processing module StepToGeom
 [INFO ]  Class: StepToGeom
-[WARNI]      [TypeHint] Skipping unknown type, StepKinematics not in module list
 [INFO ]  ## Processing module StepToTopoDS
 [INFO ]  Enum: StepToTopoDS_GeometricToolError
 [INFO ]  Enum: StepToTopoDS_TranslateShellError
@@ -4838,6 +4877,81 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: RWStepDimTol_RWToleranceZoneForm
 [INFO ]  Class: RWStepDimTol_RWTotalRunoutTolerance
 [INFO ]  Class: RWStepDimTol_RWUnequallyDisposedGeometricTolerance
+[INFO ]  ## Processing module RWStepKinematics
+[INFO ]  Class: RWStepKinematics_RWActuatedKinPairAndOrderKinPair
+[INFO ]  Class: RWStepKinematics_RWActuatedKinematicPair
+[INFO ]  Class: RWStepKinematics_RWContextDependentKinematicLinkRepresentation
+[INFO ]  Class: RWStepKinematics_RWCylindricalPair
+[INFO ]  Class: RWStepKinematics_RWCylindricalPairValue
+[INFO ]  Class: RWStepKinematics_RWCylindricalPairWithRange
+[INFO ]  Class: RWStepKinematics_RWFullyConstrainedPair
+[INFO ]  Class: RWStepKinematics_RWGearPair
+[INFO ]  Class: RWStepKinematics_RWGearPairValue
+[INFO ]  Class: RWStepKinematics_RWGearPairWithRange
+[INFO ]  Class: RWStepKinematics_RWHomokineticPair
+[INFO ]  Class: RWStepKinematics_RWKinematicJoint
+[INFO ]  Class: RWStepKinematics_RWKinematicLink
+[INFO ]  Class: RWStepKinematics_RWKinematicLinkRepresentationAssociation
+[INFO ]  Class: RWStepKinematics_RWKinematicPropertyMechanismRepresentation
+[INFO ]  Class: RWStepKinematics_RWKinematicTopologyDirectedStructure
+[INFO ]  Class: RWStepKinematics_RWKinematicTopologyNetworkStructure
+[INFO ]  Class: RWStepKinematics_RWKinematicTopologyStructure
+[INFO ]  Class: RWStepKinematics_RWLinearFlexibleAndPinionPair
+[INFO ]  Class: RWStepKinematics_RWLinearFlexibleAndPlanarCurvePair
+[INFO ]  Class: RWStepKinematics_RWLinearFlexibleLinkRepresentation
+[INFO ]  Class: RWStepKinematics_RWLowOrderKinematicPair
+[INFO ]  Class: RWStepKinematics_RWLowOrderKinematicPairValue
+[INFO ]  Class: RWStepKinematics_RWLowOrderKinematicPairWithRange
+[INFO ]  Class: RWStepKinematics_RWMechanismRepresentation
+[INFO ]  Class: RWStepKinematics_RWMechanismStateRepresentation
+[INFO ]  Class: RWStepKinematics_RWOrientedJoint
+[INFO ]  Class: RWStepKinematics_RWPairRepresentationRelationship
+[INFO ]  Class: RWStepKinematics_RWPlanarCurvePair
+[INFO ]  Class: RWStepKinematics_RWPlanarCurvePairRange
+[INFO ]  Class: RWStepKinematics_RWPlanarPair
+[INFO ]  Class: RWStepKinematics_RWPlanarPairValue
+[INFO ]  Class: RWStepKinematics_RWPlanarPairWithRange
+[INFO ]  Class: RWStepKinematics_RWPointOnPlanarCurvePair
+[INFO ]  Class: RWStepKinematics_RWPointOnPlanarCurvePairValue
+[INFO ]  Class: RWStepKinematics_RWPointOnPlanarCurvePairWithRange
+[INFO ]  Class: RWStepKinematics_RWPointOnSurfacePair
+[INFO ]  Class: RWStepKinematics_RWPointOnSurfacePairValue
+[INFO ]  Class: RWStepKinematics_RWPointOnSurfacePairWithRange
+[INFO ]  Class: RWStepKinematics_RWPrismaticPair
+[INFO ]  Class: RWStepKinematics_RWPrismaticPairValue
+[INFO ]  Class: RWStepKinematics_RWPrismaticPairWithRange
+[INFO ]  Class: RWStepKinematics_RWProductDefinitionKinematics
+[INFO ]  Class: RWStepKinematics_RWProductDefinitionRelationshipKinematics
+[INFO ]  Class: RWStepKinematics_RWRackAndPinionPair
+[INFO ]  Class: RWStepKinematics_RWRackAndPinionPairValue
+[INFO ]  Class: RWStepKinematics_RWRackAndPinionPairWithRange
+[INFO ]  Class: RWStepKinematics_RWRevolutePair
+[INFO ]  Class: RWStepKinematics_RWRevolutePairValue
+[INFO ]  Class: RWStepKinematics_RWRevolutePairWithRange
+[INFO ]  Class: RWStepKinematics_RWRigidLinkRepresentation
+[INFO ]  Class: RWStepKinematics_RWRollingCurvePair
+[INFO ]  Class: RWStepKinematics_RWRollingCurvePairValue
+[INFO ]  Class: RWStepKinematics_RWRollingSurfacePair
+[INFO ]  Class: RWStepKinematics_RWRollingSurfacePairValue
+[INFO ]  Class: RWStepKinematics_RWRotationAboutDirection
+[INFO ]  Class: RWStepKinematics_RWScrewPair
+[INFO ]  Class: RWStepKinematics_RWScrewPairValue
+[INFO ]  Class: RWStepKinematics_RWScrewPairWithRange
+[INFO ]  Class: RWStepKinematics_RWSlidingCurvePair
+[INFO ]  Class: RWStepKinematics_RWSlidingCurvePairValue
+[INFO ]  Class: RWStepKinematics_RWSlidingSurfacePair
+[INFO ]  Class: RWStepKinematics_RWSlidingSurfacePairValue
+[INFO ]  Class: RWStepKinematics_RWSphericalPair
+[INFO ]  Class: RWStepKinematics_RWSphericalPairValue
+[INFO ]  Class: RWStepKinematics_RWSphericalPairWithPin
+[INFO ]  Class: RWStepKinematics_RWSphericalPairWithPinAndRange
+[INFO ]  Class: RWStepKinematics_RWSphericalPairWithRange
+[INFO ]  Class: RWStepKinematics_RWSurfacePairWithRange
+[INFO ]  Class: RWStepKinematics_RWUnconstrainedPair
+[INFO ]  Class: RWStepKinematics_RWUnconstrainedPairValue
+[INFO ]  Class: RWStepKinematics_RWUniversalPair
+[INFO ]  Class: RWStepKinematics_RWUniversalPairValue
+[INFO ]  Class: RWStepKinematics_RWUniversalPairWithRange
 [INFO ]  ## Processing module RWStepVisual
 [INFO ]  Class: RWStepVisual_RWAnnotationCurveOccurrence
 [INFO ]  Class: RWStepVisual_RWAnnotationCurveOccurrenceAndGeomReprItem
@@ -5009,6 +5123,93 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: StepDimTol_PerpendicularityTolerance
 [INFO ]  Class: StepDimTol_SymmetryTolerance
 [INFO ]  Class: StepDimTol_TotalRunoutTolerance
+[INFO ]  ## Processing module StepKinematics
+[INFO ]  Enum: StepKinematics_ActuatedDirection
+[INFO ]  Class: StepKinematics_ContextDependentKinematicLinkRepresentation
+[INFO ]  Class: StepKinematics_KinematicJoint
+[INFO ]  Class: StepKinematics_KinematicLink
+[INFO ]  Class: StepKinematics_KinematicLinkRepresentation
+[INFO ]  Class: StepKinematics_KinematicLinkRepresentationAssociation
+[INFO ]  Class: StepKinematics_KinematicPair
+[INFO ]  Class: StepKinematics_KinematicPropertyDefinitionRepresentation
+[INFO ]  Class: StepKinematics_KinematicTopologyDirectedStructure
+[INFO ]  Class: StepKinematics_KinematicTopologyNetworkStructure
+[INFO ]  Class: StepKinematics_KinematicTopologyRepresentationSelect
+[INFO ]  Class: StepKinematics_KinematicTopologyStructure
+[INFO ]  Class: StepKinematics_MechanismRepresentation
+[INFO ]  Class: StepKinematics_MechanismStateRepresentation
+[INFO ]  Class: StepKinematics_OrientedJoint
+[INFO ]  Class: StepKinematics_PairRepresentationRelationship
+[INFO ]  Class: StepKinematics_PairValue
+[INFO ]  Class: StepKinematics_ProductDefinitionKinematics
+[INFO ]  Class: StepKinematics_ProductDefinitionRelationshipKinematics
+[INFO ]  Class: StepKinematics_RigidPlacement
+[INFO ]  Class: StepKinematics_RotationAboutDirection
+[INFO ]  Class: StepKinematics_SpatialRotation
+[INFO ]  Class: StepKinematics_SphericalPairSelect
+[INFO ]  Class: StepKinematics_ActuatedKinPairAndOrderKinPair
+[INFO ]  Class: StepKinematics_ActuatedKinematicPair
+[INFO ]  Class: StepKinematics_CylindricalPairValue
+[INFO ]  Class: StepKinematics_GearPairValue
+[INFO ]  Class: StepKinematics_HighOrderKinematicPair
+[INFO ]  Class: StepKinematics_KinematicPropertyMechanismRepresentation
+[INFO ]  Class: StepKinematics_LinearFlexibleLinkRepresentation
+[INFO ]  Class: StepKinematics_LowOrderKinematicPair
+[INFO ]  Class: StepKinematics_LowOrderKinematicPairValue
+[INFO ]  Class: StepKinematics_LowOrderKinematicPairWithMotionCoupling
+[INFO ]  Class: StepKinematics_PlanarPairValue
+[INFO ]  Class: StepKinematics_PointOnPlanarCurvePairValue
+[INFO ]  Class: StepKinematics_PointOnSurfacePairValue
+[INFO ]  Class: StepKinematics_PrismaticPairValue
+[INFO ]  Class: StepKinematics_RackAndPinionPairValue
+[INFO ]  Class: StepKinematics_RevolutePairValue
+[INFO ]  Class: StepKinematics_RigidLinkRepresentation
+[INFO ]  Class: StepKinematics_RollingCurvePairValue
+[INFO ]  Class: StepKinematics_RollingSurfacePairValue
+[INFO ]  Class: StepKinematics_ScrewPairValue
+[INFO ]  Class: StepKinematics_SlidingCurvePairValue
+[INFO ]  Class: StepKinematics_SlidingSurfacePairValue
+[INFO ]  Class: StepKinematics_SphericalPairValue
+[INFO ]  Class: StepKinematics_UnconstrainedPairValue
+[INFO ]  Class: StepKinematics_UniversalPairValue
+[INFO ]  Class: StepKinematics_CylindricalPair
+[INFO ]  Class: StepKinematics_FullyConstrainedPair
+[INFO ]  Class: StepKinematics_GearPair
+[INFO ]  Class: StepKinematics_LinearFlexibleAndPinionPair
+[INFO ]  Class: StepKinematics_LinearFlexibleAndPlanarCurvePair
+[INFO ]  Class: StepKinematics_LowOrderKinematicPairWithRange
+[INFO ]  Class: StepKinematics_PlanarCurvePair
+[INFO ]  Class: StepKinematics_PlanarPair
+[INFO ]  Class: StepKinematics_PointOnPlanarCurvePair
+[INFO ]  Class: StepKinematics_PointOnSurfacePair
+[INFO ]  Class: StepKinematics_PrismaticPair
+[INFO ]  Class: StepKinematics_RackAndPinionPair
+[INFO ]  Class: StepKinematics_RevolutePair
+[INFO ]  Class: StepKinematics_ScrewPair
+[INFO ]  Class: StepKinematics_SphericalPair
+[INFO ]  Class: StepKinematics_SphericalPairWithPin
+[INFO ]  Class: StepKinematics_SurfacePair
+[INFO ]  Class: StepKinematics_UnconstrainedPair
+[INFO ]  Class: StepKinematics_UniversalPair
+[INFO ]  Class: StepKinematics_CylindricalPairWithRange
+[INFO ]  Class: StepKinematics_GearPairWithRange
+[INFO ]  Class: StepKinematics_HomokineticPair
+[INFO ]  Class: StepKinematics_PlanarCurvePairRange
+[INFO ]  Class: StepKinematics_PlanarPairWithRange
+[INFO ]  Class: StepKinematics_PointOnPlanarCurvePairWithRange
+[INFO ]  Class: StepKinematics_PointOnSurfacePairWithRange
+[INFO ]  Class: StepKinematics_PrismaticPairWithRange
+[INFO ]  Class: StepKinematics_RackAndPinionPairWithRange
+[INFO ]  Class: StepKinematics_RevolutePairWithRange
+[INFO ]  Class: StepKinematics_RollingCurvePair
+[INFO ]  Class: StepKinematics_RollingSurfacePair
+[INFO ]  Class: StepKinematics_ScrewPairWithRange
+[INFO ]  Class: StepKinematics_SlidingCurvePair
+[INFO ]  Class: StepKinematics_SlidingSurfacePair
+[INFO ]  Class: StepKinematics_SphericalPairWithPinAndRange
+[INFO ]  Class: StepKinematics_SphericalPairWithRange
+[INFO ]  Class: StepKinematics_SurfacePairWithRange
+[INFO ]  Class: StepKinematics_UniversalPairWithRange
 [INFO ]  ## Processing module StepVisual
 [INFO ]  Found HARRAY1 definitionStepVisual_HArray1OfAnnotationPlaneElement: StepVisual_Array1OfAnnotationPlaneElement
 [INFO ]  Found HARRAY1 definitionStepVisual_HArray1OfDraughtingCalloutElement: StepVisual_Array1OfDraughtingCalloutElement
@@ -5179,6 +5380,10 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: StepVisual_CubicBezierTriangulatedFace
 [INFO ]  Class: StepVisual_TessellatedConnectingEdge
 [INFO ]  Class: StepVisual_TriangulatedFace
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Processing toolkit TKSTEPBase ===
 [INFO ]  ## Processing module RWStepBasic
 [INFO ]  Class: RWStepBasic_RWAction
@@ -6137,10 +6342,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      skipped method Aspect_Window::4917c328b71fee6e570c6c8c46531c25
 [INFO ]  Class: Aspect_WindowInputListener
 [INFO ]      Class Aspect_WindowInputListener is abstract, using %nodefaultctor.
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping unknown type, WNT not in module list
 [WARNI]      [TypeHint] Skipping unknown type, WNT not in module list
 [WARNI]      [TypeHint] Skipping unknown type, WNT not in module list
@@ -6164,7 +6365,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type NCollection_Mat4<double, seems to be a template
 [WARNI]      [TypeHint] Skipping type Aspect_FrustumLRBT<double>, seems to be a template
 [WARNI]      [TypeHint] Skipping type NCollection_Mat4<double, seems to be a template
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type NCollection_Vec2<int, seems to be a template
 [WARNI]      [TypeHint] Skipping type TrackingUniverseOrigin, should contain _
 [WARNI]      [TypeHint] Skip type Aspect_XRSession::TrackingUniverseOrigin, because of trailing :
@@ -6174,7 +6374,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type NCollection_Mat4<double, seems to be a template
 [WARNI]      [TypeHint] Skipping type InfoString, should contain _
 [WARNI]      [TypeHint] Skipping type NCollection_Mat4<double, seems to be a template
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type NCollection_Vec2<int, seems to be a template
 [WARNI]      [TypeHint] Skipping type TrackingUniverseOrigin, should contain _
 [INFO ]  ## Processing module Graphic3d
@@ -6248,8 +6447,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfPrimitives
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_Aspects
 [WARNI]      [TypeHint] Skipping unknown type, uint16 not in module list
 [WARNI]      [TypeHint] Skipping unknown type, uint16 not in module list
@@ -6276,7 +6473,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Class Graphic3d_CStructure is abstract, using %nodefaultctor.
 [INFO ]      Wrap nested class Graphic3d_CStructure::SubclassStructIterator
 [INFO ]      Wrap nested class Graphic3d_CStructure::SubclassGroupIterator
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_Camera
 [INFO ]      Wrap nested class Graphic3d_Camera::TransformMatrices
 [INFO ]  Enum: Projection
@@ -6286,7 +6482,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [WARNI]      [TypeHint] Skipping type NCollection_Array1<Graphic3d_Vec3d>, seems to be a template
 [WARNI]      [TypeHint] Skip type Graphic3d_Camera::IODType, because of trailing :
-[WARNI]      [TypeHint] Skipping type const double, should contain _
 [WARNI]      [TypeHint] Skip type Graphic3d_Camera::Projection, because of trailing :
 [WARNI]      [TypeHint] Skipping type Aspect_FrustumLRBT<float>, seems to be a template
 [WARNI]      [TypeHint] Skipping type IODType, should contain _
@@ -6334,11 +6529,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skip type Graphic3d_GraduatedTrihedron::AxisAspect, because of trailing :
 [INFO ]  Class: Graphic3d_GraphicDriver
 [INFO ]      Class Graphic3d_GraphicDriver is abstract, using %nodefaultctor.
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_GraphicDriverFactory
 [INFO ]      Class Graphic3d_GraphicDriverFactory is abstract, using %nodefaultctor.
 [INFO ]  Class: Graphic3d_Group
@@ -6370,7 +6560,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Graphic3d_PolygonOffset
 [INFO ]  Class: Graphic3d_PresentationAttributes
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_RenderingParams
 [INFO ]  Enum: Anaglyph
 [INFO ]  Enum: PerfCounters
@@ -6379,7 +6568,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Wrap nested class Graphic3d_SequenceOfHClipPlane::Iterator
 [WARNI]      [TypeHint] Skipping type Iterator, should contain _
 [INFO ]  Class: Graphic3d_ShaderAttribute
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ShaderManager
 [INFO ]  Class: Graphic3d_ShaderObject
 [INFO ]      Wrap nested class Graphic3d_ShaderObject::ShaderVariable
@@ -6390,11 +6578,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      skipped method Graphic3d_ShaderVariable::1c39ea34e9cd401639711b3354464d76
 [INFO ]  Class: Graphic3d_Structure
 [WARNI]      [TypeHint] Skipping type NCollection_Map<Graphic3d_Structure, seems to be a template
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_StructureManager
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type NCollection_Map<Graphic3d_Structure, seems to be a template
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_Text
 [WARNI]      [TypeHint] Skipping unknown type, Font not in module list
 [WARNI]      [TypeHint] Skipping unknown type, Font not in module list
@@ -6425,31 +6610,22 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: Graphic3d_ZLayerSettings
 [INFO ]  Class: Graphic3d_ArrayOfPoints
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfPolygons
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfPolylines
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfQuadrangleStrips
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfQuadrangles
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfSegments
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfTriangleFans
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfTriangleStrips
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_ArrayOfTriangles
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_AspectFillArea3d
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Graphic3d_AspectLine3d
@@ -6463,16 +6639,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: Graphic3d_CView
 [INFO ]      Class Graphic3d_CView is abstract, using %nodefaultctor.
 [INFO ]  Constructor skipped for abstract class Graphic3d_CView
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skip type NCollection_List<opencascade::handle<Graphic3d_Layer>>, because of trailing :
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skip type NCollection_Sequence<opencascade::handle<Graphic3d_CView>>, because of trailing :
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Graphic3d_FrameStatsDataTmp
 [INFO ]      Creating Get and Set methods for method ChangeFrameRate
 [INFO ]      Creating Get and Set methods for method ChangeFrameRateCpu
@@ -6481,8 +6649,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Creating Get and Set methods for method ChangeTimerValue
 [INFO ]  Class: Graphic3d_MediaTextureSet
 [INFO ]      skipped method Graphic3d_MediaTextureSet::6cd54bd353308339998409ead11d6658
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [INFO ]  Class: Graphic3d_TextureEnv
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Graphic3d_TextureMap
@@ -6502,6 +6668,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [WARNI]      [TypeHint] Skipping type NCollection_Array1<TCollection_AsciiString>, seems to be a template
 [WARNI]      [TypeHint] Skip type NCollection_Array1<opencascade::handle<Image_PixMap>, because of trailing :
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: Graphic3d_MediaTexture
 [INFO ]  Class: Graphic3d_Texture1Dmanual
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
@@ -6517,29 +6684,16 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  ## Processing module InterfaceGraphic
 [INFO ]  ## Processing module Media
 [INFO ]  Class: Media_BufferPool
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type AVBufferRef *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Media_CodecContext
 [WARNI]      [TypeHint] Skipping type AVCodecContext *, should contain _
 [WARNI]      [TypeHint] Skipping type const AVStream &, should contain _
 [WARNI]      [TypeHint] Skipping type const AVStream &, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Media_FormatContext
 [WARNI]      [TypeHint] Skipping type AVFormatContext *, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type static double, should contain _
 [WARNI]      [TypeHint] Skipping unknown type, int64 not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type const AVRational &, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type const AVStream &, should contain _
 [WARNI]      [TypeHint] Skipping type AVCodecContext *, should contain _
 [WARNI]      [TypeHint] Skipping type const AVStream &, should contain _
@@ -6550,17 +6704,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: Media_Frame
 [WARNI]      [TypeHint] Skipping unknown type, int64 not in module list
 [WARNI]      [TypeHint] Skipping type AVFrame *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type const AVFrame *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping unknown type, uint8 not in module list
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Media_IFrameQueue
 [INFO ]      Class Media_IFrameQueue is abstract, using %nodefaultctor.
 [INFO ]  Class: Media_Packet
@@ -6569,16 +6714,10 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping unknown type, uint8 not in module list
 [WARNI]      [TypeHint] Skipping unknown type, int64 not in module list
 [WARNI]      [TypeHint] Skipping unknown type, int64 not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type const AVPacket *, should contain _
 [WARNI]      [TypeHint] Skipping unknown type, int64 not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Media_PlayerContext
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Media_Scaler
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Media_Timer
 [INFO ]  ## Processing module TColQuantity
 [INFO ]  Processing toolkit TKShHealing ===
@@ -6850,6 +6989,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: TObj_Object
 [INFO ]  Enum: TypeFlags
 [INFO ]  Enum: ObjectState
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: TObj_ObjectIterator
 [INFO ]  Class: TObj_Persistence
 [INFO ]      Class TObj_Persistence is abstract, using %nodefaultctor.
@@ -7033,14 +7174,10 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: BRepExtrema_ProximityDistTool
 [INFO ]      Wrap nested class BRepExtrema_ProximityDistTool::PrjState
 [INFO ]  Enum: ProxPnt_Status
+[INFO ]      skipped method BRepExtrema_ProximityDistTool::8ffab36643583ec67fd4b25052ceca82
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping unknown type, ProxPnt not in module list
-[INFO ]  Class: BRepExtrema_ProximityValueTool
-[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[INFO ]  Enum passed by reference: ProxPnt_Status &thePointStatus1 changed to ProxPnt_Status &OutValue
-[INFO ]  Enum passed by reference: ProxPnt_Status &thePointStatus2 changed to ProxPnt_Status &OutValue
-[INFO ]  Enum passed by reference: ProxPnt_Status & thePointStatus1 changed to ProxPnt_Status &OutValue
-[INFO ]  Enum passed by reference: ProxPnt_Status & thePointStatus2 changed to ProxPnt_Status &OutValue
+[WARNI]      [TypeHint] Skipping type NCollection_Vector<ProxPnt_Status>, seems to be a template
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping unknown type, ProxPnt not in module list
 [INFO ]  Class: BRepExtrema_ShapeProximity
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
@@ -7238,6 +7375,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: AIS_BadEdgeFilter
 [INFO ]  Class: AIS_C0RegularityFilter
 [INFO ]  Class: AIS_ColoredDrawer
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const, should contain _
 [INFO ]  Class: AIS_ExclusionFilter
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
@@ -7249,7 +7388,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: AIS_InteractiveContext
 [INFO ]      skipped method AIS_InteractiveContext::1577ccb6ef0339194a1358b684b5f8f5
 [INFO ]      skipped method AIS_InteractiveContext::13a16fcaa16772fa242d641b664249e2
-[WARNI]      [TypeHint] Skipping type int, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: AIS_InteractiveObject
 [INFO ]  Class: AIS_LightSourceOwner
 [INFO ]  Class: AIS_ManipulatorOwner
@@ -7258,17 +7397,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: AIS_TrihedronOwner
 [INFO ]  Class: AIS_TypeFilter
 [INFO ]  Class: AIS_ViewController
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type NCollection_Sequence<Graphic3d_Vec2i>, seems to be a template
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping unknown type, WNT not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [INFO ]  Class: AIS_ViewCubeOwner
 [INFO ]  Class: AIS_ViewCubeSensitive
 [INFO ]  Class: AIS_ViewInputBuffer
@@ -7283,14 +7413,15 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: AIS_WalkDelta
 [INFO ]  Class: AIS_WalkPart
 [INFO ]  Class: AIS_AnimationCamera
-[INFO ]  Class: AIS_AnimationObject
 [INFO ]  Class: AIS_Axis
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: AIS_BaseAnimationObject
 [INFO ]  Class: AIS_CameraFrustum
 [INFO ]  Enum: SelectionMode
 [INFO ]  Class: AIS_Circle
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AIS_ColorScale
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const, should contain _
 [INFO ]  Class: AIS_ConnectedInteractive
 [INFO ]  Class: AIS_LightSource
@@ -7312,7 +7443,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type OptionsForAttach, should contain _
 [WARNI]      [TypeHint] Skipping type OptionsForAttach, should contain _
 [INFO ]  Class: AIS_MediaPlayer
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skip type Graphic3d_MediaTextureSet::CallbackOnUpdate_t, because of trailing :
 [INFO ]  Class: AIS_MultipleConnectedInteractive
 [INFO ]  Class: AIS_Plane
@@ -7330,6 +7460,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: AIS_TextLabel
 [WARNI]      [TypeHint] Skipping unknown type, Font not in module list
 [WARNI]      [TypeHint] Skipping unknown type, Font not in module list
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping unknown type, Font not in module list
 [WARNI]      [TypeHint] Skipping unknown type, Font not in module list
 [INFO ]  Class: AIS_Triangulation
@@ -7338,6 +7469,8 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Wrap nested class AIS_ViewCube::IntegerHasher
 [INFO ]  Class: AIS_XRTrackedDevice
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: AIS_AnimationAxisRotation
+[INFO ]  Class: AIS_AnimationObject
 [INFO ]  Class: AIS_ColoredShape
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: AIS_TexturedShape
@@ -7416,6 +7549,9 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Wrap nested class PrsDim_Dimension::SelectionGeometry
 [INFO ]  Enum: ComputeMode
 [INFO ]      skipped method PrsDim_Dimension::8ab9cd206b10624276640f7c3b737839
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: PrsDim_DimensionOwner
 [INFO ]  Class: PrsDim_Relation
 [INFO ]  Class: PrsDim_AngleDimension
@@ -7466,11 +7602,8 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [INFO ]  Class: PrsMgr_PresentableObject
 [INFO ]      Class PrsMgr_PresentableObject is abstract, using %nodefaultctor.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: PrsMgr_Presentation
 [INFO ]  Class: PrsMgr_PresentationManager
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  ## Processing module Select3D
 [INFO ]  Enum: Select3D_TypeOfSensitivity
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
@@ -7496,7 +7629,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: Select3D_SensitivePoly
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Select3D_SensitivePrimitiveArray
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [INFO ]  Class: Select3D_SensitiveWire
 [WARNI]      [TypeHint] Skip type NCollection_Vector<opencascade::handle<Select3D_SensitiveEntity>>, because of trailing :
 [INFO ]  Class: Select3D_SensitiveCurve
@@ -7541,13 +7673,11 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type NCollection_Vector<SelectMgr_Vec4>, seems to be a template
 [INFO ]  Class: SelectMgr_EntityOwner
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: SelectMgr_Filter
 [INFO ]      Class SelectMgr_Filter is abstract, using %nodefaultctor.
 [INFO ]  Class: SelectMgr_SelectableObject
 [INFO ]      Class SelectMgr_SelectableObject is abstract, using %nodefaultctor.
 [INFO ]      skipped method SelectMgr_SelectableObject::443f93b07a9907ef337840cc8b4ae9ed
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: SelectMgr_SelectableObjectSet
 [INFO ]      Wrap nested class SelectMgr_SelectableObjectSet::Iterator
 [INFO ]  Enum: BVHSubset
@@ -7645,11 +7775,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [WARNI]      [TypeHint] Skip type NCollection_Sequence<opencascade::handle<V3d_View>>, because of trailing :
 [INFO ]  Class: V3d_Viewer
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: V3d_DirectionalLight
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: V3d_PositionalLight
@@ -7796,6 +7921,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: VrmlData_Node
 [INFO ]      Class VrmlData_Node is abstract, using %nodefaultctor.
 [INFO ]  Constructor skipped for abstract class VrmlData_Node
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Enum passed by reference: VrmlData_ErrorStatus &outStat changed to VrmlData_ErrorStatus &OutValue
 [INFO ]  Enum passed by reference: VrmlData_ErrorStatus & outStat changed to VrmlData_ErrorStatus &OutValue
 [INFO ]  Enum passed by reference: VrmlData_ErrorStatus & outStat changed to VrmlData_ErrorStatus &OutValue
@@ -7803,13 +7929,17 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type NCollection_List<TCollection_AsciiString>, seems to be a template
 [INFO ]  Class: VrmlData_Scene
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type Iterator, should contain _
 [WARNI]      [TypeHint] Skip type VrmlData_MapOfNode::Iterator, because of trailing :
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type NCollection_List<TCollection_ExtendedString, seems to be a template
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: VrmlData_ShapeConvert
 [INFO ]      Wrap nested class VrmlData_ShapeConvert::ShapeData
 [INFO ]  Class: VrmlData_Appearance
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: VrmlData_Geometry
 [INFO ]      Class VrmlData_Geometry is abstract, using %nodefaultctor.
 [INFO ]  Constructor skipped for abstract class VrmlData_Geometry
@@ -7932,8 +8062,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type NCollection_IndexedDataMap<TDF_Label,, seems to be a template
 [INFO ]  Class: XCAFDoc_Dimension
 [INFO ]  Class: XCAFDoc_DocumentTool
-[WARNI]      [TypeHint] Skipping unknown type, UnitsMethods not in module list
-[WARNI]      [TypeHint] Skipping unknown type, UnitsMethods not in module list
 [INFO ]  Class: XCAFDoc_Editor
 [WARNI]      [TypeHint] Skip type NCollection_DataMap<opencascade::handle<XCAFDoc_VisMaterial>,, because of trailing :
 [INFO ]  Class: XCAFDoc_GraphNode
@@ -7952,6 +8080,9 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: XCAFDoc_VisMaterialCommon
 [INFO ]  Class: XCAFDoc_VisMaterialPBR
 [INFO ]  Class: XCAFDoc_VisMaterialTool
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: XCAFDoc_Volume
 [INFO ]  Class: XCAFDoc_NoteBinData
 [INFO ]  Class: XCAFDoc_NoteComment
@@ -7966,10 +8097,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: XCAFPrs_AISObject
 [INFO ]  Class: XCAFPrs_DocumentExplorer
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: XCAFPrs_DocumentIdIterator
 [INFO ]  Class: XCAFPrs_DocumentNode
 [INFO ]  Class: XCAFPrs_Driver
@@ -8070,6 +8197,16 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  ## Processing module XBRepMesh
 [INFO ]  Class: XBRepMesh
 [INFO ]  Processing toolkit TKXSBase ===
+[INFO ]  ## Processing module APIHeaderSection
+[INFO ]  Class: APIHeaderSection_EditHeader
+[INFO ]  Class: APIHeaderSection_MakeHeader
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  ## Processing module HeaderSection
+[INFO ]  Class: HeaderSection
+[INFO ]  Class: HeaderSection_FileDescription
+[INFO ]  Class: HeaderSection_FileName
+[INFO ]  Class: HeaderSection_FileSchema
+[INFO ]  Class: HeaderSection_Protocol
 [INFO ]  ## Processing module IFSelect
 [INFO ]  Found HSEQUENCE definitionIFSelect_HSeqOfSelection: IFSelect_TSeqOfSelection
 [INFO ]  Enum: IFSelect_PrintFail
@@ -8294,7 +8431,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Enum: MoniTool_ValueType
 [WARNI]  Template: )skipped because name doesn't contain _.
 [WARNI]      [TypeHint] Skip type TopoDS_Shape,opencascade::handle, because of trailing :
-[WARNI]      [TypeHint] Skip type Standard_CString,opencascade::handle, because of trailing :
 [WARNI]      [TypeHint] Skip type TopoDS_Shape,opencascade::handle, because of trailing :
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [INFO ]  Class: MoniTool_AttrList
@@ -8323,6 +8459,13 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type NCollection_DataMap<TCollection_AsciiString,, seems to be a template
 [INFO ]  Class: MoniTool_SignShape
 [INFO ]  Class: MoniTool_TransientElem
+[INFO ]  ## Processing module RWHeaderSection
+[INFO ]  Class: RWHeaderSection
+[INFO ]  Class: RWHeaderSection_GeneralModule
+[INFO ]  Class: RWHeaderSection_RWFileDescription
+[INFO ]  Class: RWHeaderSection_RWFileName
+[INFO ]  Class: RWHeaderSection_RWFileSchema
+[INFO ]  Class: RWHeaderSection_ReadWriteModule
 [INFO ]  ## Processing module StepData
 [INFO ]  Found HARRAY1 definitionStepData_HArray1OfField: StepData_Array1OfField
 [INFO ]  Enum: StepData_Logical
@@ -8552,6 +8695,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: XmlMFunction_ScopeDriver
 [INFO ]  ## Processing module XmlObjMgt
 [INFO ]  Class: XmlObjMgt
+[INFO ]      skipped method XmlObjMgt::d90d1ac036196cdb858a419d79e08e97
 [INFO ]  Class: XmlObjMgt_Array1
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: XmlObjMgt_GP
@@ -8688,7 +8832,6 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Enum: OSD_SingleProtection
 [WARNI]      [TypeHint] Skipping type FILE *, should contain _
 [WARNI]      [TypeHint] Skipping type FILE *, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skip type ::std::ios_base::openmode, because of trailing :
 [WARNI]      [TypeHint] Skipping type ::std::filebuf &, should contain _
 [INFO ]  ## Processing module Plugin
@@ -8729,7 +8872,6 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type std::streamsize, should contain _
 [INFO ]  Class: Standard_Condition
 [INFO ]      skipped method Standard_Condition::3d6aeea9cf734fccbb0537336d54c48e
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [INFO ]  Class: Standard_ErrorHandler
 [INFO ]      Wrap nested class Standard_ErrorHandler::Callback
 [INFO ]      skipped method Standard_ErrorHandler::ef042789fa8460b413c73405dcff195e
@@ -8740,6 +8882,7 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: Standard_Static_Assert<true>
 [INFO ]  Class: Standard_Transient
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Class: Standard_UUID
 [INFO ]  Class: Standard_Failure
 [INFO ]      Wrap nested class Standard_Failure::StringRef
@@ -8758,36 +8901,12 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type const, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type FILE *, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping type const, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
-[WARNI]      [TypeHint] Skipping type double, should contain _
-[WARNI]      [TypeHint] Skipping type int, should contain _
 [WARNI]      [TypeHint] Skipping unknown type, va not in module list
 [WARNI]      [TypeHint] Skipping type long, should contain _
 [WARNI]      [TypeHint] Skipping type long volatile *, should contain _
@@ -8796,11 +8915,11 @@ date : 2022-11-29 05:19:23.050448
 [WARNI]      [TypeHint] Skipping type long, should contain _
 [WARNI]      [TypeHint] Skipping type volatile long *, should contain _
 [WARNI]      [TypeHint] Skipping unknown type,  not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping unknown type,  not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping unknown type,  not in module list
-[WARNI]      [TypeHint] Skipping type double, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  ## Processing module StdFail
 [INFO ]  ## Processing module Storage
 [INFO ]  Found HARRAY1 definitionStorage_HArrayOfSchema: Storage_ArrayOfSchema
@@ -8865,6 +8984,22 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]      Wrap nested class TColStd_PackedMapOfInteger::TColStd_intMapNode
 [INFO ]      Wrap nested class TColStd_PackedMapOfInteger::Iterator
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  ## Processing module TCollection
 [INFO ]  Class: TCollection
 [INFO ]  Class: TCollection_AsciiString
@@ -8910,15 +9045,22 @@ date : 2022-11-29 05:19:23.050448
 [INFO ]  Class: Units_UnitSentence
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: Units_UnitsLexicon
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [WARNI]      [TypeHint] Skipping type const, should contain _
 [INFO ]  ## Processing module UnitsAPI
 [INFO ]  Enum: UnitsAPI_SystemUnits
 [INFO ]  Class: UnitsAPI
+[INFO ]  ## Processing module UnitsMethods
+[INFO ]  Enum: UnitsMethods_LengthUnit
+[INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 39.69s
+SWIG interface file generation completed in 30.58s
 #################################################
 
-[INFO ]  Number of classes: 4569
-[INFO ]  Number of methods: 46360
+[INFO ]  Number of classes: 4747
+[INFO ]  Number of methods: 47356

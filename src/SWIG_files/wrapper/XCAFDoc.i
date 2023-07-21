@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_xcafdoc.html"
 #include<Quantity_module.hxx>
 #include<TopoDS_module.hxx>
 #include<XCAFDimTolObjects_module.hxx>
+#include<UnitsMethods_module.hxx>
 #include<TopLoc_module.hxx>
 #include<XCAFNoteObjects_module.hxx>
 #include<OSD_module.hxx>
@@ -82,6 +83,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_xcafdoc.html"
 %import Quantity.i
 %import TopoDS.i
 %import XCAFDimTolObjects.i
+%import UnitsMethods.i
 %import TopLoc.i
 %import XCAFNoteObjects.i
 %import OSD.i
@@ -863,13 +865,13 @@ None
 
 Parameters
 ----------
-theString: TCollection_AsciiString
+theString: str
 
 Returns
 -------
 None
 ") XCAFDoc_AssemblyItemId;
-		 XCAFDoc_AssemblyItemId(const TCollection_AsciiString & theString);
+		 XCAFDoc_AssemblyItemId(TCollection_AsciiString theString);
 
 
             %feature("autodoc", "1");
@@ -912,13 +914,13 @@ None
 
 Parameters
 ----------
-theString: TCollection_AsciiString
+theString: str
 
 Returns
 -------
 None
 ") Init;
-		void Init(const TCollection_AsciiString & theString);
+		void Init(TCollection_AsciiString theString);
 
 		/****************** IsChild ******************/
 		/**** md5 signature: 74a81ffc330676a231e756fbcc5a0125 ****/
@@ -1308,13 +1310,13 @@ None
 
 Parameters
 ----------
-theString: TCollection_AsciiString
+theString: str
 
 Returns
 -------
 None
 ") SetItem;
-		void SetItem(const TCollection_AsciiString & theString);
+		void SetItem(TCollection_AsciiString theString);
 
 		/****************** SetSubshapeIndex ******************/
 		/**** md5 signature: 21266a81ca356bdccdc2388c3f31e929 ****/
@@ -1628,7 +1630,7 @@ None
 Parameters
 ----------
 thePlane: gp_Pln
-theName: TCollection_ExtendedString
+theName: str
 theCapping: bool
 
 Returns
@@ -1662,7 +1664,7 @@ TDF_Label
 Parameters
 ----------
 thePlane: gp_Pln
-theName: TCollection_ExtendedString
+theName: str
 
 Returns
 -------
@@ -1736,7 +1738,7 @@ Parameters
 ----------
 theLabel: TDF_Label
 thePlane: gp_Pln
-theName: TCollection_ExtendedString
+theName: str
 
 Returns
 -------
@@ -1753,13 +1755,13 @@ Parameters
 ----------
 theLabel: TDF_Label
 thePlane: gp_Pln
-theName: TCollection_HAsciiString
 
 Returns
 -------
+theName: TCollection_HAsciiString
 theCapping: bool
 ") GetClippingPlane;
-		Standard_Boolean GetClippingPlane(const TDF_Label & theLabel, gp_Pln & thePlane, opencascade::handle<TCollection_HAsciiString> & theName, Standard_Boolean &OutValue);
+		Standard_Boolean GetClippingPlane(const TDF_Label & theLabel, gp_Pln & thePlane, opencascade::handle<TCollection_HAsciiString> &OutValue, Standard_Boolean &OutValue);
 
 		/****************** GetClippingPlanes ******************/
 		/**** md5 signature: 075e7b42329dbcab74840155da865a35 ****/
@@ -1868,7 +1870,7 @@ Parameters
 ----------
 theLabelL: TDF_Label
 thePlane: gp_Pln
-theName: TCollection_ExtendedString
+theName: str
 
 Returns
 -------
@@ -1918,7 +1920,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") GetAlpha;
 		Standard_ShortReal GetAlpha();
 
@@ -2317,7 +2319,7 @@ TDF_Label
 		TDF_Label FindColor(const Quantity_ColorRGBA & col);
 
 		/****************** GetColor ******************/
-		/**** md5 signature: be86e43f2f2ac06163dce467a9739527 ****/
+		/**** md5 signature: 7092ec33c89b067e1ceab0d67b5ed02d ****/
 		%feature("compactdefaultargs") GetColor;
 		%feature("autodoc", "Returns color defined by label lab returns false if the label is not in colortable or does not define a color.
 
@@ -2330,10 +2332,10 @@ Returns
 -------
 bool
 ") GetColor;
-		Standard_Boolean GetColor(const TDF_Label & lab, Quantity_Color & col);
+		static Standard_Boolean GetColor(const TDF_Label & lab, Quantity_Color & col);
 
 		/****************** GetColor ******************/
-		/**** md5 signature: a7a6506d3132240934c87e97ec6b28ed ****/
+		/**** md5 signature: 7252a98dd463a84602d0b7516d6cfc04 ****/
 		%feature("compactdefaultargs") GetColor;
 		%feature("autodoc", "Returns color defined by label lab returns false if the label is not in colortable or does not define a color.
 
@@ -2346,7 +2348,7 @@ Returns
 -------
 bool
 ") GetColor;
-		Standard_Boolean GetColor(const TDF_Label & lab, Quantity_ColorRGBA & col);
+		static Standard_Boolean GetColor(const TDF_Label & lab, Quantity_ColorRGBA & col);
 
 		/****************** GetColor ******************/
 		/**** md5 signature: 869ec12dba73e125e4d66d2a85d2d496 ****/
@@ -2366,7 +2368,7 @@ bool
 		static Standard_Boolean GetColor(const TDF_Label & L, const XCAFDoc_ColorType type, TDF_Label & colorL);
 
 		/****************** GetColor ******************/
-		/**** md5 signature: 5801253cfaf9cc63278aa2d80d15b2c3 ****/
+		/**** md5 signature: 9f42bc515522bf5857381b8ed56f5af6 ****/
 		%feature("compactdefaultargs") GetColor;
 		%feature("autodoc", "Returns color assigned to <l> as <type> returns false if no such color is assigned.
 
@@ -2380,10 +2382,10 @@ Returns
 -------
 bool
 ") GetColor;
-		Standard_Boolean GetColor(const TDF_Label & L, const XCAFDoc_ColorType type, Quantity_Color & color);
+		static Standard_Boolean GetColor(const TDF_Label & L, const XCAFDoc_ColorType type, Quantity_Color & color);
 
 		/****************** GetColor ******************/
-		/**** md5 signature: f56e146c8c1c603ab9bcf2d6c801e3b4 ****/
+		/**** md5 signature: 175af0eadf13dd6e8e7059280dcebe1e ****/
 		%feature("compactdefaultargs") GetColor;
 		%feature("autodoc", "Returns color assigned to <l> as <type> returns false if no such color is assigned.
 
@@ -2397,7 +2399,7 @@ Returns
 -------
 bool
 ") GetColor;
-		Standard_Boolean GetColor(const TDF_Label & L, const XCAFDoc_ColorType type, Quantity_ColorRGBA & color);
+		static Standard_Boolean GetColor(const TDF_Label & L, const XCAFDoc_ColorType type, Quantity_ColorRGBA & color);
 
 		/****************** GetColor ******************/
 		/**** md5 signature: 6e439ce30113cabaadf18ee4ce1d0971 ****/
@@ -2599,7 +2601,7 @@ bool
 		Standard_Boolean IsSet(const TopoDS_Shape & S, const XCAFDoc_ColorType type);
 
 		/****************** IsVisible ******************/
-		/**** md5 signature: e84f73aaf1ac293dea741c71b9f10a4b ****/
+		/**** md5 signature: bcc14ce19df050eb884b5911b48c4b59 ****/
 		%feature("compactdefaultargs") IsVisible;
 		%feature("autodoc", "Return true if object on this label is visible, false if invisible.
 
@@ -2611,7 +2613,7 @@ Returns
 -------
 bool
 ") IsVisible;
-		Standard_Boolean IsVisible(const TDF_Label & L);
+		static Standard_Boolean IsVisible(const TDF_Label & L);
 
 		/****************** RemoveColor ******************/
 		/**** md5 signature: 3e1749f5696dd21fe53c3eb3d8e77952 ****/
@@ -3451,15 +3453,14 @@ TDF_Label
 Parameters
 ----------
 theDatumL: TDF_Label
-theName: TCollection_HAsciiString
-theDescription: TCollection_HAsciiString
-theIdentification: TCollection_HAsciiString
 
 Returns
 -------
-bool
+theName: TCollection_HAsciiString
+theDescription: TCollection_HAsciiString
+theIdentification: TCollection_HAsciiString
 ") GetDatum;
-		Standard_Boolean GetDatum(const TDF_Label & theDatumL, opencascade::handle<TCollection_HAsciiString> & theName, opencascade::handle<TCollection_HAsciiString> & theDescription, opencascade::handle<TCollection_HAsciiString> & theIdentification);
+		Standard_Boolean GetDatum(const TDF_Label & theDatumL, opencascade::handle<TCollection_HAsciiString> &OutValue, opencascade::handle<TCollection_HAsciiString> &OutValue, opencascade::handle<TCollection_HAsciiString> &OutValue);
 
 		/****************** GetDatumLabels ******************/
 		/**** md5 signature: 55e6de8f484b7fb12b9a45740915465a ****/
@@ -3477,7 +3478,7 @@ None
 		void GetDatumLabels(TDF_LabelSequence & Labels);
 
 		/****************** GetDatumOfTolerLabels ******************/
-		/**** md5 signature: ed65059da2973245ec5c0f5e0dfd7526 ****/
+		/**** md5 signature: 581e63a0a9642866e1575d216f9b4d3d ****/
 		%feature("compactdefaultargs") GetDatumOfTolerLabels;
 		%feature("autodoc", "Returns all datum labels defined for thedimtoll label.
 
@@ -3490,10 +3491,10 @@ Returns
 -------
 bool
 ") GetDatumOfTolerLabels;
-		Standard_Boolean GetDatumOfTolerLabels(const TDF_Label & theDimTolL, TDF_LabelSequence & theDatums);
+		static Standard_Boolean GetDatumOfTolerLabels(const TDF_Label & theDimTolL, TDF_LabelSequence & theDatums);
 
 		/****************** GetDatumWithObjectOfTolerLabels ******************/
-		/**** md5 signature: da94437dec84c797c8bab6e76d5e373f ****/
+		/**** md5 signature: d5f3a53d01bb6038ce1c82b7e4989ce4 ****/
 		%feature("compactdefaultargs") GetDatumWithObjectOfTolerLabels;
 		%feature("autodoc", "Returns all datum labels with xcafdimtolobjects_datumobject defined for label thedimtoll.
 
@@ -3506,7 +3507,7 @@ Returns
 -------
 bool
 ") GetDatumWithObjectOfTolerLabels;
-		Standard_Boolean GetDatumWithObjectOfTolerLabels(const TDF_Label & theDimTolL, TDF_LabelSequence & theDatums);
+		static Standard_Boolean GetDatumWithObjectOfTolerLabels(const TDF_Label & theDimTolL, TDF_LabelSequence & theDatums);
 
 		/****************** GetDimTol ******************/
 		/**** md5 signature: 5f2928d077835acfc683c0b7e312ac72 ****/
@@ -3517,14 +3518,14 @@ Parameters
 ----------
 theDimTolL: TDF_Label
 theVal: TColStd_HArray1OfReal
-theName: TCollection_HAsciiString
-theDescription: TCollection_HAsciiString
 
 Returns
 -------
 theKind: int
+theName: TCollection_HAsciiString
+theDescription: TCollection_HAsciiString
 ") GetDimTol;
-		Standard_Boolean GetDimTol(const TDF_Label & theDimTolL, Standard_Integer &OutValue, opencascade::handle<TColStd_HArray1OfReal> & theVal, opencascade::handle<TCollection_HAsciiString> & theName, opencascade::handle<TCollection_HAsciiString> & theDescription);
+		Standard_Boolean GetDimTol(const TDF_Label & theDimTolL, Standard_Integer &OutValue, opencascade::handle<TColStd_HArray1OfReal> & theVal, opencascade::handle<TCollection_HAsciiString> &OutValue, opencascade::handle<TCollection_HAsciiString> &OutValue);
 
 		/****************** GetDimTolLabels ******************/
 		/**** md5 signature: ecf3558fc2a17c2bcf4c65b55b7aabbc ****/
@@ -3646,7 +3647,7 @@ bool
 		Standard_Boolean GetRefGeomToleranceLabels(const TDF_Label & theShapeL, TDF_LabelSequence & theDimTols);
 
 		/****************** GetRefShapeLabel ******************/
-		/**** md5 signature: e25d6989472f0a0e102c1daa5f739a29 ****/
+		/**** md5 signature: b09dac51ded70edf3dd23cc545931b1a ****/
 		%feature("compactdefaultargs") GetRefShapeLabel;
 		%feature("autodoc", "Gets all shape labels referred by thel label of the gd&t table. returns false if there are no shape labels added to the sequences.
 
@@ -3660,7 +3661,7 @@ Returns
 -------
 bool
 ") GetRefShapeLabel;
-		Standard_Boolean GetRefShapeLabel(const TDF_Label & theL, TDF_LabelSequence & theShapeLFirst, TDF_LabelSequence & theShapeLSecond);
+		static Standard_Boolean GetRefShapeLabel(const TDF_Label & theL, TDF_LabelSequence & theShapeLFirst, TDF_LabelSequence & theShapeLSecond);
 
 		/****************** GetTolerOfDatumLabels ******************/
 		/**** md5 signature: b4d4047d58bcf3d1d31d5586d788da7e ****/
@@ -5275,13 +5276,13 @@ None
 
 Parameters
 ----------
-theLayer: TCollection_ExtendedString
+theLayer: str
 
 Returns
 -------
 TDF_Label
 ") AddLayer;
-		TDF_Label AddLayer(const TCollection_ExtendedString & theLayer);
+		TDF_Label AddLayer(TCollection_ExtendedString theLayer);
 
 		/****************** AddLayer ******************/
 		/**** md5 signature: efd3c8f010e5ea0400be0df10efda0ea ****/
@@ -5290,14 +5291,14 @@ TDF_Label
 
 Parameters
 ----------
-theLayer: TCollection_ExtendedString
+theLayer: str
 theToFindVisible: bool
 
 Returns
 -------
 TDF_Label
 ") AddLayer;
-		TDF_Label AddLayer(const TCollection_ExtendedString & theLayer, const Standard_Boolean theToFindVisible);
+		TDF_Label AddLayer(TCollection_ExtendedString theLayer, const Standard_Boolean theToFindVisible);
 
 		/****************** BaseLabel ******************/
 		/**** md5 signature: cb499d8135863e96e585085d0b85c75a ****/
@@ -5325,14 +5326,14 @@ TDF_Label
 
 Parameters
 ----------
-aLayer: TCollection_ExtendedString
+aLayer: str
 lab: TDF_Label
 
 Returns
 -------
 bool
 ") FindLayer;
-		Standard_Boolean FindLayer(const TCollection_ExtendedString & aLayer, TDF_Label & lab);
+		Standard_Boolean FindLayer(TCollection_ExtendedString aLayer, TDF_Label & lab);
 
 		/****************** FindLayer ******************/
 		/**** md5 signature: 0560222f5f3f399e6f4382dab748b597 ****/
@@ -5341,7 +5342,7 @@ bool
 
 Parameters
 ----------
-aLayer: TCollection_ExtendedString
+aLayer: str
 theToFindWithProperty: bool,optional
 	default value is Standard_False
 theToFindVisible: bool,optional
@@ -5351,7 +5352,7 @@ Returns
 -------
 TDF_Label
 ") FindLayer;
-		TDF_Label FindLayer(const TCollection_ExtendedString & aLayer, const Standard_Boolean theToFindWithProperty = Standard_False, const Standard_Boolean theToFindVisible = Standard_True);
+		TDF_Label FindLayer(TCollection_ExtendedString aLayer, const Standard_Boolean theToFindWithProperty = Standard_False, const Standard_Boolean theToFindVisible = Standard_True);
 
 		/****************** GetID ******************/
 		/**** md5 signature: afe6002d90f641ca3ea8c9ae9f8fe97c ****/
@@ -5372,7 +5373,7 @@ Standard_GUID
 Parameters
 ----------
 lab: TDF_Label
-aLayer: TCollection_ExtendedString
+aLayer: str
 
 Returns
 -------
@@ -5490,20 +5491,20 @@ opencascade::handle<TColStd_HSequenceOfExtendedString>
 		opencascade::handle<TColStd_HSequenceOfExtendedString> GetLayers(const TopoDS_Shape & Sh);
 
 		/****************** GetShapesOfLayer ******************/
-		/**** md5 signature: 8b01d3b5f0a0832996031f609b876e7c ****/
+		/**** md5 signature: 2bcd2de1711ebf8ae0d1ddf5d01dce52 ****/
 		%feature("compactdefaultargs") GetShapesOfLayer;
 		%feature("autodoc", "Return sequanese of shape labels that assigned with layers to <shlabels>.
 
 Parameters
 ----------
-layerL: TDF_Label
-ShLabels: TDF_LabelSequence
+theLayerL: TDF_Label
+theShLabels: TDF_LabelSequence
 
 Returns
 -------
 None
 ") GetShapesOfLayer;
-		void GetShapesOfLayer(const TDF_Label & layerL, TDF_LabelSequence & ShLabels);
+		static void GetShapesOfLayer(const TDF_Label & theLayerL, TDF_LabelSequence & theShLabels);
 
 		/****************** ID ******************/
 		/**** md5 signature: 4697ce8a095fa6dcef0217708d19718f ****/
@@ -5539,13 +5540,13 @@ bool
 Parameters
 ----------
 L: TDF_Label
-aLayer: TCollection_ExtendedString
+aLayer: str
 
 Returns
 -------
 bool
 ") IsSet;
-		Standard_Boolean IsSet(const TDF_Label & L, const TCollection_ExtendedString & aLayer);
+		Standard_Boolean IsSet(const TDF_Label & L, TCollection_ExtendedString aLayer);
 
 		/****************** IsSet ******************/
 		/**** md5 signature: a752a69f656dba6fbb8ebf3bb48adf18 ****/
@@ -5571,13 +5572,13 @@ bool
 Parameters
 ----------
 Sh: TopoDS_Shape
-aLayer: TCollection_ExtendedString
+aLayer: str
 
 Returns
 -------
 bool
 ") IsSet;
-		Standard_Boolean IsSet(const TopoDS_Shape & Sh, const TCollection_ExtendedString & aLayer);
+		Standard_Boolean IsSet(const TopoDS_Shape & Sh, TCollection_ExtendedString aLayer);
 
 		/****************** IsSet ******************/
 		/**** md5 signature: d8ac3a643dcc3086d6694928e97ec0a0 ****/
@@ -5666,7 +5667,7 @@ None
 Parameters
 ----------
 L: TDF_Label
-aLayer: TCollection_ExtendedString
+aLayer: str
 shapeInOneLayer: bool,optional
 	default value is Standard_False
 
@@ -5674,7 +5675,7 @@ Returns
 -------
 None
 ") SetLayer;
-		void SetLayer(const TDF_Label & L, const TCollection_ExtendedString & aLayer, const Standard_Boolean shapeInOneLayer = Standard_False);
+		void SetLayer(const TDF_Label & L, TCollection_ExtendedString aLayer, const Standard_Boolean shapeInOneLayer = Standard_False);
 
 		/****************** SetLayer ******************/
 		/**** md5 signature: 387666dea1ccb3d8d0644bd40bb7a443 ****/
@@ -5702,7 +5703,7 @@ bool
 Parameters
 ----------
 Sh: TopoDS_Shape
-aLayer: TCollection_ExtendedString
+aLayer: str
 shapeInOneLayer: bool,optional
 	default value is Standard_False
 
@@ -5710,7 +5711,7 @@ Returns
 -------
 bool
 ") SetLayer;
-		Standard_Boolean SetLayer(const TopoDS_Shape & Sh, const TCollection_ExtendedString & aLayer, const Standard_Boolean shapeInOneLayer = Standard_False);
+		Standard_Boolean SetLayer(const TopoDS_Shape & Sh, TCollection_ExtendedString aLayer, const Standard_Boolean shapeInOneLayer = Standard_False);
 
 		/****************** SetVisibility ******************/
 		/**** md5 signature: fd298e2f64f12ef8883e1e6d1ec6dea6 ****/
@@ -5778,13 +5779,13 @@ bool
 Parameters
 ----------
 L: TDF_Label
-aLayer: TCollection_ExtendedString
+aLayer: str
 
 Returns
 -------
 bool
 ") UnSetOneLayer;
-		Standard_Boolean UnSetOneLayer(const TDF_Label & L, const TCollection_ExtendedString & aLayer);
+		Standard_Boolean UnSetOneLayer(const TDF_Label & L, TCollection_ExtendedString aLayer);
 
 		/****************** UnSetOneLayer ******************/
 		/**** md5 signature: 302c9e7d6d6e40f3f9efacfcf142096e ****/
@@ -5810,13 +5811,13 @@ bool
 Parameters
 ----------
 Sh: TopoDS_Shape
-aLayer: TCollection_ExtendedString
+aLayer: str
 
 Returns
 -------
 bool
 ") UnSetOneLayer;
-		Standard_Boolean UnSetOneLayer(const TopoDS_Shape & Sh, const TCollection_ExtendedString & aLayer);
+		Standard_Boolean UnSetOneLayer(const TopoDS_Shape & Sh, TCollection_ExtendedString aLayer);
 
 		/****************** UnSetOneLayer ******************/
 		/**** md5 signature: 615aafd249a97646285d23d0f7c5fd58 ****/
@@ -5971,14 +5972,14 @@ None
 Parameters
 ----------
 theLabel: TDF_Label
-theUnitName: TCollection_AsciiString
+theUnitName: str
 theUnitValue: float
 
 Returns
 -------
 opencascade::handle<XCAFDoc_LengthUnit>
 ") Set;
-		static opencascade::handle<XCAFDoc_LengthUnit> Set(const TDF_Label & theLabel, const TCollection_AsciiString & theUnitName, const Standard_Real theUnitValue);
+		static opencascade::handle<XCAFDoc_LengthUnit> Set(const TDF_Label & theLabel, TCollection_AsciiString theUnitName, const Standard_Real theUnitValue);
 
 		/****************** Set ******************/
 		/**** md5 signature: 6574b11e6a0f9e7ddc0ec3a5fa9d4758 ****/
@@ -6005,14 +6006,14 @@ Parameters
 ----------
 theLabel: TDF_Label
 theGUID: Standard_GUID
-theUnitName: TCollection_AsciiString
+theUnitName: str
 theUnitValue: float
 
 Returns
 -------
 opencascade::handle<XCAFDoc_LengthUnit>
 ") Set;
-		static opencascade::handle<XCAFDoc_LengthUnit> Set(const TDF_Label & theLabel, const Standard_GUID & theGUID, const TCollection_AsciiString & theUnitName, const Standard_Real theUnitValue);
+		static opencascade::handle<XCAFDoc_LengthUnit> Set(const TDF_Label & theLabel, const Standard_GUID & theGUID, TCollection_AsciiString theUnitName, const Standard_Real theUnitValue);
 
 		/****************** Set ******************/
 		/**** md5 signature: 886c0c008a83c600a3fa609bbf9b32eb ****/
@@ -6021,14 +6022,14 @@ opencascade::handle<XCAFDoc_LengthUnit>
 
 Parameters
 ----------
-theUnitName: TCollection_AsciiString
+theUnitName: str
 theUnitValue: float
 
 Returns
 -------
 None
 ") Set;
-		void Set(const TCollection_AsciiString & theUnitName, const Standard_Real theUnitValue);
+		void Set(TCollection_AsciiString theUnitName, const Standard_Real theUnitValue);
 
 };
 
@@ -6456,23 +6457,23 @@ Standard_GUID
 		static const Standard_GUID & GetID();
 
 		/****************** GetMaterial ******************/
-		/**** md5 signature: 806c54e68af730f31f3353b2ba682bd0 ****/
+		/**** md5 signature: cf930e538eb371f96b92c4f439c49612 ****/
 		%feature("compactdefaultargs") GetMaterial;
 		%feature("autodoc", "Returns material assigned to <matl> returns false if no such material is assigned.
 
 Parameters
 ----------
 MatL: TDF_Label
-aName: TCollection_HAsciiString
-aDescription: TCollection_HAsciiString
-aDensName: TCollection_HAsciiString
-aDensValType: TCollection_HAsciiString
 
 Returns
 -------
+aName: TCollection_HAsciiString
+aDescription: TCollection_HAsciiString
 aDensity: float
+aDensName: TCollection_HAsciiString
+aDensValType: TCollection_HAsciiString
 ") GetMaterial;
-		Standard_Boolean GetMaterial(const TDF_Label & MatL, opencascade::handle<TCollection_HAsciiString> & aName, opencascade::handle<TCollection_HAsciiString> & aDescription, Standard_Real &OutValue, opencascade::handle<TCollection_HAsciiString> & aDensName, opencascade::handle<TCollection_HAsciiString> & aDensValType);
+		static Standard_Boolean GetMaterial(const TDF_Label & MatL, opencascade::handle<TCollection_HAsciiString> &OutValue, opencascade::handle<TCollection_HAsciiString> &OutValue, Standard_Real &OutValue, opencascade::handle<TCollection_HAsciiString> &OutValue, opencascade::handle<TCollection_HAsciiString> &OutValue);
 
 		/****************** GetMaterialLabels ******************/
 		/**** md5 signature: cd3883adc849957e7e10d763ad936071 ****/
@@ -6700,14 +6701,14 @@ None
 
 Parameters
 ----------
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
+theUserName: str
+theTimeStamp: str
 
 Returns
 -------
 None
 ") Set;
-		void Set(const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp);
+		void Set(TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp);
 
 		/****************** SetObject ******************/
 		/**** md5 signature: 71119db957b809a32068e9c60ccf3aaf ****/
@@ -6880,15 +6881,15 @@ opencascade::handle<XCAFDoc_AssemblyItemRef>
 
 Parameters
 ----------
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theComment: TCollection_ExtendedString
+theUserName: str
+theTimeStamp: str
+theComment: str
 
 Returns
 -------
 opencascade::handle<XCAFDoc_Note>
 ") CreateBalloon;
-		opencascade::handle<XCAFDoc_Note> CreateBalloon(const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theComment);
+		opencascade::handle<XCAFDoc_Note> CreateBalloon(TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theComment);
 
 		/****************** CreateBinData ******************/
 		/**** md5 signature: 8fffa593325c02823c46011e17c3c3e5 ****/
@@ -6897,17 +6898,17 @@ opencascade::handle<XCAFDoc_Note>
 
 Parameters
 ----------
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theTitle: TCollection_ExtendedString
-theMIMEtype: TCollection_AsciiString
+theUserName: str
+theTimeStamp: str
+theTitle: str
+theMIMEtype: str
 theFile: OSD_File
 
 Returns
 -------
 opencascade::handle<XCAFDoc_Note>
 ") CreateBinData;
-		opencascade::handle<XCAFDoc_Note> CreateBinData(const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theTitle, const TCollection_AsciiString & theMIMEtype, OSD_File & theFile);
+		opencascade::handle<XCAFDoc_Note> CreateBinData(TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theTitle, TCollection_AsciiString theMIMEtype, OSD_File & theFile);
 
 		/****************** CreateBinData ******************/
 		/**** md5 signature: f95933746f1ce2d9b2f0b561d3f3005d ****/
@@ -6916,17 +6917,17 @@ opencascade::handle<XCAFDoc_Note>
 
 Parameters
 ----------
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theTitle: TCollection_ExtendedString
-theMIMEtype: TCollection_AsciiString
+theUserName: str
+theTimeStamp: str
+theTitle: str
+theMIMEtype: str
 theData: TColStd_HArray1OfByte
 
 Returns
 -------
 opencascade::handle<XCAFDoc_Note>
 ") CreateBinData;
-		opencascade::handle<XCAFDoc_Note> CreateBinData(const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theTitle, const TCollection_AsciiString & theMIMEtype, const opencascade::handle<TColStd_HArray1OfByte> & theData);
+		opencascade::handle<XCAFDoc_Note> CreateBinData(TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theTitle, TCollection_AsciiString theMIMEtype, const opencascade::handle<TColStd_HArray1OfByte> & theData);
 
 		/****************** CreateComment ******************/
 		/**** md5 signature: 41b663076b0b608af4ceedbf243160b2 ****/
@@ -6935,15 +6936,15 @@ opencascade::handle<XCAFDoc_Note>
 
 Parameters
 ----------
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theComment: TCollection_ExtendedString
+theUserName: str
+theTimeStamp: str
+theComment: str
 
 Returns
 -------
 opencascade::handle<XCAFDoc_Note>
 ") CreateComment;
-		opencascade::handle<XCAFDoc_Note> CreateComment(const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theComment);
+		opencascade::handle<XCAFDoc_Note> CreateComment(TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theComment);
 
 		/****************** DeleteAllNotes ******************/
 		/**** md5 signature: d76db32223599baa426956fe4ae117fb ****/
@@ -8152,6 +8153,32 @@ opencascade::handle<TDataStd_NamedData>
 ") GetNamedProperties;
 		opencascade::handle<TDataStd_NamedData> GetNamedProperties(const TopoDS_Shape & theShape, const Standard_Boolean theToCreate = Standard_False);
 
+		/****************** GetOneShape ******************/
+		/**** md5 signature: 3215690f7fd49b341401d78832c630e0 ****/
+		%feature("compactdefaultargs") GetOneShape;
+		%feature("autodoc", "Gets shape from a sequence of shape's labels @param[in] thelabels a sequence of labels to get shapes from returns original shape in case of one label and a compound of shapes in case of more.
+
+Parameters
+----------
+theLabels: TDF_LabelSequence
+
+Returns
+-------
+TopoDS_Shape
+") GetOneShape;
+		static TopoDS_Shape GetOneShape(const TDF_LabelSequence & theLabels);
+
+		/****************** GetOneShape ******************/
+		/**** md5 signature: 5c1df85e1e2a72b0b93fde509f26a709 ****/
+		%feature("compactdefaultargs") GetOneShape;
+		%feature("autodoc", "Gets shape from a sequence of all top-level shapes which are free returns original shape in case of one label and a compound of shapes in case of more.
+
+Returns
+-------
+TopoDS_Shape
+") GetOneShape;
+		TopoDS_Shape GetOneShape();
+
 		/****************** GetReferredShape ******************/
 		/**** md5 signature: 63acc4d5460c835c166b1fc0b2913030 ****/
 		%feature("compactdefaultargs") GetReferredShape;
@@ -9281,7 +9308,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") AlphaCutOff;
 		Standard_ShortReal AlphaCutOff();
 
@@ -9542,7 +9569,7 @@ None
 Parameters
 ----------
 theMode: Graphic3d_AlphaMode
-theCutOff: Standard_ShortReal,optional
+theCutOff: float,optional
 	default value is 0.5f
 
 Returns
@@ -9669,8 +9696,8 @@ class XCAFDoc_VisMaterialCommon {
 		Quantity_Color DiffuseColor;
 		Quantity_Color SpecularColor;
 		Quantity_Color EmissiveColor;
-		Standard_ShortReal Shininess;
-		Standard_ShortReal Transparency;
+		float Shininess;
+		float Transparency;
 		bool IsDefined;
 		/****************** XCAFDoc_VisMaterialCommon ******************/
 		/**** md5 signature: 902673da58471421f95b5ccf0bdee6a3 ****/
@@ -9727,9 +9754,9 @@ class XCAFDoc_VisMaterialPBR {
 		opencascade::handle<Image_Texture > NormalTexture;
 		Quantity_ColorRGBA BaseColor;
 		Graphic3d_Vec3 EmissiveFactor;
-		Standard_ShortReal Metallic;
-		Standard_ShortReal Roughness;
-		Standard_ShortReal RefractionIndex;
+		float Metallic;
+		float Roughness;
+		float RefractionIndex;
 		bool IsDefined;
 		/****************** XCAFDoc_VisMaterialPBR ******************/
 		/**** md5 signature: 11ea295424c444b06892c19d880417c9 ****/
@@ -9798,13 +9825,13 @@ None
 Parameters
 ----------
 theMat: XCAFDoc_VisMaterial
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 TDF_Label
 ") AddMaterial;
-		TDF_Label AddMaterial(const opencascade::handle<XCAFDoc_VisMaterial> & theMat, const TCollection_AsciiString & theName);
+		TDF_Label AddMaterial(const opencascade::handle<XCAFDoc_VisMaterial> & theMat, TCollection_AsciiString theName);
 
 		/****************** AddMaterial ******************/
 		/**** md5 signature: 4f812bc5d327fe3e730676ff3e6dd617 ****/
@@ -9813,13 +9840,13 @@ TDF_Label
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 TDF_Label
 ") AddMaterial;
-		TDF_Label AddMaterial(const TCollection_AsciiString & theName);
+		TDF_Label AddMaterial(TCollection_AsciiString theName);
 
 		/****************** BaseLabel ******************/
 		/**** md5 signature: 0fb6b1cd40875f3170cd1b9dbe0b46bd ****/
@@ -9844,7 +9871,7 @@ Standard_GUID
 		static const Standard_GUID & GetID();
 
 		/****************** GetMaterial ******************/
-		/**** md5 signature: 83194336f7abcf51085de62960d38361 ****/
+		/**** md5 signature: 694e93123423187642f68fe8d4e64f2a ****/
 		%feature("compactdefaultargs") GetMaterial;
 		%feature("autodoc", "Returns material defined by specified label, or null if the label is not in material table.
 
@@ -9856,7 +9883,7 @@ Returns
 -------
 opencascade::handle<XCAFDoc_VisMaterial>
 ") GetMaterial;
-		opencascade::handle<XCAFDoc_VisMaterial> GetMaterial(const TDF_Label & theMatLabel);
+		static opencascade::handle<XCAFDoc_VisMaterial> GetMaterial(const TDF_Label & theMatLabel);
 
 		/****************** GetMaterials ******************/
 		/**** md5 signature: a96d68af36051bd063fefc1e10aabb79 ****/
@@ -9890,7 +9917,7 @@ bool
 		static Standard_Boolean GetShapeMaterial(const TDF_Label & theShapeLabel, TDF_Label & theMaterialLabel);
 
 		/****************** GetShapeMaterial ******************/
-		/**** md5 signature: 86335bfdea98c720bcf3af0fe4fb0fe0 ****/
+		/**** md5 signature: 04847c1ad68cdd465933ffa2a713f244 ****/
 		%feature("compactdefaultargs") GetShapeMaterial;
 		%feature("autodoc", "Returns material assigned to the shape label.
 
@@ -9902,7 +9929,7 @@ Returns
 -------
 opencascade::handle<XCAFDoc_VisMaterial>
 ") GetShapeMaterial;
-		opencascade::handle<XCAFDoc_VisMaterial> GetShapeMaterial(const TDF_Label & theShapeLabel);
+		static opencascade::handle<XCAFDoc_VisMaterial> GetShapeMaterial(const TDF_Label & theShapeLabel);
 
 		/****************** GetShapeMaterial ******************/
 		/**** md5 signature: b4d2560c50c52f8b49c713aa67731929 ****/
@@ -10402,17 +10429,17 @@ None
 Parameters
 ----------
 theLabel: TDF_Label
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theTitle: TCollection_ExtendedString
-theMIMEtype: TCollection_AsciiString
+theUserName: str
+theTimeStamp: str
+theTitle: str
+theMIMEtype: str
 theFile: OSD_File
 
 Returns
 -------
 opencascade::handle<XCAFDoc_NoteBinData>
 ") Set;
-		static opencascade::handle<XCAFDoc_NoteBinData> Set(const TDF_Label & theLabel, const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theTitle, const TCollection_AsciiString & theMIMEtype, OSD_File & theFile);
+		static opencascade::handle<XCAFDoc_NoteBinData> Set(const TDF_Label & theLabel, TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theTitle, TCollection_AsciiString theMIMEtype, OSD_File & theFile);
 
 		/****************** Set ******************/
 		/**** md5 signature: 2860d3c056ed0c365f58c7e7d299edb4 ****/
@@ -10422,17 +10449,17 @@ opencascade::handle<XCAFDoc_NoteBinData>
 Parameters
 ----------
 theLabel: TDF_Label
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theTitle: TCollection_ExtendedString
-theMIMEtype: TCollection_AsciiString
+theUserName: str
+theTimeStamp: str
+theTitle: str
+theMIMEtype: str
 theData: TColStd_HArray1OfByte
 
 Returns
 -------
 opencascade::handle<XCAFDoc_NoteBinData>
 ") Set;
-		static opencascade::handle<XCAFDoc_NoteBinData> Set(const TDF_Label & theLabel, const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theTitle, const TCollection_AsciiString & theMIMEtype, const opencascade::handle<TColStd_HArray1OfByte> & theData);
+		static opencascade::handle<XCAFDoc_NoteBinData> Set(const TDF_Label & theLabel, TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theTitle, TCollection_AsciiString theMIMEtype, const opencascade::handle<TColStd_HArray1OfByte> & theData);
 
 		/****************** Set ******************/
 		/**** md5 signature: 687dd70a71c09ae4e0a64c71d20cde3d ****/
@@ -10441,15 +10468,15 @@ opencascade::handle<XCAFDoc_NoteBinData>
 
 Parameters
 ----------
-theTitle: TCollection_ExtendedString
-theMIMEtype: TCollection_AsciiString
+theTitle: str
+theMIMEtype: str
 theFile: OSD_File
 
 Returns
 -------
 bool
 ") Set;
-		Standard_Boolean Set(const TCollection_ExtendedString & theTitle, const TCollection_AsciiString & theMIMEtype, OSD_File & theFile);
+		Standard_Boolean Set(TCollection_ExtendedString theTitle, TCollection_AsciiString theMIMEtype, OSD_File & theFile);
 
 		/****************** Set ******************/
 		/**** md5 signature: e0cd2bd6be68eba0bd2cad88cb216750 ****/
@@ -10458,15 +10485,15 @@ bool
 
 Parameters
 ----------
-theTitle: TCollection_ExtendedString
-theMIMEtype: TCollection_AsciiString
+theTitle: str
+theMIMEtype: str
 theData: TColStd_HArray1OfByte
 
 Returns
 -------
 None
 ") Set;
-		void Set(const TCollection_ExtendedString & theTitle, const TCollection_AsciiString & theMIMEtype, const opencascade::handle<TColStd_HArray1OfByte> & theData);
+		void Set(TCollection_ExtendedString theTitle, TCollection_AsciiString theMIMEtype, const opencascade::handle<TColStd_HArray1OfByte> & theData);
 
 		/****************** Size ******************/
 		/**** md5 signature: fe6e16e0f1e86558dd017c7384c76cd6 ****/
@@ -10623,15 +10650,15 @@ None
 Parameters
 ----------
 theLabel: TDF_Label
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theComment: TCollection_ExtendedString
+theUserName: str
+theTimeStamp: str
+theComment: str
 
 Returns
 -------
 opencascade::handle<XCAFDoc_NoteComment>
 ") Set;
-		static opencascade::handle<XCAFDoc_NoteComment> Set(const TDF_Label & theLabel, const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theComment);
+		static opencascade::handle<XCAFDoc_NoteComment> Set(const TDF_Label & theLabel, TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theComment);
 
 		/****************** Set ******************/
 		/**** md5 signature: 3e473f226231aa9fb962779c514f560d ****/
@@ -10640,13 +10667,13 @@ opencascade::handle<XCAFDoc_NoteComment>
 
 Parameters
 ----------
-theComment: TCollection_ExtendedString
+theComment: str
 
 Returns
 -------
 None
 ") Set;
-		void Set(const TCollection_ExtendedString & theComment);
+		void Set(TCollection_ExtendedString theComment);
 
 };
 
@@ -10720,15 +10747,15 @@ Standard_GUID
 Parameters
 ----------
 theLabel: TDF_Label
-theUserName: TCollection_ExtendedString
-theTimeStamp: TCollection_ExtendedString
-theComment: TCollection_ExtendedString
+theUserName: str
+theTimeStamp: str
+theComment: str
 
 Returns
 -------
 opencascade::handle<XCAFDoc_NoteBalloon>
 ") Set;
-		static opencascade::handle<XCAFDoc_NoteBalloon> Set(const TDF_Label & theLabel, const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theComment);
+		static opencascade::handle<XCAFDoc_NoteBalloon> Set(const TDF_Label & theLabel, TCollection_ExtendedString theUserName, TCollection_ExtendedString theTimeStamp, TCollection_ExtendedString theComment);
 
 };
 
@@ -10755,4 +10782,739 @@ class XCAFDoc_GeomTolerance:
 /* class aliases */
 %pythoncode {
 XCAFDoc_PartId=OCC.Core.TCollection.TCollection_AsciiString
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def xcafdoc_AssemblyGUID(*args):
+	return xcafdoc.AssemblyGUID(*args)
+
+@deprecated
+def xcafdoc_AttributeInfo(*args):
+	return xcafdoc.AttributeInfo(*args)
+
+@deprecated
+def xcafdoc_ColorByLayerGUID(*args):
+	return xcafdoc.ColorByLayerGUID(*args)
+
+@deprecated
+def xcafdoc_ColorRefGUID(*args):
+	return xcafdoc.ColorRefGUID(*args)
+
+@deprecated
+def xcafdoc_DatumRefGUID(*args):
+	return xcafdoc.DatumRefGUID(*args)
+
+@deprecated
+def xcafdoc_DatumTolRefGUID(*args):
+	return xcafdoc.DatumTolRefGUID(*args)
+
+@deprecated
+def xcafdoc_DimTolRefGUID(*args):
+	return xcafdoc.DimTolRefGUID(*args)
+
+@deprecated
+def xcafdoc_DimensionRefFirstGUID(*args):
+	return xcafdoc.DimensionRefFirstGUID(*args)
+
+@deprecated
+def xcafdoc_DimensionRefSecondGUID(*args):
+	return xcafdoc.DimensionRefSecondGUID(*args)
+
+@deprecated
+def xcafdoc_ExternRefGUID(*args):
+	return xcafdoc.ExternRefGUID(*args)
+
+@deprecated
+def xcafdoc_GeomToleranceRefGUID(*args):
+	return xcafdoc.GeomToleranceRefGUID(*args)
+
+@deprecated
+def xcafdoc_InvisibleGUID(*args):
+	return xcafdoc.InvisibleGUID(*args)
+
+@deprecated
+def xcafdoc_LayerRefGUID(*args):
+	return xcafdoc.LayerRefGUID(*args)
+
+@deprecated
+def xcafdoc_LockGUID(*args):
+	return xcafdoc.LockGUID(*args)
+
+@deprecated
+def xcafdoc_MaterialRefGUID(*args):
+	return xcafdoc.MaterialRefGUID(*args)
+
+@deprecated
+def xcafdoc_NoteRefGUID(*args):
+	return xcafdoc.NoteRefGUID(*args)
+
+@deprecated
+def xcafdoc_SHUORefGUID(*args):
+	return xcafdoc.SHUORefGUID(*args)
+
+@deprecated
+def xcafdoc_ShapeRefGUID(*args):
+	return xcafdoc.ShapeRefGUID(*args)
+
+@deprecated
+def xcafdoc_ViewRefAnnotationGUID(*args):
+	return xcafdoc.ViewRefAnnotationGUID(*args)
+
+@deprecated
+def xcafdoc_ViewRefGDTGUID(*args):
+	return xcafdoc.ViewRefGDTGUID(*args)
+
+@deprecated
+def xcafdoc_ViewRefGUID(*args):
+	return xcafdoc.ViewRefGUID(*args)
+
+@deprecated
+def xcafdoc_ViewRefNoteGUID(*args):
+	return xcafdoc.ViewRefNoteGUID(*args)
+
+@deprecated
+def xcafdoc_ViewRefPlaneGUID(*args):
+	return xcafdoc.ViewRefPlaneGUID(*args)
+
+@deprecated
+def xcafdoc_ViewRefShapeGUID(*args):
+	return xcafdoc.ViewRefShapeGUID(*args)
+
+@deprecated
+def xcafdoc_VisMaterialRefGUID(*args):
+	return xcafdoc.VisMaterialRefGUID(*args)
+
+@deprecated
+def XCAFDoc_Area_Get(*args):
+	return XCAFDoc_Area.Get(*args)
+
+@deprecated
+def XCAFDoc_Area_GetID(*args):
+	return XCAFDoc_Area.GetID(*args)
+
+@deprecated
+def XCAFDoc_Area_Set(*args):
+	return XCAFDoc_Area.Set(*args)
+
+@deprecated
+def XCAFDoc_AssemblyItemRef_Get(*args):
+	return XCAFDoc_AssemblyItemRef.Get(*args)
+
+@deprecated
+def XCAFDoc_AssemblyItemRef_GetID(*args):
+	return XCAFDoc_AssemblyItemRef.GetID(*args)
+
+@deprecated
+def XCAFDoc_AssemblyItemRef_Set(*args):
+	return XCAFDoc_AssemblyItemRef.Set(*args)
+
+@deprecated
+def XCAFDoc_AssemblyItemRef_Set(*args):
+	return XCAFDoc_AssemblyItemRef.Set(*args)
+
+@deprecated
+def XCAFDoc_AssemblyItemRef_Set(*args):
+	return XCAFDoc_AssemblyItemRef.Set(*args)
+
+@deprecated
+def XCAFDoc_Centroid_Get(*args):
+	return XCAFDoc_Centroid.Get(*args)
+
+@deprecated
+def XCAFDoc_Centroid_GetID(*args):
+	return XCAFDoc_Centroid.GetID(*args)
+
+@deprecated
+def XCAFDoc_Centroid_Set(*args):
+	return XCAFDoc_Centroid.Set(*args)
+
+@deprecated
+def XCAFDoc_ClippingPlaneTool_GetID(*args):
+	return XCAFDoc_ClippingPlaneTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_ClippingPlaneTool_Set(*args):
+	return XCAFDoc_ClippingPlaneTool.Set(*args)
+
+@deprecated
+def XCAFDoc_Color_GetID(*args):
+	return XCAFDoc_Color.GetID(*args)
+
+@deprecated
+def XCAFDoc_Color_Set(*args):
+	return XCAFDoc_Color.Set(*args)
+
+@deprecated
+def XCAFDoc_Color_Set(*args):
+	return XCAFDoc_Color.Set(*args)
+
+@deprecated
+def XCAFDoc_Color_Set(*args):
+	return XCAFDoc_Color.Set(*args)
+
+@deprecated
+def XCAFDoc_Color_Set(*args):
+	return XCAFDoc_Color.Set(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_AutoNaming(*args):
+	return XCAFDoc_ColorTool.AutoNaming(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_GetColor(*args):
+	return XCAFDoc_ColorTool.GetColor(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_GetColor(*args):
+	return XCAFDoc_ColorTool.GetColor(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_GetColor(*args):
+	return XCAFDoc_ColorTool.GetColor(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_GetColor(*args):
+	return XCAFDoc_ColorTool.GetColor(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_GetColor(*args):
+	return XCAFDoc_ColorTool.GetColor(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_GetID(*args):
+	return XCAFDoc_ColorTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_IsVisible(*args):
+	return XCAFDoc_ColorTool.IsVisible(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_Set(*args):
+	return XCAFDoc_ColorTool.Set(*args)
+
+@deprecated
+def XCAFDoc_ColorTool_SetAutoNaming(*args):
+	return XCAFDoc_ColorTool.SetAutoNaming(*args)
+
+@deprecated
+def XCAFDoc_Datum_GetID(*args):
+	return XCAFDoc_Datum.GetID(*args)
+
+@deprecated
+def XCAFDoc_Datum_Set(*args):
+	return XCAFDoc_Datum.Set(*args)
+
+@deprecated
+def XCAFDoc_Datum_Set(*args):
+	return XCAFDoc_Datum.Set(*args)
+
+@deprecated
+def XCAFDoc_DimTol_GetID(*args):
+	return XCAFDoc_DimTol.GetID(*args)
+
+@deprecated
+def XCAFDoc_DimTol_Set(*args):
+	return XCAFDoc_DimTol.Set(*args)
+
+@deprecated
+def XCAFDoc_DimTolTool_GetDatumOfTolerLabels(*args):
+	return XCAFDoc_DimTolTool.GetDatumOfTolerLabels(*args)
+
+@deprecated
+def XCAFDoc_DimTolTool_GetDatumWithObjectOfTolerLabels(*args):
+	return XCAFDoc_DimTolTool.GetDatumWithObjectOfTolerLabels(*args)
+
+@deprecated
+def XCAFDoc_DimTolTool_GetID(*args):
+	return XCAFDoc_DimTolTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_DimTolTool_GetRefShapeLabel(*args):
+	return XCAFDoc_DimTolTool.GetRefShapeLabel(*args)
+
+@deprecated
+def XCAFDoc_DimTolTool_Set(*args):
+	return XCAFDoc_DimTolTool.Set(*args)
+
+@deprecated
+def XCAFDoc_Dimension_GetID(*args):
+	return XCAFDoc_Dimension.GetID(*args)
+
+@deprecated
+def XCAFDoc_Dimension_Set(*args):
+	return XCAFDoc_Dimension.Set(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckClippingPlaneTool(*args):
+	return XCAFDoc_DocumentTool.CheckClippingPlaneTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckColorTool(*args):
+	return XCAFDoc_DocumentTool.CheckColorTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckDimTolTool(*args):
+	return XCAFDoc_DocumentTool.CheckDimTolTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckLayerTool(*args):
+	return XCAFDoc_DocumentTool.CheckLayerTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckMaterialTool(*args):
+	return XCAFDoc_DocumentTool.CheckMaterialTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckNotesTool(*args):
+	return XCAFDoc_DocumentTool.CheckNotesTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckShapeTool(*args):
+	return XCAFDoc_DocumentTool.CheckShapeTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckViewTool(*args):
+	return XCAFDoc_DocumentTool.CheckViewTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_CheckVisMaterialTool(*args):
+	return XCAFDoc_DocumentTool.CheckVisMaterialTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ClippingPlaneTool(*args):
+	return XCAFDoc_DocumentTool.ClippingPlaneTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ClippingPlanesLabel(*args):
+	return XCAFDoc_DocumentTool.ClippingPlanesLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ColorTool(*args):
+	return XCAFDoc_DocumentTool.ColorTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ColorsLabel(*args):
+	return XCAFDoc_DocumentTool.ColorsLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_DGTsLabel(*args):
+	return XCAFDoc_DocumentTool.DGTsLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_DimTolTool(*args):
+	return XCAFDoc_DocumentTool.DimTolTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_DocLabel(*args):
+	return XCAFDoc_DocumentTool.DocLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_GetID(*args):
+	return XCAFDoc_DocumentTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_GetLengthUnit(*args):
+	return XCAFDoc_DocumentTool.GetLengthUnit(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_GetLengthUnit(*args):
+	return XCAFDoc_DocumentTool.GetLengthUnit(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_IsXCAFDocument(*args):
+	return XCAFDoc_DocumentTool.IsXCAFDocument(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_LayerTool(*args):
+	return XCAFDoc_DocumentTool.LayerTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_LayersLabel(*args):
+	return XCAFDoc_DocumentTool.LayersLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_MaterialTool(*args):
+	return XCAFDoc_DocumentTool.MaterialTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_MaterialsLabel(*args):
+	return XCAFDoc_DocumentTool.MaterialsLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_NotesLabel(*args):
+	return XCAFDoc_DocumentTool.NotesLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_NotesTool(*args):
+	return XCAFDoc_DocumentTool.NotesTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_Set(*args):
+	return XCAFDoc_DocumentTool.Set(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_SetLengthUnit(*args):
+	return XCAFDoc_DocumentTool.SetLengthUnit(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_SetLengthUnit(*args):
+	return XCAFDoc_DocumentTool.SetLengthUnit(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ShapeTool(*args):
+	return XCAFDoc_DocumentTool.ShapeTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ShapesLabel(*args):
+	return XCAFDoc_DocumentTool.ShapesLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ViewTool(*args):
+	return XCAFDoc_DocumentTool.ViewTool(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_ViewsLabel(*args):
+	return XCAFDoc_DocumentTool.ViewsLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_VisMaterialLabel(*args):
+	return XCAFDoc_DocumentTool.VisMaterialLabel(*args)
+
+@deprecated
+def XCAFDoc_DocumentTool_VisMaterialTool(*args):
+	return XCAFDoc_DocumentTool.VisMaterialTool(*args)
+
+@deprecated
+def XCAFDoc_Editor_CloneMetaData(*args):
+	return XCAFDoc_Editor.CloneMetaData(*args)
+
+@deprecated
+def XCAFDoc_Editor_CloneShapeLabel(*args):
+	return XCAFDoc_Editor.CloneShapeLabel(*args)
+
+@deprecated
+def XCAFDoc_Editor_Expand(*args):
+	return XCAFDoc_Editor.Expand(*args)
+
+@deprecated
+def XCAFDoc_Editor_Expand(*args):
+	return XCAFDoc_Editor.Expand(*args)
+
+@deprecated
+def XCAFDoc_Editor_Extract(*args):
+	return XCAFDoc_Editor.Extract(*args)
+
+@deprecated
+def XCAFDoc_Editor_Extract(*args):
+	return XCAFDoc_Editor.Extract(*args)
+
+@deprecated
+def XCAFDoc_Editor_RescaleGeometry(*args):
+	return XCAFDoc_Editor.RescaleGeometry(*args)
+
+@deprecated
+def XCAFDoc_GraphNode_Find(*args):
+	return XCAFDoc_GraphNode.Find(*args)
+
+@deprecated
+def XCAFDoc_GraphNode_GetDefaultGraphID(*args):
+	return XCAFDoc_GraphNode.GetDefaultGraphID(*args)
+
+@deprecated
+def XCAFDoc_GraphNode_Set(*args):
+	return XCAFDoc_GraphNode.Set(*args)
+
+@deprecated
+def XCAFDoc_GraphNode_Set(*args):
+	return XCAFDoc_GraphNode.Set(*args)
+
+@deprecated
+def XCAFDoc_LayerTool_GetID(*args):
+	return XCAFDoc_LayerTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_LayerTool_GetShapesOfLayer(*args):
+	return XCAFDoc_LayerTool.GetShapesOfLayer(*args)
+
+@deprecated
+def XCAFDoc_LayerTool_Set(*args):
+	return XCAFDoc_LayerTool.Set(*args)
+
+@deprecated
+def XCAFDoc_LengthUnit_GetID(*args):
+	return XCAFDoc_LengthUnit.GetID(*args)
+
+@deprecated
+def XCAFDoc_LengthUnit_Set(*args):
+	return XCAFDoc_LengthUnit.Set(*args)
+
+@deprecated
+def XCAFDoc_LengthUnit_Set(*args):
+	return XCAFDoc_LengthUnit.Set(*args)
+
+@deprecated
+def XCAFDoc_LengthUnit_Set(*args):
+	return XCAFDoc_LengthUnit.Set(*args)
+
+@deprecated
+def XCAFDoc_Location_GetID(*args):
+	return XCAFDoc_Location.GetID(*args)
+
+@deprecated
+def XCAFDoc_Location_Set(*args):
+	return XCAFDoc_Location.Set(*args)
+
+@deprecated
+def XCAFDoc_Material_GetID(*args):
+	return XCAFDoc_Material.GetID(*args)
+
+@deprecated
+def XCAFDoc_Material_Set(*args):
+	return XCAFDoc_Material.Set(*args)
+
+@deprecated
+def XCAFDoc_MaterialTool_GetDensityForShape(*args):
+	return XCAFDoc_MaterialTool.GetDensityForShape(*args)
+
+@deprecated
+def XCAFDoc_MaterialTool_GetID(*args):
+	return XCAFDoc_MaterialTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_MaterialTool_GetMaterial(*args):
+	return XCAFDoc_MaterialTool.GetMaterial(*args)
+
+@deprecated
+def XCAFDoc_MaterialTool_Set(*args):
+	return XCAFDoc_MaterialTool.Set(*args)
+
+@deprecated
+def XCAFDoc_Note_Get(*args):
+	return XCAFDoc_Note.Get(*args)
+
+@deprecated
+def XCAFDoc_Note_IsMine(*args):
+	return XCAFDoc_Note.IsMine(*args)
+
+@deprecated
+def XCAFDoc_NotesTool_GetID(*args):
+	return XCAFDoc_NotesTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_NotesTool_Set(*args):
+	return XCAFDoc_NotesTool.Set(*args)
+
+@deprecated
+def XCAFDoc_ShapeMapTool_GetID(*args):
+	return XCAFDoc_ShapeMapTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_ShapeMapTool_Set(*args):
+	return XCAFDoc_ShapeMapTool.Set(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_AutoNaming(*args):
+	return XCAFDoc_ShapeTool.AutoNaming(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_FindSHUO(*args):
+	return XCAFDoc_ShapeTool.FindSHUO(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetAllComponentSHUO(*args):
+	return XCAFDoc_ShapeTool.GetAllComponentSHUO(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetComponents(*args):
+	return XCAFDoc_ShapeTool.GetComponents(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetExternRefs(*args):
+	return XCAFDoc_ShapeTool.GetExternRefs(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetID(*args):
+	return XCAFDoc_ShapeTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetLocation(*args):
+	return XCAFDoc_ShapeTool.GetLocation(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetOneShape(*args):
+	return XCAFDoc_ShapeTool.GetOneShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetReferredShape(*args):
+	return XCAFDoc_ShapeTool.GetReferredShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetSHUO(*args):
+	return XCAFDoc_ShapeTool.GetSHUO(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetSHUONextUsage(*args):
+	return XCAFDoc_ShapeTool.GetSHUONextUsage(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetSHUOUpperUsage(*args):
+	return XCAFDoc_ShapeTool.GetSHUOUpperUsage(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetShape(*args):
+	return XCAFDoc_ShapeTool.GetShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetShape(*args):
+	return XCAFDoc_ShapeTool.GetShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetSubShapes(*args):
+	return XCAFDoc_ShapeTool.GetSubShapes(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_GetUsers(*args):
+	return XCAFDoc_ShapeTool.GetUsers(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsAssembly(*args):
+	return XCAFDoc_ShapeTool.IsAssembly(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsComponent(*args):
+	return XCAFDoc_ShapeTool.IsComponent(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsCompound(*args):
+	return XCAFDoc_ShapeTool.IsCompound(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsExternRef(*args):
+	return XCAFDoc_ShapeTool.IsExternRef(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsFree(*args):
+	return XCAFDoc_ShapeTool.IsFree(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsReference(*args):
+	return XCAFDoc_ShapeTool.IsReference(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsShape(*args):
+	return XCAFDoc_ShapeTool.IsShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsSimpleShape(*args):
+	return XCAFDoc_ShapeTool.IsSimpleShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_IsSubShape(*args):
+	return XCAFDoc_ShapeTool.IsSubShape(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_NbComponents(*args):
+	return XCAFDoc_ShapeTool.NbComponents(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_Set(*args):
+	return XCAFDoc_ShapeTool.Set(*args)
+
+@deprecated
+def XCAFDoc_ShapeTool_SetAutoNaming(*args):
+	return XCAFDoc_ShapeTool.SetAutoNaming(*args)
+
+@deprecated
+def XCAFDoc_View_GetID(*args):
+	return XCAFDoc_View.GetID(*args)
+
+@deprecated
+def XCAFDoc_View_Set(*args):
+	return XCAFDoc_View.Set(*args)
+
+@deprecated
+def XCAFDoc_ViewTool_GetID(*args):
+	return XCAFDoc_ViewTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_ViewTool_Set(*args):
+	return XCAFDoc_ViewTool.Set(*args)
+
+@deprecated
+def XCAFDoc_VisMaterial_GetID(*args):
+	return XCAFDoc_VisMaterial.GetID(*args)
+
+@deprecated
+def XCAFDoc_VisMaterialTool_GetID(*args):
+	return XCAFDoc_VisMaterialTool.GetID(*args)
+
+@deprecated
+def XCAFDoc_VisMaterialTool_GetMaterial(*args):
+	return XCAFDoc_VisMaterialTool.GetMaterial(*args)
+
+@deprecated
+def XCAFDoc_VisMaterialTool_GetShapeMaterial(*args):
+	return XCAFDoc_VisMaterialTool.GetShapeMaterial(*args)
+
+@deprecated
+def XCAFDoc_VisMaterialTool_GetShapeMaterial(*args):
+	return XCAFDoc_VisMaterialTool.GetShapeMaterial(*args)
+
+@deprecated
+def XCAFDoc_VisMaterialTool_Set(*args):
+	return XCAFDoc_VisMaterialTool.Set(*args)
+
+@deprecated
+def XCAFDoc_Volume_Get(*args):
+	return XCAFDoc_Volume.Get(*args)
+
+@deprecated
+def XCAFDoc_Volume_GetID(*args):
+	return XCAFDoc_Volume.GetID(*args)
+
+@deprecated
+def XCAFDoc_Volume_Set(*args):
+	return XCAFDoc_Volume.Set(*args)
+
+@deprecated
+def XCAFDoc_NoteBinData_Get(*args):
+	return XCAFDoc_NoteBinData.Get(*args)
+
+@deprecated
+def XCAFDoc_NoteBinData_GetID(*args):
+	return XCAFDoc_NoteBinData.GetID(*args)
+
+@deprecated
+def XCAFDoc_NoteBinData_Set(*args):
+	return XCAFDoc_NoteBinData.Set(*args)
+
+@deprecated
+def XCAFDoc_NoteBinData_Set(*args):
+	return XCAFDoc_NoteBinData.Set(*args)
+
+@deprecated
+def XCAFDoc_NoteComment_Get(*args):
+	return XCAFDoc_NoteComment.Get(*args)
+
+@deprecated
+def XCAFDoc_NoteComment_GetID(*args):
+	return XCAFDoc_NoteComment.GetID(*args)
+
+@deprecated
+def XCAFDoc_NoteComment_Set(*args):
+	return XCAFDoc_NoteComment.Set(*args)
+
+@deprecated
+def XCAFDoc_NoteBalloon_Get(*args):
+	return XCAFDoc_NoteBalloon.Get(*args)
+
+@deprecated
+def XCAFDoc_NoteBalloon_GetID(*args):
+	return XCAFDoc_NoteBalloon.GetID(*args)
+
+@deprecated
+def XCAFDoc_NoteBalloon_Set(*args):
+	return XCAFDoc_NoteBalloon.Set(*args)
+
 }

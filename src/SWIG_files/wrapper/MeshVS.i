@@ -1092,7 +1092,7 @@ None
 Parameters
 ----------
 Key: int
-Value: TCollection_AsciiString
+Value: str
 
 Returns
 -------
@@ -1275,13 +1275,13 @@ bool
 Parameters
 ----------
 Key: int
-Value: TCollection_AsciiString
+Value: str
 
 Returns
 -------
 None
 ") SetAsciiString;
-		void SetAsciiString(const Standard_Integer Key, const TCollection_AsciiString & Value);
+		void SetAsciiString(const Standard_Integer Key, TCollection_AsciiString Value);
 
 		/****************** SetBoolean ******************/
 		/**** md5 signature: de57cc8afe03434b7e50da2a4245e18d ****/
@@ -1613,13 +1613,13 @@ None
 
 Parameters
 ----------
-TypeString: char *
+TypeString: str
 
 Returns
 -------
 opencascade::handle<MeshVS_PrsBuilder>
 ") FindBuilder;
-		opencascade::handle<MeshVS_PrsBuilder> FindBuilder(const char * TypeString);
+		opencascade::handle<MeshVS_PrsBuilder> FindBuilder(Standard_CString TypeString);
 
 		/****************** GetBuilder ******************/
 		/**** md5 signature: 4c9607e94ac7aa236064857b9e1b7e7b ****/
@@ -4263,7 +4263,7 @@ Parameters
 ----------
 IsElement: bool
 ID: int
-Text: TCollection_AsciiString
+Text: str
 
 Returns
 -------
@@ -4310,13 +4310,13 @@ Parameters
 ----------
 IsElement: bool
 ID: int
-Text: TCollection_AsciiString
+Text: str
 
 Returns
 -------
 None
 ") SetText;
-		void SetText(const Standard_Boolean IsElement, const Standard_Integer ID, const TCollection_AsciiString & Text);
+		void SetText(const Standard_Boolean IsElement, const Standard_Integer ID, TCollection_AsciiString Text);
 
 		/****************** SetTexts ******************/
 		/**** md5 signature: 417e71af0ee08340a68f99a92c30842d ****/
@@ -4589,4 +4589,63 @@ class MeshVS_HArray1OfSequenceOfInteger : public MeshVS_Array1OfSequenceOfIntege
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def MeshVS_SymmetricPairHasher_HashCode(*args):
+	return MeshVS_SymmetricPairHasher.HashCode(*args)
+
+@deprecated
+def MeshVS_SymmetricPairHasher_IsEqual(*args):
+	return MeshVS_SymmetricPairHasher.IsEqual(*args)
+
+@deprecated
+def MeshVS_Tool_CreateAspectFillArea3d(*args):
+	return MeshVS_Tool.CreateAspectFillArea3d(*args)
+
+@deprecated
+def MeshVS_Tool_CreateAspectFillArea3d(*args):
+	return MeshVS_Tool.CreateAspectFillArea3d(*args)
+
+@deprecated
+def MeshVS_Tool_CreateAspectLine3d(*args):
+	return MeshVS_Tool.CreateAspectLine3d(*args)
+
+@deprecated
+def MeshVS_Tool_CreateAspectMarker3d(*args):
+	return MeshVS_Tool.CreateAspectMarker3d(*args)
+
+@deprecated
+def MeshVS_Tool_CreateAspectText3d(*args):
+	return MeshVS_Tool.CreateAspectText3d(*args)
+
+@deprecated
+def MeshVS_Tool_GetAverageNormal(*args):
+	return MeshVS_Tool.GetAverageNormal(*args)
+
+@deprecated
+def MeshVS_Tool_GetNormal(*args):
+	return MeshVS_Tool.GetNormal(*args)
+
+@deprecated
+def MeshVS_DataSource3D_CreatePrismTopology(*args):
+	return MeshVS_DataSource3D.CreatePrismTopology(*args)
+
+@deprecated
+def MeshVS_DataSource3D_CreatePyramidTopology(*args):
+	return MeshVS_DataSource3D.CreatePyramidTopology(*args)
+
+@deprecated
+def MeshVS_MeshPrsBuilder_AddVolumePrs(*args):
+	return MeshVS_MeshPrsBuilder.AddVolumePrs(*args)
+
+@deprecated
+def MeshVS_MeshPrsBuilder_HowManyPrimitives(*args):
+	return MeshVS_MeshPrsBuilder.HowManyPrimitives(*args)
+
+@deprecated
+def MeshVS_VectorPrsBuilder_calculateArrow(*args):
+	return MeshVS_VectorPrsBuilder.calculateArrow(*args)
+
 }

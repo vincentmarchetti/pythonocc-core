@@ -25,7 +25,11 @@ import warnings
 
 from OCC.Core.TCollection import TCollection_ExtendedString
 from OCC.Core.TDocStd import TDocStd_Document
-from OCC.Core.XCAFDoc import XCAFDoc_DocumentTool, XCAFDoc_ColorGen
+from OCC.Core.XCAFDoc import (
+    XCAFDoc_DocumentTool,
+    XCAFDoc_ColorGen,
+    XCAFDoc_Material,
+)
 from OCC.Core.STEPCAFControl import STEPCAFControl_Reader, STEPCAFControl_Writer
 from OCC.Core.IFSelect import IFSelect_RetDone
 from OCC.Core.Quantity import Quantity_Color, Quantity_TypeOfColor
@@ -51,13 +55,13 @@ class TestOCAF(unittest.TestCase):
     def test_create_doc(self) -> None:
         """Creates an OCAF app and an empty document"""
         # create an handle to a document
-        doc = TDocStd_Document(TCollection_ExtendedString("MDTV-CAF"))
+        doc = TDocStd_Document("MDTV-CAF")
         self.assertFalse(doc is None)
 
     def test_write_step_file(self) -> None:
         """Exports a colored box into a STEP file"""
         ### initialisation
-        doc = TDocStd_Document(TCollection_ExtendedString("pythonocc-doc"))
+        doc = TDocStd_Document("pythonocc-doc")
         self.assertTrue(doc is not None)
 
         # Get root assembly
@@ -84,7 +88,7 @@ class TestOCAF(unittest.TestCase):
     def test_read_step_file(self) -> None:
         """Reads the previous step file"""
         # create an handle to a document
-        doc = TDocStd_Document(TCollection_ExtendedString("pythonocc-doc"))
+        doc = TDocStd_Document("pythonocc-doc")
         # Get root assembly
         shape_tool = XCAFDoc_DocumentTool.ShapeTool(doc.Main())
         l_colors = XCAFDoc_DocumentTool.ColorTool(doc.Main())
@@ -94,8 +98,8 @@ class TestOCAF(unittest.TestCase):
         step_reader.SetNameMode(True)
         step_reader.SetMatMode(True)
         status = step_reader.ReadFile("./test_io/test_ocaf.stp")
-        if status == IFSelect_RetDone:
-            step_reader.Transfer(doc)
+        self.assertEqual(status, IFSelect_RetDone)
+        step_reader.Transfer(doc)
 
         labels = TDF_LabelSequence()
         color_labels = TDF_LabelSequence()
@@ -114,6 +118,46 @@ class TestOCAF(unittest.TestCase):
         label_shp = labels.Value(1)
         a_shape = shape_tool.GetShape(label_shp)
         self.assertFalse(a_shape.IsNull())
+
+    def test_read_step_material(self) -> None:
+        # create an handle to a document
+        doc = TDocStd_Document("pythonocc-doc")
+
+        # Get root assembly
+        shape_tool = XCAFDoc_DocumentTool.ShapeTool(doc.Main())
+        mat_tool = XCAFDoc_DocumentTool.MaterialTool(doc.Main())
+        step_reader = STEPCAFControl_Reader()
+
+        status = step_reader.ReadFile("./test_io/eight_cyl.stp")
+
+        self.assertEqual(status, IFSelect_RetDone)
+        step_reader.Transfer(doc)
+
+        shape_labels = TDF_LabelSequence()
+        material_labels = TDF_LabelSequence()
+
+        shape_tool.GetFreeShapes(shape_labels)
+        mat_tool.GetMaterialLabels(material_labels)
+
+        number_of_shapes = shape_labels.Length()
+        self.assertEqual(number_of_shapes, 8)
+        for i in range(1, number_of_shapes + 1):
+            label = shape_labels.Value(i)
+            a_shape = shape_tool.GetShape(label)
+
+        # materials
+        number_of_materials = material_labels.Length()
+        self.assertEqual(number_of_materials, 8)
+        for i in range(1, number_of_materials + 1):
+            (
+                ok,
+                material_name,
+                material_description,
+                material_density,
+                material_densname,
+                material_densvaltype,
+            ) = mat_tool.GetMaterial(material_labels.Value(i))
+            self.assertTrue(ok)
 
 
 def suite() -> unittest.TestSuite:

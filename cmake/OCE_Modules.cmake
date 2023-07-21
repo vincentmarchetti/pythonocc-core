@@ -16,6 +16,7 @@ LIST(APPEND OCE_TOOLKIT_MODEL
 	TShort
 	Units
 	UnitsAPI
+	UnitsMethods
 # TKMath
 	BSplCLib
 	BSplSLib
@@ -240,6 +241,7 @@ LIST(APPEND OCE_TOOLKIT_DATAEXCHANGE
 # TKRWMesh
 	RWGltf
 	RWObj
+	RWPly
 	RWMesh
 # TKSTEP
 	StepAP214
@@ -264,8 +266,10 @@ LIST(APPEND OCE_TOOLKIT_DATAEXCHANGE
 	StepFEA
 # TKSTEPAttr
 	RWStepDimTol
+	RWStepKinematics
 	RWStepVisual
 	StepDimTol
+	StepKinematics
 	StepVisual
 # TKSTEPBase
 	StepBasic
@@ -303,6 +307,9 @@ LIST(APPEND OCE_TOOLKIT_DATAEXCHANGE
 	Transfer
 	TransferBRep
 	MoniTool
+	HeaderSection
+    RWHeaderSection
+    APIHeaderSection
 # TKXmlXCAF
 	XmlXCAFDrivers
 	XmlMXCAFDoc

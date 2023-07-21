@@ -110,6 +110,10 @@ class GeomInt_IntSS:
     @overload
     def __init__(self, S1: Geom_Surface, S2: Geom_Surface, Tol: float, Approx: Optional[bool] = True, ApproxS1: Optional[bool] = False, ApproxS2: Optional[bool] = False) -> None: ...
     def Boundary(self, Index: int) -> Geom_Curve: ...
+    @overload
+    @staticmethod
+    def BuildPCurves(theFirst: float, theLast: float, theUmin: float, theUmax: float, theVmin: float, theVmax: float, theSurface: Geom_Surface, theCurve: Geom_Curve, theCurve2d: Geom2d_Curve) -> float: ...
+    @overload
     @staticmethod
     def BuildPCurves(f: float, l: float, S: Geom_Surface, C: Geom_Curve, C2d: Geom2d_Curve) -> float: ...
     def HasLineOnS1(self, Index: int) -> bool: ...
@@ -523,31 +527,3 @@ class GeomInt_WLApprox: ...
 # harray2 classes
 # hsequence classes
 
-geomint_AdjustPeriodic = geomint.AdjustPeriodic
-GeomInt_IntSS_BuildPCurves = GeomInt_IntSS.BuildPCurves
-GeomInt_IntSS_MakeBSpline = GeomInt_IntSS.MakeBSpline
-GeomInt_IntSS_MakeBSpline2d = GeomInt_IntSS.MakeBSpline2d
-GeomInt_IntSS_TreatRLine = GeomInt_IntSS.TreatRLine
-GeomInt_IntSS_TrimILineOnSurfBoundaries = GeomInt_IntSS.TrimILineOnSurfBoundaries
-GeomInt_LineTool_DecompositionOfWLine = GeomInt_LineTool.DecompositionOfWLine
-GeomInt_LineTool_FirstParameter = GeomInt_LineTool.FirstParameter
-GeomInt_LineTool_LastParameter = GeomInt_LineTool.LastParameter
-GeomInt_LineTool_NbVertex = GeomInt_LineTool.NbVertex
-GeomInt_LineTool_Vertex = GeomInt_LineTool.Vertex
-GeomInt_TheMultiLineToolOfWLApprox_Curvature = GeomInt_TheMultiLineToolOfWLApprox.Curvature
-GeomInt_TheMultiLineToolOfWLApprox_Curvature = GeomInt_TheMultiLineToolOfWLApprox.Curvature
-GeomInt_TheMultiLineToolOfWLApprox_Curvature = GeomInt_TheMultiLineToolOfWLApprox.Curvature
-GeomInt_TheMultiLineToolOfWLApprox_Dump = GeomInt_TheMultiLineToolOfWLApprox.Dump
-GeomInt_TheMultiLineToolOfWLApprox_FirstPoint = GeomInt_TheMultiLineToolOfWLApprox.FirstPoint
-GeomInt_TheMultiLineToolOfWLApprox_LastPoint = GeomInt_TheMultiLineToolOfWLApprox.LastPoint
-GeomInt_TheMultiLineToolOfWLApprox_MakeMLBetween = GeomInt_TheMultiLineToolOfWLApprox.MakeMLBetween
-GeomInt_TheMultiLineToolOfWLApprox_MakeMLOneMorePoint = GeomInt_TheMultiLineToolOfWLApprox.MakeMLOneMorePoint
-GeomInt_TheMultiLineToolOfWLApprox_NbP2d = GeomInt_TheMultiLineToolOfWLApprox.NbP2d
-GeomInt_TheMultiLineToolOfWLApprox_NbP3d = GeomInt_TheMultiLineToolOfWLApprox.NbP3d
-GeomInt_TheMultiLineToolOfWLApprox_Tangency = GeomInt_TheMultiLineToolOfWLApprox.Tangency
-GeomInt_TheMultiLineToolOfWLApprox_Tangency = GeomInt_TheMultiLineToolOfWLApprox.Tangency
-GeomInt_TheMultiLineToolOfWLApprox_Tangency = GeomInt_TheMultiLineToolOfWLApprox.Tangency
-GeomInt_TheMultiLineToolOfWLApprox_Value = GeomInt_TheMultiLineToolOfWLApprox.Value
-GeomInt_TheMultiLineToolOfWLApprox_Value = GeomInt_TheMultiLineToolOfWLApprox.Value
-GeomInt_TheMultiLineToolOfWLApprox_Value = GeomInt_TheMultiLineToolOfWLApprox.Value
-GeomInt_TheMultiLineToolOfWLApprox_WhatStatus = GeomInt_TheMultiLineToolOfWLApprox.WhatStatus

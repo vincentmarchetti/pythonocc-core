@@ -30,7 +30,7 @@ from OCC.Core.AIS import (
     AIS_Shaded,
     AIS_TexturedShape,
     AIS_WireFrame,
-    AIS_Shape_SelectionMode,
+    AIS_Shape,
 )
 from OCC.Core.gp import gp_Dir, gp_Pnt, gp_Pnt2d, gp_Vec
 from OCC.Core.BRepBuilderAPI import (
@@ -59,7 +59,6 @@ from OCC.Core.V3d import (
     V3d_Yneg,
     V3d_XposYnegZpos,
 )
-from OCC.Core.TCollection import TCollection_ExtendedString, TCollection_AsciiString
 from OCC.Core.Quantity import (
     Quantity_Color,
     Quantity_TOC_RGB,
@@ -140,10 +139,6 @@ def get_color_from_name(color_name):
     return Quantity_Color(color_num)
 
 
-def to_string(_string):
-    return TCollection_ExtendedString(_string)
-
-
 # some thing we'll need later
 modes = itertools.cycle(
     [TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_SHELL, TopAbs_SOLID]
@@ -161,9 +156,10 @@ class Viewer3d(Display3d):
         self.Context = self.GetContext()
         self.Viewer = self.GetViewer()
         self.View = self.GetView()
+        self.camera = self.GetCamera()
+        self.struc_mgr = self.GetStructureManager()
 
         self.default_drawer = None
-        self._struc_mgr = None
         self._is_offscreen = None
 
         self.selected_shapes = []
@@ -171,7 +167,6 @@ class Viewer3d(Display3d):
         self._overlay_items = []
 
         self._window_handle = None
-        self.camera = None
 
     def get_parent(self):
         return self._parent
@@ -227,7 +222,6 @@ class Viewer3d(Display3d):
             self.Viewer.SetDefaultLights()
             self.Viewer.SetLightOn()
 
-        self.camera = self.View.Camera()
         self.default_drawer = self.Context.DefaultDrawer()
 
         # draw black contour edges, like other famous CAD packages
@@ -241,9 +235,6 @@ class Viewer3d(Display3d):
         if phong_shading:
             # gouraud shading by default, prefer phong instead
             self.View.SetShadingModel(Graphic3d_TOSM_FRAGMENT)
-
-        # necessary for text rendering
-        self._struc_mgr = self.Context.MainPrsMgr().StructureManager()
 
         # turn self._inited flag to True
         self._inited = True
@@ -423,7 +414,7 @@ class Viewer3d(Display3d):
     def DisplayVector(self, vec, pnt, update=False):
         """displays a vector as an arrow"""
         if self._inited:
-            aStructure = Graphic3d_Structure(self._struc_mgr)
+            aStructure = Graphic3d_Structure(self.struc_mgr)
 
             pnt_as_vec = gp_Vec(pnt.X(), pnt.Y(), pnt.Z())
             start = pnt_as_vec + vec
@@ -457,7 +448,7 @@ class Viewer3d(Display3d):
         :height: font height, 12 by defaults
         :message_color: triple with the range 0-1, default to black
         """
-        aStructure = Graphic3d_Structure(self._struc_mgr)
+        aStructure = Graphic3d_Structure(self.struc_mgr)
 
         text_aspect = Prs3d_TextAspect()
         text_aspect.SetColor(rgb_color(*message_color))
@@ -465,9 +456,7 @@ class Viewer3d(Display3d):
         if isinstance(point, gp_Pnt2d):
             point = gp_Pnt(point.X(), point.Y(), 0)
 
-        Prs3d_Text.Draw(
-            aStructure.CurrentGroup(), text_aspect, to_string(text_to_write), point
-        )
+        Prs3d_Text.Draw(aStructure.CurrentGroup(), text_aspect, text_to_write, point)
         aStructure.Display()
         # @TODO: it would be more coherent if a AIS_InteractiveObject
         # is be returned
@@ -524,9 +513,7 @@ class Viewer3d(Display3d):
                         originU,
                         originV,
                     ) = texture.GetProperties()
-                    shape_to_display.SetTextureFileName(
-                        TCollection_AsciiString(filename)
-                    )
+                    shape_to_display.SetTextureFileName(filename)
                     shape_to_display.SetTextureMapOn()
                     shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
@@ -630,9 +617,9 @@ class Viewer3d(Display3d):
         self.Context.Deactivate()
         topo_level = next(modes)
         if mode is None:
-            self.Context.Activate(AIS_Shape_SelectionMode(topo_level), True)
+            self.Context.Activate(AIS_Shape.SelectionMode(topo_level), True)
         else:
-            self.Context.Activate(AIS_Shape_SelectionMode(mode), True)
+            self.Context.Activate(AIS_Shape.SelectionMode(mode), True)
         self.Context.UpdateSelected(True)
 
     def SetSelectionModeVertex(self):

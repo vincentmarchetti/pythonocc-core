@@ -35,7 +35,7 @@ from OCC.Core.TopAbs import (
     TopAbs_COMPSOLID,
     TopAbs_ShapeEnum,
 )
-from OCC.Core.TopExp import TopExp_Explorer, topexp_MapShapesAndAncestors
+from OCC.Core.TopExp import TopExp_Explorer, topexp
 from OCC.Core.TopTools import (
     TopTools_ListIteratorOfListOfShape,
     TopTools_IndexedDataMapOfShapeListOfShape,
@@ -51,8 +51,6 @@ from OCC.Core.TopoDS import (
     TopoDS_Shape,
     TopoDS_Compound,
     TopoDS_CompSolid,
-    topods_Edge,
-    topods_Vertex,
     TopoDS_Iterator,
 )
 from OCC.Core.GCPnts import (
@@ -62,7 +60,24 @@ from OCC.Core.GCPnts import (
 )
 from OCC.Core.BRepAdaptor import BRepAdaptor_Curve
 
-MAX_32_BIT_INT = 2 ** 31 - 1
+MAX_32_BIT_INT = 2**31 - 1
+
+
+def _number_of_topo(iterable: Iterable) -> int:
+    nbr_topo = 0
+    for _ in iterable:
+        nbr_topo += 1
+    return nbr_topo
+
+
+def ordered_vertices_from_wire(wire: TopoDS_Wire) -> Iterator[TopoDS_Vertex]:
+    wire_exp = WireExplorer(wire)
+    return wire_exp.ordered_vertices()
+
+
+def ordered_edges_from_wire(wire: TopoDS_Wire) -> Iterator[TopoDS_Edge]:
+    wire_exp = WireExplorer(wire)
+    return wire_exp.ordered_edges()
 
 
 class WireExplorer:
@@ -84,7 +99,7 @@ class WireExplorer:
     def _loop_topo(self, edges: Optional[bool] = True) -> Iterator[Any]:
         if self.done:
             self._reinitialize()
-        topology_type = topods_Edge if edges else topods_Vertex
+        topology_type = topods.Edge if edges else topods.Vertex
         seq = []
 
         while self.wire_explorer.More():
@@ -232,14 +247,8 @@ class TopologyExplorer:
         """
         return self._loop_topo(TopAbs_FACE)
 
-    def _number_of_topo(self, iterable: Iterable) -> int:
-        nbr_topo = 0
-        for _ in iterable:
-            nbr_topo += 1
-        return nbr_topo
-
     def number_of_faces(self) -> int:
-        return self._number_of_topo(self.faces())
+        return _number_of_topo(self.faces())
 
     def vertices(self) -> Iterator[TopoDS_Vertex]:
         """
@@ -248,7 +257,7 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_VERTEX)
 
     def number_of_vertices(self) -> int:
-        return self._number_of_topo(self.vertices())
+        return _number_of_topo(self.vertices())
 
     def edges(self) -> Iterator[TopoDS_Edge]:
         """
@@ -257,7 +266,7 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_EDGE)
 
     def number_of_edges(self) -> int:
-        return self._number_of_topo(self.edges())
+        return _number_of_topo(self.edges())
 
     def wires(self) -> Iterator[TopoDS_Wire]:
         """
@@ -266,7 +275,7 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_WIRE)
 
     def number_of_wires(self) -> int:
-        return self._number_of_topo(self.wires())
+        return _number_of_topo(self.wires())
 
     def shells(self) -> Iterator[TopoDS_Shell]:
         """
@@ -275,7 +284,7 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_SHELL, None)
 
     def number_of_shells(self) -> int:
-        return self._number_of_topo(self.shells())
+        return _number_of_topo(self.shells())
 
     def solids(self) -> Iterator[TopoDS_Solid]:
         """
@@ -284,7 +293,7 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_SOLID, None)
 
     def number_of_solids(self) -> int:
-        return self._number_of_topo(self.solids())
+        return _number_of_topo(self.solids())
 
     def comp_solids(self) -> Iterator[TopoDS_CompSolid]:
         """
@@ -293,7 +302,7 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_COMPSOLID)
 
     def number_of_comp_solids(self) -> int:
-        return self._number_of_topo(self.comp_solids())
+        return _number_of_topo(self.comp_solids())
 
     def compounds(self) -> Iterator[TopoDS_Compound]:
         """
@@ -302,27 +311,13 @@ class TopologyExplorer:
         return self._loop_topo(TopAbs_COMPOUND)
 
     def number_of_compounds(self) -> int:
-        return self._number_of_topo(self.compounds())
-
-    def ordered_vertices_from_wire(self, wire: TopoDS_Wire) -> Iterator[TopoDS_Vertex]:
-        """
-        @param wire: TopoDS_Wire
-        """
-        wire_exp = WireExplorer(wire)
-        return wire_exp.ordered_vertices()
+        return _number_of_topo(self.compounds())
 
     def number_of_ordered_vertices_from_wire(self, wire: TopoDS_Wire) -> int:
-        return self._number_of_topo(self.ordered_vertices_from_wire(wire))
-
-    def ordered_edges_from_wire(self, wire: TopoDS_Wire) -> Iterator[TopoDS_Edge]:
-        """
-        @param wire: TopoDS_Wire
-        """
-        wire_exp = WireExplorer(wire)
-        return wire_exp.ordered_edges()
+        return _number_of_topo(ordered_vertices_from_wire(wire))
 
     def number_of_ordered_edges_from_wire(self, wire: TopoDS_Wire) -> int:
-        return self._number_of_topo(self.ordered_edges_from_wire(wire))
+        return _number_of_topo(ordered_edges_from_wire(wire))
 
     def _map_shapes_and_ancestors(
         self, topology_type_1, topology_type_2, topological_entity
@@ -336,7 +331,7 @@ class TopologyExplorer:
         topo_set = set()
         topo_set_hash_codes = {}
         _map = TopTools_IndexedDataMapOfShapeListOfShape()
-        topexp_MapShapesAndAncestors(
+        topexp.MapShapesAndAncestors(
             self.my_shape, topology_type_1, topology_type_2, _map
         )
         results = _map.FindFromKey(topological_entity)
@@ -386,7 +381,7 @@ class TopologyExplorer:
         """
         topo_set = set()
         _map = TopTools_IndexedDataMapOfShapeListOfShape()
-        topexp_MapShapesAndAncestors(
+        topexp.MapShapesAndAncestors(
             self.my_shape, topology_type_1, topology_type_2, _map
         )
         results = _map.FindFromKey(topological_entity)
@@ -534,7 +529,7 @@ def dump_topology_to_string(
     brt = BRep_Tool()
     s = shape.ShapeType()
     if s == TopAbs_VERTEX:
-        pnt = brt.Pnt(topods_Vertex(shape))
+        pnt = brt.Pnt(topods.Vertex(shape))
         print(".." * level + f"<Vertex {hash(shape)}: {pnt.X()} {pnt.Y()} {pnt.Z()}>\n")
     else:
         print(".." * level, end="")
@@ -679,11 +674,20 @@ def get_type_as_string(topods_shape: TopoDS_Shape) -> str:
 
 def get_sorted_hlr_edges(
     topods_shape: TopoDS_Shape,
-    position: Optional[gp_Pnt] = gp_Pnt(),
-    direction: Optional[gp_Dir] = gp_Dir(),
+    position: Optional[gp_Pnt] = None,
+    direction: Optional[gp_Dir] = None,
     export_hidden_edges: Optional[bool] = True,
 ) -> Tuple[List, List]:
     """Return hidden and visible edges as two lists of edges"""
+    if position is None:
+        position = gp_Pnt()
+    if not isinstance(position, gp_Pnt):
+        raise TypeError("position must be a gp_Pnt")
+    if direction is None:
+        direction = gp_Dir()
+    if not isinstance(direction, gp_Dir):
+        raise TypeError("position must be a gp_Dir")
+
     hlr = HLRBRep_Algo()
     hlr.Add(topods_shape)
 

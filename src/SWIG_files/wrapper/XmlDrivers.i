@@ -237,13 +237,13 @@ class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDrive
 
 Parameters
 ----------
-theCopyright: TCollection_ExtendedString
+theCopyright: str
 
 Returns
 -------
 None
 ") XmlDrivers_DocumentStorageDriver;
-		 XmlDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
+		 XmlDrivers_DocumentStorageDriver(TCollection_ExtendedString theCopyright);
 
 		/****************** AttributeDrivers ******************/
 		/**** md5 signature: 8f96c34c95c7e9b565e8874b99e9133c ****/
@@ -294,4 +294,19 @@ bool
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def xmldrivers_AttributeDrivers(*args):
+	return xmldrivers.AttributeDrivers(*args)
+
+@deprecated
+def xmldrivers_DefineFormat(*args):
+	return xmldrivers.DefineFormat(*args)
+
+@deprecated
+def xmldrivers_Factory(*args):
+	return xmldrivers.Factory(*args)
+
 }

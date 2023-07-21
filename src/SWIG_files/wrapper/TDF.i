@@ -257,13 +257,13 @@ class TDF {
 Parameters
 ----------
 ID: Standard_GUID
-ProgID: TCollection_ExtendedString
+ProgID: str
 
 Returns
 -------
 None
 ") AddLinkGUIDToProgID;
-		static void AddLinkGUIDToProgID(const Standard_GUID & ID, const TCollection_ExtendedString & ProgID);
+		static void AddLinkGUIDToProgID(const Standard_GUID & ID, TCollection_ExtendedString ProgID);
 
 		/****************** GUIDFromProgID ******************/
 		/**** md5 signature: 1569c70b0eaddf0abaa25d243a344b0b ****/
@@ -272,14 +272,14 @@ None
 
 Parameters
 ----------
-ProgID: TCollection_ExtendedString
+ProgID: str
 ID: Standard_GUID
 
 Returns
 -------
 bool
 ") GUIDFromProgID;
-		static Standard_Boolean GUIDFromProgID(const TCollection_ExtendedString & ProgID, Standard_GUID & ID);
+		static Standard_Boolean GUIDFromProgID(TCollection_ExtendedString ProgID, Standard_GUID & ID);
 
 		/****************** LowestID ******************/
 		/**** md5 signature: 5ffb42eb955c726f6468aa77a30aa62f ****/
@@ -300,7 +300,7 @@ Standard_GUID
 Parameters
 ----------
 ID: Standard_GUID
-ProgID: TCollection_ExtendedString
+ProgID: str
 
 Returns
 -------
@@ -1752,14 +1752,14 @@ None
 
 Parameters
 ----------
-anEntry: TCollection_AsciiString
+anEntry: str
 aLabel: TDF_Label
 
 Returns
 -------
 bool
 ") GetLabel;
-		Standard_Boolean GetLabel(const TCollection_AsciiString & anEntry, TDF_Label & aLabel);
+		Standard_Boolean GetLabel(TCollection_AsciiString anEntry, TDF_Label & aLabel);
 
 		/****************** IsAccessByEntries ******************/
 		/**** md5 signature: e9c87e292dba49522735bc8b2f6391f2 ****/
@@ -2200,13 +2200,13 @@ TCollection_ExtendedString
 
 Parameters
 ----------
-theName: TCollection_ExtendedString
+theName: str
 
 Returns
 -------
 None
 ") SetName;
-		void SetName(const TCollection_ExtendedString & theName);
+		void SetName(TCollection_ExtendedString theName);
 
 };
 
@@ -3301,7 +3301,7 @@ None
 Parameters
 ----------
 aLabel: TDF_Label
-anEntry: TCollection_AsciiString
+anEntry: str
 
 Returns
 -------
@@ -3348,7 +3348,7 @@ bool
 Parameters
 ----------
 aDF: TDF_Data
-anEntry: TCollection_AsciiString
+anEntry: str
 aLabel: TDF_Label
 create: bool,optional
 	default value is Standard_False
@@ -3357,7 +3357,7 @@ Returns
 -------
 None
 ") Label;
-		static void Label(const opencascade::handle<TDF_Data> & aDF, const TCollection_AsciiString & anEntry, TDF_Label & aLabel, const Standard_Boolean create = Standard_False);
+		static void Label(const opencascade::handle<TDF_Data> & aDF, TCollection_AsciiString anEntry, TDF_Label & aLabel, const Standard_Boolean create = Standard_False);
 
 		/****************** Label ******************/
 		/**** md5 signature: 06e6f21799eb9ca00a6456b866227df2 ****/
@@ -3367,7 +3367,7 @@ None
 Parameters
 ----------
 aDF: TDF_Data
-anEntry: char *
+anEntry: str
 aLabel: TDF_Label
 create: bool,optional
 	default value is Standard_False
@@ -3376,7 +3376,7 @@ Returns
 -------
 None
 ") Label;
-		static void Label(const opencascade::handle<TDF_Data> & aDF, const char * anEntry, TDF_Label & aLabel, const Standard_Boolean create = Standard_False);
+		static void Label(const opencascade::handle<TDF_Data> & aDF, Standard_CString anEntry, TDF_Label & aLabel, const Standard_Boolean create = Standard_False);
 
 		/****************** Label ******************/
 		/**** md5 signature: 86d4f246c23ebec41b9cd05f0e7f6a0a ****/
@@ -3554,14 +3554,14 @@ None
 
 Parameters
 ----------
-anEntry: TCollection_AsciiString
+anEntry: str
 aTagList: TColStd_ListOfInteger
 
 Returns
 -------
 None
 ") TagList;
-		static void TagList(const TCollection_AsciiString & anEntry, TColStd_ListOfInteger & aTagList);
+		static void TagList(TCollection_AsciiString anEntry, TColStd_ListOfInteger & aTagList);
 
 };
 
@@ -3584,14 +3584,14 @@ class TDF_Transaction {
 
 Parameters
 ----------
-aName: TCollection_AsciiString,optional
+aName: str,optional
 	default value is ""
 
 Returns
 -------
 None
 ") TDF_Transaction;
-		 TDF_Transaction(const TCollection_AsciiString & aName = "");
+		 TDF_Transaction(TCollection_AsciiString aName = "");
 
 		/****************** TDF_Transaction ******************/
 		/**** md5 signature: 19cf46609d259426ac1948baa7d6a59d ****/
@@ -3601,14 +3601,14 @@ None
 Parameters
 ----------
 aDF: TDF_Data
-aName: TCollection_AsciiString,optional
+aName: str,optional
 	default value is ""
 
 Returns
 -------
 None
 ") TDF_Transaction;
-		 TDF_Transaction(const opencascade::handle<TDF_Data> & aDF, const TCollection_AsciiString & aName = "");
+		 TDF_Transaction(const opencascade::handle<TDF_Data> & aDF, TCollection_AsciiString aName = "");
 
 		/****************** Abort ******************/
 		/**** md5 signature: 1fff85d2b99366704df7b68c63810e9a ****/
@@ -4356,4 +4356,179 @@ class TDF_HAttributeArray1 : public TDF_AttributeArray1, public Standard_Transie
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def tdf_AddLinkGUIDToProgID(*args):
+	return tdf.AddLinkGUIDToProgID(*args)
+
+@deprecated
+def tdf_GUIDFromProgID(*args):
+	return tdf.GUIDFromProgID(*args)
+
+@deprecated
+def tdf_LowestID(*args):
+	return tdf.LowestID(*args)
+
+@deprecated
+def tdf_ProgIDFromGUID(*args):
+	return tdf.ProgIDFromGUID(*args)
+
+@deprecated
+def tdf_UppestID(*args):
+	return tdf.UppestID(*args)
+
+@deprecated
+def TDF_ClosureTool_Closure(*args):
+	return TDF_ClosureTool.Closure(*args)
+
+@deprecated
+def TDF_ClosureTool_Closure(*args):
+	return TDF_ClosureTool.Closure(*args)
+
+@deprecated
+def TDF_ClosureTool_Closure(*args):
+	return TDF_ClosureTool.Closure(*args)
+
+@deprecated
+def TDF_ComparisonTool_Compare(*args):
+	return TDF_ComparisonTool.Compare(*args)
+
+@deprecated
+def TDF_ComparisonTool_Cut(*args):
+	return TDF_ComparisonTool.Cut(*args)
+
+@deprecated
+def TDF_ComparisonTool_IsSelfContained(*args):
+	return TDF_ComparisonTool.IsSelfContained(*args)
+
+@deprecated
+def TDF_ComparisonTool_SourceUnbound(*args):
+	return TDF_ComparisonTool.SourceUnbound(*args)
+
+@deprecated
+def TDF_ComparisonTool_TargetUnbound(*args):
+	return TDF_ComparisonTool.TargetUnbound(*args)
+
+@deprecated
+def TDF_CopyLabel_ExternalReferences(*args):
+	return TDF_CopyLabel.ExternalReferences(*args)
+
+@deprecated
+def TDF_CopyLabel_ExternalReferences(*args):
+	return TDF_CopyLabel.ExternalReferences(*args)
+
+@deprecated
+def TDF_CopyTool_Copy(*args):
+	return TDF_CopyTool.Copy(*args)
+
+@deprecated
+def TDF_CopyTool_Copy(*args):
+	return TDF_CopyTool.Copy(*args)
+
+@deprecated
+def TDF_CopyTool_Copy(*args):
+	return TDF_CopyTool.Copy(*args)
+
+@deprecated
+def TDF_LabelMapHasher_HashCode(*args):
+	return TDF_LabelMapHasher.HashCode(*args)
+
+@deprecated
+def TDF_LabelMapHasher_IsEqual(*args):
+	return TDF_LabelMapHasher.IsEqual(*args)
+
+@deprecated
+def TDF_Tool_CountLabels(*args):
+	return TDF_Tool.CountLabels(*args)
+
+@deprecated
+def TDF_Tool_DeductLabels(*args):
+	return TDF_Tool.DeductLabels(*args)
+
+@deprecated
+def TDF_Tool_Entry(*args):
+	return TDF_Tool.Entry(*args)
+
+@deprecated
+def TDF_Tool_IsSelfContained(*args):
+	return TDF_Tool.IsSelfContained(*args)
+
+@deprecated
+def TDF_Tool_IsSelfContained(*args):
+	return TDF_Tool.IsSelfContained(*args)
+
+@deprecated
+def TDF_Tool_Label(*args):
+	return TDF_Tool.Label(*args)
+
+@deprecated
+def TDF_Tool_Label(*args):
+	return TDF_Tool.Label(*args)
+
+@deprecated
+def TDF_Tool_Label(*args):
+	return TDF_Tool.Label(*args)
+
+@deprecated
+def TDF_Tool_NbAttributes(*args):
+	return TDF_Tool.NbAttributes(*args)
+
+@deprecated
+def TDF_Tool_NbAttributes(*args):
+	return TDF_Tool.NbAttributes(*args)
+
+@deprecated
+def TDF_Tool_NbLabels(*args):
+	return TDF_Tool.NbLabels(*args)
+
+@deprecated
+def TDF_Tool_OutReferences(*args):
+	return TDF_Tool.OutReferences(*args)
+
+@deprecated
+def TDF_Tool_OutReferences(*args):
+	return TDF_Tool.OutReferences(*args)
+
+@deprecated
+def TDF_Tool_OutReferers(*args):
+	return TDF_Tool.OutReferers(*args)
+
+@deprecated
+def TDF_Tool_OutReferers(*args):
+	return TDF_Tool.OutReferers(*args)
+
+@deprecated
+def TDF_Tool_RelocateLabel(*args):
+	return TDF_Tool.RelocateLabel(*args)
+
+@deprecated
+def TDF_Tool_TagList(*args):
+	return TDF_Tool.TagList(*args)
+
+@deprecated
+def TDF_Tool_TagList(*args):
+	return TDF_Tool.TagList(*args)
+
+@deprecated
+def TDF_Reference_GetID(*args):
+	return TDF_Reference.GetID(*args)
+
+@deprecated
+def TDF_Reference_Set(*args):
+	return TDF_Reference.Set(*args)
+
+@deprecated
+def TDF_TagSource_GetID(*args):
+	return TDF_TagSource.GetID(*args)
+
+@deprecated
+def TDF_TagSource_NewChild(*args):
+	return TDF_TagSource.NewChild(*args)
+
+@deprecated
+def TDF_TagSource_Set(*args):
+	return TDF_TagSource.Set(*args)
+
 }

@@ -414,13 +414,13 @@ int
 Parameters
 ----------
 theLabel: TDF_Label
-theParentId: TCollection_AsciiString
+theParentId: str
 
 Returns
 -------
 TCollection_AsciiString
 ") DefineChildId;
-		static TCollection_AsciiString DefineChildId(const TDF_Label & theLabel, const TCollection_AsciiString & theParentId);
+		static TCollection_AsciiString DefineChildId(const TDF_Label & theLabel, TCollection_AsciiString theParentId);
 
 		/****************** FindLabelFromPathId ******************/
 		/**** md5 signature: 36bd799783495ac64d75996cfdfc41d5 ****/
@@ -430,7 +430,7 @@ TCollection_AsciiString
 Parameters
 ----------
 theDocument: TDocStd_Document
-theId: TCollection_AsciiString
+theId: str
 theParentLocation: TopLoc_Location
 theLocation: TopLoc_Location
 
@@ -438,7 +438,7 @@ Returns
 -------
 TDF_Label
 ") FindLabelFromPathId;
-		static TDF_Label FindLabelFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, const TCollection_AsciiString & theId, TopLoc_Location & theParentLocation, TopLoc_Location & theLocation);
+		static TDF_Label FindLabelFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, TCollection_AsciiString theId, TopLoc_Location & theParentLocation, TopLoc_Location & theLocation);
 
 		/****************** FindLabelFromPathId ******************/
 		/**** md5 signature: c5c736078028775b674842dc6f73fef0 ****/
@@ -448,14 +448,14 @@ TDF_Label
 Parameters
 ----------
 theDocument: TDocStd_Document
-theId: TCollection_AsciiString
+theId: str
 theLocation: TopLoc_Location
 
 Returns
 -------
 TDF_Label
 ") FindLabelFromPathId;
-		static TDF_Label FindLabelFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, const TCollection_AsciiString & theId, TopLoc_Location & theLocation);
+		static TDF_Label FindLabelFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, TCollection_AsciiString theId, TopLoc_Location & theLocation);
 
 		/****************** FindShapeFromPathId ******************/
 		/**** md5 signature: fd58ff02219632fc8856de9d76e8dfa9 ****/
@@ -465,13 +465,13 @@ TDF_Label
 Parameters
 ----------
 theDocument: TDocStd_Document
-theId: TCollection_AsciiString
+theId: str
 
 Returns
 -------
 TopoDS_Shape
 ") FindShapeFromPathId;
-		static TopoDS_Shape FindShapeFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, const TCollection_AsciiString & theId);
+		static TopoDS_Shape FindShapeFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, TCollection_AsciiString theId);
 
 		/****************** Init ******************/
 		/**** md5 signature: eec1c7e6d6c080cb010b849abf99e398 ****/
@@ -565,13 +565,13 @@ class XCAFPrs_DocumentIdIterator {
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 
 Returns
 -------
 None
 ") XCAFPrs_DocumentIdIterator;
-		 XCAFPrs_DocumentIdIterator(const TCollection_AsciiString & thePath);
+		 XCAFPrs_DocumentIdIterator(TCollection_AsciiString thePath);
 
 		/****************** More ******************/
 		/**** md5 signature: 0a7b505ff53e438121f2c208f8ae7ce8 ****/
@@ -1019,7 +1019,7 @@ None
 class XCAFPrs_Texture : public Graphic3d_Texture2D {
 	public:
 		/****************** XCAFPrs_Texture ******************/
-		/**** md5 signature: f9dbe9d0fe880b67c047fad8716af896 ****/
+		/**** md5 signature: 000bd876aad38ca74535015d5e9463d7 ****/
 		%feature("compactdefaultargs") XCAFPrs_Texture;
 		%feature("autodoc", "Constructor.
 
@@ -1032,7 +1032,7 @@ Returns
 -------
 None
 ") XCAFPrs_Texture;
-		 XCAFPrs_Texture(const Image_Texture & theImageSource, const Graphic3d_TextureUnit theUnit);
+		 XCAFPrs_Texture(const opencascade::handle<Image_Texture> & theImageSource, const Graphic3d_TextureUnit theUnit);
 
 		/****************** GetCompressedImage ******************/
 		/**** md5 signature: bad0c95151f5a884e9dbc72217977538 ****/
@@ -1065,15 +1065,15 @@ opencascade::handle<Image_PixMap>
 		virtual opencascade::handle<Image_PixMap> GetImage(const opencascade::handle<Image_SupportedFormats> & theSupported);
 
 		/****************** GetImageSource ******************/
-		/**** md5 signature: 1fa59174d8d0d408df072137f5b3fe0e ****/
+		/**** md5 signature: c24f99a1f3e5bf7521b240aa232d6d28 ****/
 		%feature("compactdefaultargs") GetImageSource;
 		%feature("autodoc", "Return image source.
 
 Returns
 -------
-Image_Texture
+opencascade::handle<Image_Texture>
 ") GetImageSource;
-		const Image_Texture & GetImageSource();
+		const opencascade::handle<Image_Texture> & GetImageSource();
 
 };
 
@@ -1091,4 +1091,55 @@ Image_Texture
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def xcafprs_CollectStyleSettings(*args):
+	return xcafprs.CollectStyleSettings(*args)
+
+@deprecated
+def xcafprs_GetViewNameMode(*args):
+	return xcafprs.GetViewNameMode(*args)
+
+@deprecated
+def xcafprs_SetViewNameMode(*args):
+	return xcafprs.SetViewNameMode(*args)
+
+@deprecated
+def XCAFPrs_DocumentExplorer_DefineChildId(*args):
+	return XCAFPrs_DocumentExplorer.DefineChildId(*args)
+
+@deprecated
+def XCAFPrs_DocumentExplorer_FindLabelFromPathId(*args):
+	return XCAFPrs_DocumentExplorer.FindLabelFromPathId(*args)
+
+@deprecated
+def XCAFPrs_DocumentExplorer_FindLabelFromPathId(*args):
+	return XCAFPrs_DocumentExplorer.FindLabelFromPathId(*args)
+
+@deprecated
+def XCAFPrs_DocumentExplorer_FindShapeFromPathId(*args):
+	return XCAFPrs_DocumentExplorer.FindShapeFromPathId(*args)
+
+@deprecated
+def XCAFPrs_DocumentNode_HashCode(*args):
+	return XCAFPrs_DocumentNode.HashCode(*args)
+
+@deprecated
+def XCAFPrs_DocumentNode_IsEqual(*args):
+	return XCAFPrs_DocumentNode.IsEqual(*args)
+
+@deprecated
+def XCAFPrs_Driver_GetID(*args):
+	return XCAFPrs_Driver.GetID(*args)
+
+@deprecated
+def XCAFPrs_Style_HashCode(*args):
+	return XCAFPrs_Style.HashCode(*args)
+
+@deprecated
+def XCAFPrs_Style_IsEqual(*args):
+	return XCAFPrs_Style.IsEqual(*args)
+
 }

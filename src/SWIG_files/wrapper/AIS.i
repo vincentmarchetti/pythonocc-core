@@ -577,8 +577,8 @@ AIS_TOPL_YZPlane = AIS_TypeOfPlane.AIS_TOPL_YZPlane
 %wrap_handle(AIS_TrihedronOwner)
 %wrap_handle(AIS_TypeFilter)
 %wrap_handle(AIS_AnimationCamera)
-%wrap_handle(AIS_AnimationObject)
 %wrap_handle(AIS_Axis)
+%wrap_handle(AIS_BaseAnimationObject)
 %wrap_handle(AIS_Circle)
 %wrap_handle(AIS_ColorScale)
 %wrap_handle(AIS_ConnectedInteractive)
@@ -595,6 +595,8 @@ AIS_TOPL_YZPlane = AIS_TypeOfPlane.AIS_TOPL_YZPlane
 %wrap_handle(AIS_TextLabel)
 %wrap_handle(AIS_Triangulation)
 %wrap_handle(AIS_Trihedron)
+%wrap_handle(AIS_AnimationAxisRotation)
+%wrap_handle(AIS_AnimationObject)
 %wrap_handle(AIS_ColoredShape)
 %wrap_handle(AIS_TexturedShape)
 /* end handles declaration */
@@ -699,13 +701,13 @@ class AIS_Animation : public Standard_Transient {
 
 Parameters
 ----------
-theAnimationName: TCollection_AsciiString
+theAnimationName: str
 
 Returns
 -------
 None
 ") AIS_Animation;
-		 AIS_Animation(const TCollection_AsciiString & theAnimationName);
+		 AIS_Animation(TCollection_AsciiString theAnimationName);
 
 		/****************** Add ******************/
 		/**** md5 signature: b7202ad1c8c688e6eb7fda91d2734c8a ****/
@@ -788,13 +790,13 @@ float
 
 Parameters
 ----------
-theAnimationName: TCollection_AsciiString
+theAnimationName: str
 
 Returns
 -------
 opencascade::handle<AIS_Animation>
 ") Find;
-		opencascade::handle<AIS_Animation> Find(const TCollection_AsciiString & theAnimationName);
+		opencascade::handle<AIS_Animation> Find(TCollection_AsciiString theAnimationName);
 
 		/****************** HasOwnDuration ******************/
 		/**** md5 signature: d56fdc215ecd1f278eef79952f8de61f ****/
@@ -3970,14 +3972,14 @@ YSize: float
 Parameters
 ----------
 anObj: AIS_InteractiveObject
-aFactor: Standard_ShortReal
-aUnits: Standard_ShortReal
 
 Returns
 -------
 aMode: int
+aFactor: float
+aUnits: float
 ") PolygonOffsets;
-		void PolygonOffsets(const opencascade::handle<AIS_InteractiveObject> & anObj, Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits);
+		void PolygonOffsets(const opencascade::handle<AIS_InteractiveObject> & anObj, Standard_Integer &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** RebuildSelectionStructs ******************/
 		/**** md5 signature: fc018c2ec4a8be467c479b724e4da811 ****/
@@ -4792,8 +4794,8 @@ Parameters
 ----------
 theIObj: AIS_InteractiveObject
 theMode: int
-theFactor: Standard_ShortReal
-theUnits: Standard_ShortReal
+theFactor: float
+theUnits: float
 theToUpdateViewer: bool
 
 Returns
@@ -8434,14 +8436,14 @@ class AIS_AnimationCamera : public AIS_Animation {
 
 Parameters
 ----------
-theAnimationName: TCollection_AsciiString
+theAnimationName: str
 theView: V3d_View
 
 Returns
 -------
 None
 ") AIS_AnimationCamera;
-		 AIS_AnimationCamera(const TCollection_AsciiString & theAnimationName, const opencascade::handle<V3d_View> & theView);
+		 AIS_AnimationCamera(TCollection_AsciiString theAnimationName, const opencascade::handle<V3d_View> & theView);
 
 		/****************** CameraEnd ******************/
 		/**** md5 signature: b01b09ea2b055e00cd1afbc9547d1944 ****/
@@ -8527,41 +8529,6 @@ opencascade::handle<V3d_View>
 %make_alias(AIS_AnimationCamera)
 
 %extend AIS_AnimationCamera {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/****************************
-* class AIS_AnimationObject *
-****************************/
-class AIS_AnimationObject : public AIS_Animation {
-	public:
-		/****************** AIS_AnimationObject ******************/
-		/**** md5 signature: c16e60828b420c37f86bd653dd4d9c04 ****/
-		%feature("compactdefaultargs") AIS_AnimationObject;
-		%feature("autodoc", "Constructor with initialization. note that start/end transformations specify exactly local transformation of the object, not the transformation to be applied to existing local transformation. @param theanimationname animation identifier @param thecontext interactive context where object have been displayed @param theobject object to apply local transformation @param thetrsfstart local transformation at the start of animation (e.g. theobject->localtransformation()) @param thetrsfend local transformation at the end of animation.
-
-Parameters
-----------
-theAnimationName: TCollection_AsciiString
-theContext: AIS_InteractiveContext
-theObject: AIS_InteractiveObject
-theTrsfStart: gp_Trsf
-theTrsfEnd: gp_Trsf
-
-Returns
--------
-None
-") AIS_AnimationObject;
-		 AIS_AnimationObject(const TCollection_AsciiString & theAnimationName, const opencascade::handle<AIS_InteractiveContext> & theContext, const opencascade::handle<AIS_InteractiveObject> & theObject, const gp_Trsf & theTrsfStart, const gp_Trsf & theTrsfEnd);
-
-};
-
-
-%make_alias(AIS_AnimationObject)
-
-%extend AIS_AnimationObject {
 	%pythoncode {
 	__repr__ = _dumps_object
 	}
@@ -8850,6 +8817,23 @@ None
 %make_alias(AIS_Axis)
 
 %extend AIS_Axis {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/********************************
+* class AIS_BaseAnimationObject *
+********************************/
+%nodefaultctor AIS_BaseAnimationObject;
+class AIS_BaseAnimationObject : public AIS_Animation {
+	public:
+};
+
+
+%make_alias(AIS_BaseAnimationObject)
+
+%extend AIS_BaseAnimationObject {
 	%pythoncode {
 	__repr__ = _dumps_object
 	}
@@ -9782,13 +9766,13 @@ None
 
 Parameters
 ----------
-theFormat: TCollection_AsciiString
+theFormat: str
 
 Returns
 -------
 None
 ") SetFormat;
-		void SetFormat(const TCollection_AsciiString & theFormat);
+		void SetFormat(TCollection_AsciiString theFormat);
 
 		/****************** SetHeight ******************/
 		/**** md5 signature: e32aa97606dad72235a0a6b4a7c46ba6 ****/
@@ -9844,14 +9828,14 @@ None
 
 Parameters
 ----------
-theLabel: TCollection_ExtendedString
+theLabel: str
 theIndex: int
 
 Returns
 -------
 None
 ") SetLabel;
-		void SetLabel(const TCollection_ExtendedString & theLabel, const Standard_Integer theIndex);
+		void SetLabel(TCollection_ExtendedString theLabel, const Standard_Integer theIndex);
 
 		/****************** SetLabelAtBorder ******************/
 		/**** md5 signature: 2e74089f2855b82e157ab10779d34d9a ****/
@@ -10073,13 +10057,13 @@ None
 
 Parameters
 ----------
-theTitle: TCollection_ExtendedString
+theTitle: str
 
 Returns
 -------
 None
 ") SetTitle;
-		void SetTitle(const TCollection_ExtendedString & theTitle);
+		void SetTitle(TCollection_ExtendedString theTitle);
 
 		/****************** SetTitlePosition ******************/
 		/**** md5 signature: ffb68e1026952762986ee0e118b51626 ****/
@@ -10150,13 +10134,13 @@ None
 
 Parameters
 ----------
-theText: TCollection_ExtendedString
+theText: str
 
 Returns
 -------
 int
 ") TextHeight;
-		Standard_Integer TextHeight(const TCollection_ExtendedString & theText);
+		Standard_Integer TextHeight(TCollection_ExtendedString theText);
 
 		/****************** TextSize ******************/
 		/**** md5 signature: df57c5cfbbb6f8f9a5d75ce1943f61ab ****/
@@ -10165,7 +10149,7 @@ int
 
 Parameters
 ----------
-theText: TCollection_ExtendedString
+theText: str
 theHeight: int
 
 Returns
@@ -10174,7 +10158,7 @@ theWidth: int
 theAscent: int
 theDescent: int
 ") TextSize;
-		void TextSize(const TCollection_ExtendedString & theText, const Standard_Integer theHeight, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		void TextSize(TCollection_ExtendedString theText, const Standard_Integer theHeight, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** TextWidth ******************/
 		/**** md5 signature: ef6e59d61da317f2087b0778bbc36b23 ****/
@@ -10183,13 +10167,13 @@ theDescent: int
 
 Parameters
 ----------
-theText: TCollection_ExtendedString
+theText: str
 
 Returns
 -------
 int
 ") TextWidth;
-		Standard_Integer TextWidth(const TCollection_ExtendedString & theText);
+		Standard_Integer TextWidth(TCollection_ExtendedString theText);
 
 		/****************** hueToValidRange ******************/
 		/**** md5 signature: f60f245014fce41540c5cd6f560cd4ad ****/
@@ -11291,7 +11275,7 @@ bool
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -11369,7 +11353,7 @@ None
 
 Parameters
 ----------
-theSideLength: Standard_ShortReal
+theSideLength: float
 
 Returns
 -------
@@ -11414,7 +11398,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Size;
 		Standard_ShortReal Size();
 
@@ -11577,14 +11561,14 @@ double
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theToWait: bool
 
 Returns
 -------
 None
 ") OpenInput;
-		void OpenInput(const TCollection_AsciiString & thePath, Standard_Boolean theToWait);
+		void OpenInput(TCollection_AsciiString thePath, Standard_Boolean theToWait);
 
 		/****************** PlayPause ******************/
 		/**** md5 signature: 811ffa83708da2acdc8d22e930c8cece ****/
@@ -12456,13 +12440,13 @@ None
 
 Parameters
 ----------
-theLabel: TCollection_AsciiString
+theLabel: str
 
 Returns
 -------
 None
 ") SetXLabel;
-		void SetXLabel(const TCollection_AsciiString & theLabel);
+		void SetXLabel(TCollection_AsciiString theLabel);
 
 		/****************** SetYLabel ******************/
 		/**** md5 signature: 8fe68a257c14798d817c0a27a82042b8 ****/
@@ -12471,13 +12455,13 @@ None
 
 Parameters
 ----------
-theLabel: TCollection_AsciiString
+theLabel: str
 
 Returns
 -------
 None
 ") SetYLabel;
-		void SetYLabel(const TCollection_AsciiString & theLabel);
+		void SetYLabel(TCollection_AsciiString theLabel);
 
 		/****************** Signature ******************/
 		/**** md5 signature: 4e037e01ba764fd5d5261e3d9ba6557d ****/
@@ -13982,13 +13966,13 @@ None
 
 Parameters
 ----------
-theFont: char *
+theFont: str
 
 Returns
 -------
 None
 ") SetFont;
-		void SetFont(const char * theFont);
+		void SetFont(Standard_CString theFont);
 
 		/****************** SetFontAspect ******************/
 		/**** md5 signature: 5c2494c796ae98d97b009a2fec1f0d8d ****/
@@ -14102,13 +14086,13 @@ None
 
 Parameters
 ----------
-theText: TCollection_ExtendedString
+theText: str
 
 Returns
 -------
 None
 ") SetText;
-		void SetText(const TCollection_ExtendedString & theText);
+		void SetText(TCollection_ExtendedString theText);
 
 		/****************** SetTextFormatter ******************/
 		/**** md5 signature: 69d92dbd5b2f2ec93859c8dcc0b4f585 ****/
@@ -14666,13 +14650,13 @@ None
 Parameters
 ----------
 thePart: Prs3d_DatumParts
-theName: TCollection_ExtendedString
+theName: str
 
 Returns
 -------
 None
 ") SetLabel;
-		void SetLabel(const Prs3d_DatumParts thePart, const TCollection_ExtendedString & theName);
+		void SetLabel(const Prs3d_DatumParts thePart, TCollection_ExtendedString theName);
 
 		/****************** SetOriginColor ******************/
 		/**** md5 signature: 1017d076464e72d0a5e64feb3baf458f ****/
@@ -15370,15 +15354,15 @@ None
 
 Parameters
 ----------
-theX: TCollection_AsciiString
-theY: TCollection_AsciiString
-theZ: TCollection_AsciiString
+theX: str
+theY: str
+theZ: str
 
 Returns
 -------
 None
 ") SetAxesLabels;
-		void SetAxesLabels(const TCollection_AsciiString & theX, const TCollection_AsciiString & theY, const TCollection_AsciiString & theZ);
+		void SetAxesLabels(TCollection_AsciiString theX, TCollection_AsciiString theY, TCollection_AsciiString theZ);
 
 		/****************** SetAxesPadding ******************/
 		/**** md5 signature: bda467829db54201ecc24927f31793c3 ****/
@@ -15508,13 +15492,13 @@ None
 Parameters
 ----------
 theSide: V3d_TypeOfOrientation
-theLabel: TCollection_AsciiString
+theLabel: str
 
 Returns
 -------
 None
 ") SetBoxSideLabel;
-		void SetBoxSideLabel(const V3d_TypeOfOrientation theSide, const TCollection_AsciiString & theLabel);
+		void SetBoxSideLabel(const V3d_TypeOfOrientation theSide, TCollection_AsciiString theLabel);
 
 		/****************** SetBoxTransparency ******************/
 		/**** md5 signature: 7b1db2c489dae836412f459804ab26de ****/
@@ -15643,13 +15627,13 @@ None
 
 Parameters
 ----------
-theFont: TCollection_AsciiString
+theFont: str
 
 Returns
 -------
 None
 ") SetFont;
-		void SetFont(const TCollection_AsciiString & theFont);
+		void SetFont(TCollection_AsciiString theFont);
 
 		/****************** SetFontHeight ******************/
 		/**** md5 signature: 88c3666178019f6b9e8629cb7bd9166f ****/
@@ -16048,7 +16032,7 @@ Quantity_Color
 
 Returns
 -------
-Standard_ShortReal
+float
 ") LaserLength;
 		Standard_ShortReal LaserLength();
 
@@ -16085,7 +16069,7 @@ None
 
 Parameters
 ----------
-theLength: Standard_ShortReal
+theLength: float
 
 Returns
 -------
@@ -16115,7 +16099,7 @@ None
 
 Parameters
 ----------
-theFactor: Standard_ShortReal
+theFactor: float
 
 Returns
 -------
@@ -16130,7 +16114,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") UnitFactor;
 		Standard_ShortReal UnitFactor();
 
@@ -16138,6 +16122,77 @@ Standard_ShortReal
 
 
 %extend AIS_XRTrackedDevice {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/**********************************
+* class AIS_AnimationAxisRotation *
+**********************************/
+class AIS_AnimationAxisRotation : public AIS_BaseAnimationObject {
+	public:
+		/****************** AIS_AnimationAxisRotation ******************/
+		/**** md5 signature: 819427e2c422233cc067da4633992952 ****/
+		%feature("compactdefaultargs") AIS_AnimationAxisRotation;
+		%feature("autodoc", "Constructor with initialization. @param[in] theanimationname animation identifier @param[in] thecontext interactive context where object have been displayed @param[in] theobject object to apply rotation @param[in] theaxis rotation axis @param[in] theanglestart rotation angle at the start of animation @param[in] theangleend rotation angle at the end of animation.
+
+Parameters
+----------
+theAnimationName: str
+theContext: AIS_InteractiveContext
+theObject: AIS_InteractiveObject
+theAxis: gp_Ax1
+theAngleStart: float
+theAngleEnd: float
+
+Returns
+-------
+None
+") AIS_AnimationAxisRotation;
+		 AIS_AnimationAxisRotation(TCollection_AsciiString theAnimationName, const opencascade::handle<AIS_InteractiveContext> & theContext, const opencascade::handle<AIS_InteractiveObject> & theObject, const gp_Ax1 & theAxis, const Standard_Real theAngleStart, const Standard_Real theAngleEnd);
+
+};
+
+
+%make_alias(AIS_AnimationAxisRotation)
+
+%extend AIS_AnimationAxisRotation {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/****************************
+* class AIS_AnimationObject *
+****************************/
+class AIS_AnimationObject : public AIS_BaseAnimationObject {
+	public:
+		/****************** AIS_AnimationObject ******************/
+		/**** md5 signature: c16e60828b420c37f86bd653dd4d9c04 ****/
+		%feature("compactdefaultargs") AIS_AnimationObject;
+		%feature("autodoc", "Constructor with initialization. note that start/end transformations specify exactly local transformation of the object, not the transformation to be applied to existing local transformation. @param[in] theanimationname animation identifier @param[in] thecontext interactive context where object have been displayed @param[in] theobject object to apply local transformation @param[in] thetrsfstart local transformation at the start of animation (e.g. theobject->localtransformation()) @param[in] thetrsfend local transformation at the end of animation.
+
+Parameters
+----------
+theAnimationName: str
+theContext: AIS_InteractiveContext
+theObject: AIS_InteractiveObject
+theTrsfStart: gp_Trsf
+theTrsfEnd: gp_Trsf
+
+Returns
+-------
+None
+") AIS_AnimationObject;
+		 AIS_AnimationObject(TCollection_AsciiString theAnimationName, const opencascade::handle<AIS_InteractiveContext> & theContext, const opencascade::handle<AIS_InteractiveObject> & theObject, const gp_Trsf & theTrsfStart, const gp_Trsf & theTrsfEnd);
+
+};
+
+
+%make_alias(AIS_AnimationObject)
+
+%extend AIS_AnimationObject {
 	%pythoncode {
 	__repr__ = _dumps_object
 	}
@@ -16478,13 +16533,13 @@ None
 
 Parameters
 ----------
-theTextureFileName: TCollection_AsciiString
+theTextureFileName: str
 
 Returns
 -------
 None
 ") SetTextureFileName;
-		virtual void SetTextureFileName(const TCollection_AsciiString & theTextureFileName);
+		virtual void SetTextureFileName(TCollection_AsciiString theTextureFileName);
 
 		/****************** SetTextureMapOff ******************/
 		/**** md5 signature: 63364859b184736648b21d705a82db43 ****/
@@ -16587,9 +16642,9 @@ None
 
 Returns
 -------
-char *
+str
 ") TextureFile;
-		const char * TextureFile();
+		Standard_CString TextureFile();
 
 		/****************** TextureMapState ******************/
 		/**** md5 signature: 383404f1553dcde6191be859120a79f5 ****/
@@ -16778,4 +16833,79 @@ float
 %pythoncode {
 AIS_AnimationTimer=OCC.Core.Media.Media_Timer
 AIS_DisplayStatus=OCC.Core.PrsMgr.PrsMgr_DisplayStatus
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def AIS_GraphicTool_GetInteriorColor(*args):
+	return AIS_GraphicTool.GetInteriorColor(*args)
+
+@deprecated
+def AIS_GraphicTool_GetInteriorColor(*args):
+	return AIS_GraphicTool.GetInteriorColor(*args)
+
+@deprecated
+def AIS_GraphicTool_GetLineAtt(*args):
+	return AIS_GraphicTool.GetLineAtt(*args)
+
+@deprecated
+def AIS_GraphicTool_GetLineColor(*args):
+	return AIS_GraphicTool.GetLineColor(*args)
+
+@deprecated
+def AIS_GraphicTool_GetLineColor(*args):
+	return AIS_GraphicTool.GetLineColor(*args)
+
+@deprecated
+def AIS_GraphicTool_GetLineType(*args):
+	return AIS_GraphicTool.GetLineType(*args)
+
+@deprecated
+def AIS_GraphicTool_GetLineWidth(*args):
+	return AIS_GraphicTool.GetLineWidth(*args)
+
+@deprecated
+def AIS_GraphicTool_GetMaterial(*args):
+	return AIS_GraphicTool.GetMaterial(*args)
+
+@deprecated
+def AIS_ColorScale_FindColor(*args):
+	return AIS_ColorScale.FindColor(*args)
+
+@deprecated
+def AIS_ColorScale_FindColor(*args):
+	return AIS_ColorScale.FindColor(*args)
+
+@deprecated
+def AIS_ColorScale_MakeUniformColors(*args):
+	return AIS_ColorScale.MakeUniformColors(*args)
+
+@deprecated
+def AIS_ColorScale_hueToValidRange(*args):
+	return AIS_ColorScale.hueToValidRange(*args)
+
+@deprecated
+def AIS_Shape_SelectionMode(*args):
+	return AIS_Shape.SelectionMode(*args)
+
+@deprecated
+def AIS_Shape_SelectionType(*args):
+	return AIS_Shape.SelectionType(*args)
+
+@deprecated
+def AIS_Shape_computeHlrPresentation(*args):
+	return AIS_Shape.computeHlrPresentation(*args)
+
+@deprecated
+def AIS_ViewCube_IsBoxCorner(*args):
+	return AIS_ViewCube.IsBoxCorner(*args)
+
+@deprecated
+def AIS_ViewCube_IsBoxEdge(*args):
+	return AIS_ViewCube.IsBoxEdge(*args)
+
+@deprecated
+def AIS_ViewCube_IsBoxSide(*args):
+	return AIS_ViewCube.IsBoxSide(*args)
+
 }

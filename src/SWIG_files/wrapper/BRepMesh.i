@@ -938,13 +938,13 @@ opencascade::handle<BRepMesh_VertexTool>
 
 Parameters
 ----------
-theFileNameStr: char *
+theFileNameStr: str
 
 Returns
 -------
 None
 ") Dump;
-		void Dump(const char * theFileNameStr);
+		void Dump(Standard_CString theFileNameStr);
 
 		/****************** ElementNodes ******************/
 		/**** md5 signature: 5db4f2cf5cd97ae13ac71bb7f7bf46de ****/
@@ -1767,15 +1767,15 @@ TColStd_MapOfAsciiString
 
 Parameters
 ----------
-theName: TCollection_AsciiString
-theFuncName: TCollection_AsciiString,optional
+theName: str
+theFuncName: str,optional
 	default value is 'DISCRETALGO'
 
 Returns
 -------
 bool
 ") SetDefault;
-		Standard_Boolean SetDefault(const TCollection_AsciiString & theName, const TCollection_AsciiString & theFuncName = "DISCRETALGO");
+		Standard_Boolean SetDefault(TCollection_AsciiString theName, TCollection_AsciiString theFuncName = "DISCRETALGO");
 
 		/****************** SetDefaultName ******************/
 		/**** md5 signature: 93c5c55f8eba457c231a268a0ebe4017 ****/
@@ -1784,13 +1784,13 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 bool
 ") SetDefaultName;
-		Standard_Boolean SetDefaultName(const TCollection_AsciiString & theName);
+		Standard_Boolean SetDefaultName(TCollection_AsciiString theName);
 
 		/****************** SetFunctionName ******************/
 		/**** md5 signature: 7082400624fff321b966b58b2455fbbd ****/
@@ -1799,13 +1799,13 @@ bool
 
 Parameters
 ----------
-theFuncName: TCollection_AsciiString
+theFuncName: str
 
 Returns
 -------
 bool
 ") SetFunctionName;
-		Standard_Boolean SetFunctionName(const TCollection_AsciiString & theFuncName);
+		Standard_Boolean SetFunctionName(TCollection_AsciiString theFuncName);
 
 };
 
@@ -4739,4 +4739,143 @@ class BRepMesh_DelaunayNodeInsertionMeshAlgo:
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def BRepMesh_CircleInspector_IsEqual(*args):
+	return BRepMesh_CircleInspector.IsEqual(*args)
+
+@deprecated
+def BRepMesh_CircleTool_MakeCircle(*args):
+	return BRepMesh_CircleTool.MakeCircle(*args)
+
+@deprecated
+def BRepMesh_Deflection_ComputeAbsoluteDeflection(*args):
+	return BRepMesh_Deflection.ComputeAbsoluteDeflection(*args)
+
+@deprecated
+def BRepMesh_Deflection_ComputeDeflection(*args):
+	return BRepMesh_Deflection.ComputeDeflection(*args)
+
+@deprecated
+def BRepMesh_Deflection_ComputeDeflection(*args):
+	return BRepMesh_Deflection.ComputeDeflection(*args)
+
+@deprecated
+def BRepMesh_Deflection_ComputeDeflection(*args):
+	return BRepMesh_Deflection.ComputeDeflection(*args)
+
+@deprecated
+def BRepMesh_Deflection_IsConsistent(*args):
+	return BRepMesh_Deflection.IsConsistent(*args)
+
+@deprecated
+def BRepMesh_DiscretFactory_Get(*args):
+	return BRepMesh_DiscretFactory.Get(*args)
+
+@deprecated
+def BRepMesh_EdgeDiscret_CreateEdgeTessellationExtractor(*args):
+	return BRepMesh_EdgeDiscret.CreateEdgeTessellationExtractor(*args)
+
+@deprecated
+def BRepMesh_EdgeDiscret_CreateEdgeTessellator(*args):
+	return BRepMesh_EdgeDiscret.CreateEdgeTessellator(*args)
+
+@deprecated
+def BRepMesh_EdgeDiscret_CreateEdgeTessellator(*args):
+	return BRepMesh_EdgeDiscret.CreateEdgeTessellator(*args)
+
+@deprecated
+def BRepMesh_EdgeDiscret_Tessellate2d(*args):
+	return BRepMesh_EdgeDiscret.Tessellate2d(*args)
+
+@deprecated
+def BRepMesh_EdgeDiscret_Tessellate3d(*args):
+	return BRepMesh_EdgeDiscret.Tessellate3d(*args)
+
+@deprecated
+def BRepMesh_GeomTool_CellsCount(*args):
+	return BRepMesh_GeomTool.CellsCount(*args)
+
+@deprecated
+def BRepMesh_GeomTool_SquareDeflectionOfSegment(*args):
+	return BRepMesh_GeomTool.SquareDeflectionOfSegment(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_AddInFace(*args):
+	return BRepMesh_ShapeTool.AddInFace(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_BoxMaxDimension(*args):
+	return BRepMesh_ShapeTool.BoxMaxDimension(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_CheckAndUpdateFlags(*args):
+	return BRepMesh_ShapeTool.CheckAndUpdateFlags(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_MaxFaceTolerance(*args):
+	return BRepMesh_ShapeTool.MaxFaceTolerance(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_NullifyEdge(*args):
+	return BRepMesh_ShapeTool.NullifyEdge(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_NullifyEdge(*args):
+	return BRepMesh_ShapeTool.NullifyEdge(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_NullifyFace(*args):
+	return BRepMesh_ShapeTool.NullifyFace(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_Range(*args):
+	return BRepMesh_ShapeTool.Range(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_Range(*args):
+	return BRepMesh_ShapeTool.Range(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_UVPoints(*args):
+	return BRepMesh_ShapeTool.UVPoints(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_UpdateEdge(*args):
+	return BRepMesh_ShapeTool.UpdateEdge(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_UpdateEdge(*args):
+	return BRepMesh_ShapeTool.UpdateEdge(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_UpdateEdge(*args):
+	return BRepMesh_ShapeTool.UpdateEdge(*args)
+
+@deprecated
+def BRepMesh_ShapeTool_UseLocation(*args):
+	return BRepMesh_ShapeTool.UseLocation(*args)
+
+@deprecated
+def BRepMesh_Triangulator_ToPolyTriangulation(*args):
+	return BRepMesh_Triangulator.ToPolyTriangulation(*args)
+
+@deprecated
+def BRepMesh_VertexInspector_IsEqual(*args):
+	return BRepMesh_VertexInspector.IsEqual(*args)
+
+@deprecated
+def BRepMesh_IncrementalMesh_Discret(*args):
+	return BRepMesh_IncrementalMesh.Discret(*args)
+
+@deprecated
+def BRepMesh_IncrementalMesh_IsParallelDefault(*args):
+	return BRepMesh_IncrementalMesh.IsParallelDefault(*args)
+
+@deprecated
+def BRepMesh_IncrementalMesh_SetParallelDefault(*args):
+	return BRepMesh_IncrementalMesh.SetParallelDefault(*args)
+
 }

@@ -116,7 +116,7 @@ class breptools:
     @staticmethod
     def Write(theShape: TopoDS_Shape, theFile: str, theWithTriangles: bool, theWithNormals: bool, theVersion: TopTools_FormatVersion, theProgress: Optional[Message_ProgressRange] = Message_ProgressRange()) -> bool: ...
     @staticmethod
-    def WriteToString(Sh: TopoDS_Shape) -> str: ...
+    def WriteToString(sh: TopoDS_Shape) -> str: ...
     @staticmethod
     def ReadFromString(s: str) -> TopoDS_Shape: ...
 
@@ -294,48 +294,3 @@ class BRepTools_NurbsConvertModification(BRepTools_CopyModification):
 # harray2 classes
 # hsequence classes
 
-breptools_ActivateTriangulation = breptools.ActivateTriangulation
-breptools_AddUVBounds = breptools.AddUVBounds
-breptools_AddUVBounds = breptools.AddUVBounds
-breptools_AddUVBounds = breptools.AddUVBounds
-breptools_CheckLocations = breptools.CheckLocations
-breptools_Clean = breptools.Clean
-breptools_CleanGeometry = breptools.CleanGeometry
-breptools_Compare = breptools.Compare
-breptools_Compare = breptools.Compare
-breptools_DetectClosedness = breptools.DetectClosedness
-breptools_Dump = breptools.Dump
-breptools_EvalAndUpdateTol = breptools.EvalAndUpdateTol
-breptools_IsReallyClosed = breptools.IsReallyClosed
-breptools_LoadAllTriangulations = breptools.LoadAllTriangulations
-breptools_LoadTriangulation = breptools.LoadTriangulation
-breptools_Map3DEdges = breptools.Map3DEdges
-breptools_OriEdgeInFace = breptools.OriEdgeInFace
-breptools_OuterWire = breptools.OuterWire
-breptools_Read = breptools.Read
-breptools_Read = breptools.Read
-breptools_RemoveInternals = breptools.RemoveInternals
-breptools_RemoveUnusedPCurves = breptools.RemoveUnusedPCurves
-breptools_Triangulation = breptools.Triangulation
-breptools_UVBounds = breptools.UVBounds
-breptools_UVBounds = breptools.UVBounds
-breptools_UVBounds = breptools.UVBounds
-breptools_UnloadAllTriangulations = breptools.UnloadAllTriangulations
-breptools_UnloadTriangulation = breptools.UnloadTriangulation
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_Update = breptools.Update
-breptools_UpdateFaceUVPoints = breptools.UpdateFaceUVPoints
-breptools_Write = breptools.Write
-breptools_Write = breptools.Write
-breptools_Write = breptools.Write
-breptools_Write = breptools.Write
-breptools_WriteToString = breptools.WriteToString
-breptools_ReadFromString = breptools.ReadFromString
-BRepTools_History_IsSupportedType = BRepTools_History.IsSupportedType

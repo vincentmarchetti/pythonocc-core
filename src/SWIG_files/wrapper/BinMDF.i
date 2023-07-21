@@ -260,13 +260,13 @@ None
 
 Parameters
 ----------
-theDerivedType: char *
+theDerivedType: str
 
 Returns
 -------
 opencascade::handle<Standard_Type>
 ") AddDerivedDriver;
-		const opencascade::handle<Standard_Type> & AddDerivedDriver(const char * theDerivedType);
+		const opencascade::handle<Standard_Type> & AddDerivedDriver(Standard_CString theDerivedType);
 
 		/****************** AddDriver ******************/
 		/**** md5 signature: b535a4822476bdd281f04ff4cdbaa916 ****/
@@ -590,4 +590,11 @@ None
 /* class aliases */
 %pythoncode {
 BinMDF_StringIdMap=OCC.Core.TColStd.TColStd_DataMapOfAsciiStringInteger
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def binmdf_AddDrivers(*args):
+	return binmdf.AddDrivers(*args)
+
 }

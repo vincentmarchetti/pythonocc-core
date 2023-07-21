@@ -21,9 +21,114 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %{
 #include <TopoDS.hxx>
+#include <TCollection_AsciiString.hxx>
+#include <TCollection_ExtendedString.hxx>
+#include <TCollection_HAsciiString.hxx>
 %}
 
 %include <typemaps.i>
+
+/*
+Standard_CString parameter transformation
+*/
+
+%typemap(in) Standard_CString
+{
+    $1 = PyUnicode_AsUTF8($input);
+}
+
+%typemap(typecheck, precedence=SWIG_TYPECHECK_INTEGER) Standard_CString {
+    $1 = PyUnicode_Check($input) ? 1 : 0;
+}
+%typemap(out) Standard_CString {
+    $result = PyString_FromString($1);
+}
+
+/*
+TCollection_ExtendedString parameter transformation
+*/
+
+%typemap(in) TCollection_ExtendedString
+{
+    $1 = TCollection_ExtendedString(PyUnicode_AsUTF8($input));
+}
+%typemap(typecheck, precedence=SWIG_TYPECHECK_INTEGER) TCollection_ExtendedString {
+    $1 = PyUnicode_Check($input) ? 1 : 0;
+}
+%typemap(out) TCollection_ExtendedString {
+    // convert the TCollection_ExtendedString to TCollection_AsciiString
+    $result = PyUnicode_FromString(TCollection_AsciiString($1).ToCString());
+}
+
+/*
+TCollection_AsciiString parameter transformation
+*/
+
+%typemap(in) TCollection_AsciiString
+{
+    $1 = TCollection_AsciiString(PyUnicode_AsUTF8($input));
+}
+%typemap(typecheck, precedence=SWIG_TYPECHECK_INTEGER) TCollection_AsciiString {
+    $1 = PyUnicode_Check($input) ? 1 : 0;
+}
+%typemap(out) TCollection_AsciiString {
+    $result = PyString_FromString($1.ToCString());
+}
+
+/*
+TCollection_HAsciiString output by ref parameter transformation
+*/
+%typemap(argout) opencascade::handle<TCollection_HAsciiString> &OutValue {
+    PyObject *o, *o2, *o3;
+    opencascade::handle<TCollection_HAsciiString> thas = new TCollection_HAsciiString(*$1);
+    o = PyString_FromString(thas->ToCString());
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) opencascade::handle<TCollection_HAsciiString>  &OutValue(opencascade::handle<TCollection_HAsciiString>  temp) {
+    $1 = &temp;
+}
+
+/*
+Standard_ShortReal & function transformation
+*/
+%typemap(argout) Standard_ShortReal &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyFloat_FromDouble(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_ShortReal &OutValue(Standard_ShortReal temp) {
+    $1 = &temp;
+}
 
 /*
 Standard_Real & function transformation

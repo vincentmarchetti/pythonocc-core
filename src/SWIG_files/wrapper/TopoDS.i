@@ -369,14 +369,14 @@ class TopoDS_AlertAttribute : public Message_AttributeStream {
 Parameters
 ----------
 theShape: TopoDS_Shape
-theName: TCollection_AsciiString,optional
+theName: str,optional
 	default value is TCollection_AsciiString()
 
 Returns
 -------
 None
 ") TopoDS_AlertAttribute;
-		 TopoDS_AlertAttribute(const TopoDS_Shape & theShape, const TCollection_AsciiString & theName = TCollection_AsciiString());
+		 TopoDS_AlertAttribute(const TopoDS_Shape & theShape, TCollection_AsciiString theName = TCollection_AsciiString());
 
 
             %feature("autodoc", "1");
@@ -1434,12 +1434,12 @@ None
 %extend TopoDS_Shape {
 %pythoncode {
 	def __getstate__(self):
-		from .BRepTools import breptools_WriteToString
-		str_shape = breptools_WriteToString(self, True)
+		from .BRepTools import breptools
+		str_shape = breptools.WriteToString(self, True)
 		return str_shape
 	def __setstate__(self, state):
-		from .BRepTools import breptools_ReadFromString
-		the_shape = breptools_ReadFromString(state)
+		from .BRepTools import breptools
+		the_shape = breptools.ReadFromString(state)
 		self.this = the_shape.this
 	}
 };
@@ -2272,4 +2272,75 @@ None
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def topods_CompSolid(*args):
+	return topods.CompSolid(*args)
+
+@deprecated
+def topods_CompSolid(*args):
+	return topods.CompSolid(*args)
+
+@deprecated
+def topods_Compound(*args):
+	return topods.Compound(*args)
+
+@deprecated
+def topods_Compound(*args):
+	return topods.Compound(*args)
+
+@deprecated
+def topods_Edge(*args):
+	return topods.Edge(*args)
+
+@deprecated
+def topods_Edge(*args):
+	return topods.Edge(*args)
+
+@deprecated
+def topods_Face(*args):
+	return topods.Face(*args)
+
+@deprecated
+def topods_Face(*args):
+	return topods.Face(*args)
+
+@deprecated
+def topods_Shell(*args):
+	return topods.Shell(*args)
+
+@deprecated
+def topods_Shell(*args):
+	return topods.Shell(*args)
+
+@deprecated
+def topods_Solid(*args):
+	return topods.Solid(*args)
+
+@deprecated
+def topods_Solid(*args):
+	return topods.Solid(*args)
+
+@deprecated
+def topods_Vertex(*args):
+	return topods.Vertex(*args)
+
+@deprecated
+def topods_Vertex(*args):
+	return topods.Vertex(*args)
+
+@deprecated
+def topods_Wire(*args):
+	return topods.Wire(*args)
+
+@deprecated
+def topods_Wire(*args):
+	return topods.Wire(*args)
+
+@deprecated
+def TopoDS_AlertAttribute_Send(*args):
+	return TopoDS_AlertAttribute.Send(*args)
+
 }

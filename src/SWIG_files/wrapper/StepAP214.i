@@ -4846,9 +4846,9 @@ opencascade::handle<Interface_Protocol>
 
 Returns
 -------
-char *
+str
 ") SchemaName;
-		virtual const char * SchemaName();
+		virtual Standard_CString SchemaName();
 
 		/****************** TypeNumber ******************/
 		/**** md5 signature: f4ed4f2e12d80f3bd752f6dd34ed84b4 ****/
@@ -5726,4 +5726,11 @@ class StepAP214_HArray1OfDateAndTimeItem : public StepAP214_Array1OfDateAndTimeI
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def stepap214_Protocol(*args):
+	return stepap214.Protocol(*args)
+
 }

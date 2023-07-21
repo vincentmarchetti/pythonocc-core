@@ -2039,9 +2039,9 @@ status: int
 
 Returns
 -------
-char *
+str
 ") StatusMessage;
-		const char * StatusMessage(const Standard_Integer status);
+		Standard_CString StatusMessage(const Standard_Integer status);
 
 		/****************** Uncertainty ******************/
 		/**** md5 signature: d91d2a9d8a7c9b921d9f843bf59b3624 ****/
@@ -2134,15 +2134,15 @@ None
 
 Parameters
 ----------
-filename: char *
+filename: str
 PD: StepBasic_ProductDefinition
-format: char *
+format: str
 
 Returns
 -------
 int
 ") AddExternRef;
-		Standard_Integer AddExternRef(const char * filename, const opencascade::handle<StepBasic_ProductDefinition> & PD, const char * format);
+		Standard_Integer AddExternRef(Standard_CString filename, const opencascade::handle<StepBasic_ProductDefinition> & PD, Standard_CString format);
 
 		/****************** Clear ******************/
 		/**** md5 signature: ae54be580b423a6eadbe062e0bdb44c2 ****/
@@ -2181,9 +2181,9 @@ num: int
 
 Returns
 -------
-char *
+str
 ") FileName;
-		const char * FileName(const Standard_Integer num);
+		Standard_CString FileName(const Standard_Integer num);
 
 		/****************** Format ******************/
 		/**** md5 signature: 600d3fed43f6e174acc9f0aff53e1d79 ****/
@@ -2598,6 +2598,17 @@ opencascade::handle<StepVisual_PresentationStyleAssignment>
 ") MakeColorPSA;
 		opencascade::handle<StepVisual_PresentationStyleAssignment> MakeColorPSA(const opencascade::handle<StepRepr_RepresentationItem> & item, const opencascade::handle<StepVisual_Colour> & SurfCol, const opencascade::handle<StepVisual_Colour> & CurveCol, const opencascade::handle<StepVisual_Colour> & RenderCol, const Standard_Real RenderTransp, const Standard_Boolean isForNAUO = Standard_False);
 
+		/****************** NbRootStyles ******************/
+		/**** md5 signature: 4bb6a5a6f49e5abb7085f5ef57337a5a ****/
+		%feature("compactdefaultargs") NbRootStyles;
+		%feature("autodoc", "Returns number of override styles.
+
+Returns
+-------
+int
+") NbRootStyles;
+		Standard_Integer NbRootStyles();
+
 		/****************** NbStyles ******************/
 		/**** md5 signature: 9f5fbd515247307ce70e63c6f585ddb7 ****/
 		%feature("compactdefaultargs") NbStyles;
@@ -2608,6 +2619,21 @@ Returns
 int
 ") NbStyles;
 		Standard_Integer NbStyles();
+
+		/****************** RootStyle ******************/
+		/**** md5 signature: 97e67ad6592e4e36a6444e18652921fc ****/
+		%feature("compactdefaultargs") RootStyle;
+		%feature("autodoc", "Returns override style with given index.
+
+Parameters
+----------
+i: int
+
+Returns
+-------
+opencascade::handle<StepVisual_StyledItem>
+") RootStyle;
+		opencascade::handle<StepVisual_StyledItem> RootStyle(const Standard_Integer i);
 
 		/****************** Style ******************/
 		/**** md5 signature: e152f39ac13e328dca6d350a6f881da8 ****/
@@ -2707,7 +2733,7 @@ Parameters
 ----------
 Shape: TopoDS_Shape
 Prop: StepRepr_RepresentationItem
-Descr: char *
+Descr: str
 instance: bool,optional
 	default value is Standard_False
 
@@ -2715,7 +2741,7 @@ Returns
 -------
 bool
 ") AddProp;
-		Standard_Boolean AddProp(const TopoDS_Shape & Shape, const opencascade::handle<StepRepr_RepresentationItem> & Prop, const char * Descr, const Standard_Boolean instance = Standard_False);
+		Standard_Boolean AddProp(const TopoDS_Shape & Shape, const opencascade::handle<StepRepr_RepresentationItem> & Prop, Standard_CString Descr, const Standard_Boolean instance = Standard_False);
 
 		/****************** AddProp ******************/
 		/**** md5 signature: f72fb71cc97ec8abf9b1b1524386d515 ****/
@@ -2727,13 +2753,13 @@ Parameters
 target: StepRepr_CharacterizedDefinition
 Context: StepRepr_RepresentationContext
 Prop: StepRepr_RepresentationItem
-Descr: char *
+Descr: str
 
 Returns
 -------
 bool
 ") AddProp;
-		Standard_Boolean AddProp(const StepRepr_CharacterizedDefinition & target, const opencascade::handle<StepRepr_RepresentationContext> & Context, const opencascade::handle<StepRepr_RepresentationItem> & Prop, const char * Descr);
+		Standard_Boolean AddProp(const StepRepr_CharacterizedDefinition & target, const opencascade::handle<StepRepr_RepresentationContext> & Context, const opencascade::handle<StepRepr_RepresentationItem> & Prop, Standard_CString Descr);
 
 		/****************** AddVolume ******************/
 		/**** md5 signature: ce494cdd22f4586fedbbc19b590238d1 ****/
@@ -2922,4 +2948,51 @@ None
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def stepconstruct_FindCDSR(*args):
+	return stepconstruct.FindCDSR(*args)
+
+@deprecated
+def stepconstruct_FindEntity(*args):
+	return stepconstruct.FindEntity(*args)
+
+@deprecated
+def stepconstruct_FindEntity(*args):
+	return stepconstruct.FindEntity(*args)
+
+@deprecated
+def stepconstruct_FindShape(*args):
+	return stepconstruct.FindShape(*args)
+
+@deprecated
+def STEPConstruct_Assembly_CheckSRRReversesNAUO(*args):
+	return STEPConstruct_Assembly.CheckSRRReversesNAUO(*args)
+
+@deprecated
+def STEPConstruct_PointHasher_HashCode(*args):
+	return STEPConstruct_PointHasher.HashCode(*args)
+
+@deprecated
+def STEPConstruct_PointHasher_IsEqual(*args):
+	return STEPConstruct_PointHasher.IsEqual(*args)
+
+@deprecated
+def STEPConstruct_UnitContext_ConvertSiPrefix(*args):
+	return STEPConstruct_UnitContext.ConvertSiPrefix(*args)
+
+@deprecated
+def STEPConstruct_Styles_DecodeColor(*args):
+	return STEPConstruct_Styles.DecodeColor(*args)
+
+@deprecated
+def STEPConstruct_Styles_EncodeColor(*args):
+	return STEPConstruct_Styles.EncodeColor(*args)
+
+@deprecated
+def STEPConstruct_Styles_EncodeColor(*args):
+	return STEPConstruct_Styles.EncodeColor(*args)
+
 }

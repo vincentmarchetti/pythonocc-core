@@ -131,9 +131,9 @@ None
 
 Returns
 -------
-char *
+str
 ") ResourcesName;
-		virtual const char * ResourcesName();
+		virtual Standard_CString ResourcesName();
 
 };
 
@@ -151,4 +151,11 @@ char *
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def XCAFApp_Application_GetApplication(*args):
+	return XCAFApp_Application.GetApplication(*args)
+
 }

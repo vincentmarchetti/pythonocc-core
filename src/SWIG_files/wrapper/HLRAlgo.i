@@ -888,15 +888,15 @@ None
 
 Parameters
 ----------
-TolStart: Standard_ShortReal
-TolEnd: Standard_ShortReal
 
 Returns
 -------
 Start: float
+TolStart: float
 End: float
+TolEnd: float
 ") Hidden;
-		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
+		void Hidden(Standard_Real &OutValue, Standard_ShortReal &OutValue, Standard_Real &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** InitHidden ******************/
 		/**** md5 signature: 94f1415b23db23cda63dd5f0d3b0a1c8 ****/
@@ -979,15 +979,15 @@ None
 
 Parameters
 ----------
-TolStart: Standard_ShortReal
-TolEnd: Standard_ShortReal
 
 Returns
 -------
 Start: float
+TolStart: float
 End: float
+TolEnd: float
 ") Visible;
-		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
+		void Visible(Standard_Real &OutValue, Standard_ShortReal &OutValue, Standard_Real &OutValue, Standard_ShortReal &OutValue);
 
 };
 
@@ -1022,9 +1022,9 @@ None
 Parameters
 ----------
 Start: float
-TolStart: Standard_ShortReal
+TolStart: float
 End: float
-TolEnd: Standard_ShortReal
+TolEnd: float
 
 Returns
 -------
@@ -1091,15 +1091,15 @@ None
 
 Parameters
 ----------
-theTolStart: Standard_ShortReal
-theTolEnd: Standard_ShortReal
 
 Returns
 -------
 theStart: float
+theTolStart: float
 theEnd: float
+theTolEnd: float
 ") Bounds;
-		void Bounds(Standard_Real &OutValue, Standard_ShortReal & theTolStart, Standard_Real &OutValue, Standard_ShortReal & theTolEnd);
+		void Bounds(Standard_Real &OutValue, Standard_ShortReal &OutValue, Standard_Real &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** Hide ******************/
 		/**** md5 signature: ce985d27b09ccae676c4faed96ec3d3d ****/
@@ -1109,9 +1109,9 @@ theEnd: float
 Parameters
 ----------
 Start: float
-TolStart: Standard_ShortReal
+TolStart: float
 End: float
-TolEnd: Standard_ShortReal
+TolEnd: float
 OnFace: bool
 OnBoundary: bool
 
@@ -1140,9 +1140,9 @@ None
 Parameters
 ----------
 Start: float
-TolStart: Standard_ShortReal
+TolStart: float
 End: float
-TolEnd: Standard_ShortReal
+TolEnd: float
 
 Returns
 -------
@@ -1180,15 +1180,15 @@ None
 Parameters
 ----------
 Index: int
-TolStart: Standard_ShortReal
-TolEnd: Standard_ShortReal
 
 Returns
 -------
 Start: float
+TolStart: float
 End: float
+TolEnd: float
 ") VisiblePart;
-		void VisiblePart(const Standard_Integer Index, Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
+		void VisiblePart(const Standard_Integer Index, Standard_Real &OutValue, Standard_ShortReal &OutValue, Standard_Real &OutValue, Standard_ShortReal &OutValue);
 
 };
 
@@ -1667,7 +1667,7 @@ Lev: int
 SegInd: int
 Ind: int
 P: float
-Tol: Standard_ShortReal
+Tol: float
 S: TopAbs_State
 
 Returns
@@ -1839,7 +1839,7 @@ TopAbs_State
 
 Parameters
 ----------
-T: Standard_ShortReal
+T: float
 
 Returns
 -------
@@ -1854,7 +1854,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Tolerance;
 		Standard_ShortReal Tolerance();
 
@@ -3129,4 +3129,39 @@ class HLRAlgo_HArray1OfPISeg : public HLRAlgo_Array1OfPISeg, public Standard_Tra
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def hlralgo_AddMinMax(*args):
+	return hlralgo.AddMinMax(*args)
+
+@deprecated
+def hlralgo_CopyMinMax(*args):
+	return hlralgo.CopyMinMax(*args)
+
+@deprecated
+def hlralgo_DecodeMinMax(*args):
+	return hlralgo.DecodeMinMax(*args)
+
+@deprecated
+def hlralgo_EncodeMinMax(*args):
+	return hlralgo.EncodeMinMax(*args)
+
+@deprecated
+def hlralgo_EnlargeMinMax(*args):
+	return hlralgo.EnlargeMinMax(*args)
+
+@deprecated
+def hlralgo_InitMinMax(*args):
+	return hlralgo.InitMinMax(*args)
+
+@deprecated
+def hlralgo_SizeBox(*args):
+	return hlralgo.SizeBox(*args)
+
+@deprecated
+def hlralgo_UpdateMinMax(*args):
+	return hlralgo.UpdateMinMax(*args)
+
 }

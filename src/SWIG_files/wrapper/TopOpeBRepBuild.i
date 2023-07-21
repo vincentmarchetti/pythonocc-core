@@ -2172,16 +2172,16 @@ Parameters
 ----------
 iS: int
 T: TopAbs_State
-a: TCollection_AsciiString,optional
+a: str,optional
 	default value is ""
-b: TCollection_AsciiString,optional
+b: str,optional
 	default value is ""
 
 Returns
 -------
 None
 ") GdumpSHASTA;
-		void GdumpSHASTA(const Standard_Integer iS, const TopAbs_State T, const TCollection_AsciiString & a = "", const TCollection_AsciiString & b = "");
+		void GdumpSHASTA(const Standard_Integer iS, const TopAbs_State T, TCollection_AsciiString a = "", TCollection_AsciiString b = "");
 
 		/****************** GdumpSHASTA ******************/
 		/**** md5 signature: cad20edf8bfe449486276d27f8ff1f74 ****/
@@ -2192,16 +2192,16 @@ Parameters
 ----------
 S: TopoDS_Shape
 T: TopAbs_State
-a: TCollection_AsciiString,optional
+a: str,optional
 	default value is ""
-b: TCollection_AsciiString,optional
+b: str,optional
 	default value is ""
 
 Returns
 -------
 None
 ") GdumpSHASTA;
-		void GdumpSHASTA(const TopoDS_Shape & S, const TopAbs_State T, const TCollection_AsciiString & a = "", const TCollection_AsciiString & b = "");
+		void GdumpSHASTA(const TopoDS_Shape & S, const TopAbs_State T, TCollection_AsciiString a = "", TCollection_AsciiString b = "");
 
 		/****************** GdumpSHASTA ******************/
 		/**** md5 signature: ad5d444f38fc9076eb7fc932b55a4d7e ****/
@@ -2213,18 +2213,18 @@ Parameters
 iS: int
 T: TopAbs_State
 SS: TopOpeBRepBuild_ShapeSet
-a: TCollection_AsciiString,optional
+a: str,optional
 	default value is ""
-b: TCollection_AsciiString,optional
+b: str,optional
 	default value is ""
-c: TCollection_AsciiString,optional
+c: str,optional
 	default value is '\n'
 
 Returns
 -------
 None
 ") GdumpSHASTA;
-		void GdumpSHASTA(const Standard_Integer iS, const TopAbs_State T, const TopOpeBRepBuild_ShapeSet & SS, const TCollection_AsciiString & a = "", const TCollection_AsciiString & b = "", const TCollection_AsciiString & c = "\n");
+		void GdumpSHASTA(const Standard_Integer iS, const TopAbs_State T, const TopOpeBRepBuild_ShapeSet & SS, TCollection_AsciiString a = "", TCollection_AsciiString b = "", TCollection_AsciiString c = "\n");
 
 		/****************** GdumpSOBU ******************/
 		/**** md5 signature: 1aea67b9789dcd3f2eb7ecd482cf35ab ****/
@@ -6006,13 +6006,13 @@ bool
 
 Parameters
 ----------
-N: TCollection_AsciiString
+N: str
 
 Returns
 -------
 None
 ") DEBName;
-		void DEBName(const TCollection_AsciiString & N);
+		void DEBName(TCollection_AsciiString N);
 
 		/****************** DEBName ******************/
 		/**** md5 signature: 596c83e886c46038e831ad6994742c89 ****/
@@ -6237,16 +6237,16 @@ None
 Parameters
 ----------
 S: TopoDS_Shape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SName;
-		virtual TCollection_AsciiString SName(const TopoDS_Shape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SName(const TopoDS_Shape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SName ******************/
 		/**** md5 signature: aae50302d53b33cbeb1c320b118dd208 ****/
@@ -6256,16 +6256,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopTools_ListOfShape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SName;
-		virtual TCollection_AsciiString SName(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SName(const TopTools_ListOfShape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SNameori ******************/
 		/**** md5 signature: 38c70945225dd056fbf42066df8d01f7 ****/
@@ -6275,16 +6275,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopoDS_Shape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SNameori;
-		virtual TCollection_AsciiString SNameori(const TopoDS_Shape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SNameori(const TopoDS_Shape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SNameori ******************/
 		/**** md5 signature: e4676f5575125dd0147b7098e8a6d83e ****/
@@ -6294,16 +6294,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopTools_ListOfShape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SNameori;
-		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** Shape ******************/
 		/**** md5 signature: e2e979bbf0e2f5cedfc0e482bf183e08 ****/
@@ -8676,16 +8676,16 @@ None
 Parameters
 ----------
 S: TopoDS_Shape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SName;
-		virtual TCollection_AsciiString SName(const TopoDS_Shape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SName(const TopoDS_Shape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SName ******************/
 		/**** md5 signature: 439aa61e703e5a53a45918a05c2d0318 ****/
@@ -8695,16 +8695,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopTools_ListOfShape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SName;
-		virtual TCollection_AsciiString SName(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SName(const TopTools_ListOfShape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SNameori ******************/
 		/**** md5 signature: 13d091dc5a1df5e5b76408b1cf7882ab ****/
@@ -8714,16 +8714,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopoDS_Shape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SNameori;
-		virtual TCollection_AsciiString SNameori(const TopoDS_Shape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SNameori(const TopoDS_Shape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SNameori ******************/
 		/**** md5 signature: 5a9c43c224cad506161a5139631efdf6 ****/
@@ -8733,16 +8733,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopTools_ListOfShape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SNameori;
-		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** Solid ******************/
 		/**** md5 signature: 0e70c03e20bb23e014ac5417ea4abe26 ****/
@@ -8920,16 +8920,16 @@ TopTools_ListOfShape
 Parameters
 ----------
 S: TopoDS_Shape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SName;
-		virtual TCollection_AsciiString SName(const TopoDS_Shape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SName(const TopoDS_Shape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SName ******************/
 		/**** md5 signature: 439aa61e703e5a53a45918a05c2d0318 ****/
@@ -8939,16 +8939,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopTools_ListOfShape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SName;
-		virtual TCollection_AsciiString SName(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SName(const TopTools_ListOfShape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SNameori ******************/
 		/**** md5 signature: 13d091dc5a1df5e5b76408b1cf7882ab ****/
@@ -8958,16 +8958,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopoDS_Shape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SNameori;
-		virtual TCollection_AsciiString SNameori(const TopoDS_Shape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SNameori(const TopoDS_Shape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 		/****************** SNameori ******************/
 		/**** md5 signature: 5a9c43c224cad506161a5139631efdf6 ****/
@@ -8977,16 +8977,16 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopTools_ListOfShape
-sb: TCollection_AsciiString,optional
+sb: str,optional
 	default value is ""
-sa: TCollection_AsciiString,optional
+sa: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SNameori;
-		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
+		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, TCollection_AsciiString sb = "", TCollection_AsciiString sa = "");
 
 };
 
@@ -9550,4 +9550,255 @@ TopAbs_State
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def TopOpeBRepBuild_Builder_Contains(*args):
+	return TopOpeBRepBuild_Builder.Contains(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GContains(*args):
+	return TopOpeBRepBuild_Builder.GContains(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GCopyList(*args):
+	return TopOpeBRepBuild_Builder.GCopyList(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GCopyList(*args):
+	return TopOpeBRepBuild_Builder.GCopyList(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GTakeCommonOfDiff(*args):
+	return TopOpeBRepBuild_Builder.GTakeCommonOfDiff(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GTakeCommonOfSame(*args):
+	return TopOpeBRepBuild_Builder.GTakeCommonOfSame(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GcheckNBOUNDS(*args):
+	return TopOpeBRepBuild_Builder.GcheckNBOUNDS(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GdumpORIPARPNT(*args):
+	return TopOpeBRepBuild_Builder.GdumpORIPARPNT(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_GdumpPNT(*args):
+	return TopOpeBRepBuild_Builder.GdumpPNT(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_KPContains(*args):
+	return TopOpeBRepBuild_Builder.KPContains(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_KPls(*args):
+	return TopOpeBRepBuild_Builder.KPls(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_KPls(*args):
+	return TopOpeBRepBuild_Builder.KPls(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_KPreturn(*args):
+	return TopOpeBRepBuild_Builder.KPreturn(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_Orient(*args):
+	return TopOpeBRepBuild_Builder.Orient(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_PrintCur(*args):
+	return TopOpeBRepBuild_Builder.PrintCur(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_PrintGeo(*args):
+	return TopOpeBRepBuild_Builder.PrintGeo(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_PrintOri(*args):
+	return TopOpeBRepBuild_Builder.PrintOri(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_PrintPnt(*args):
+	return TopOpeBRepBuild_Builder.PrintPnt(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_PrintSur(*args):
+	return TopOpeBRepBuild_Builder.PrintSur(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_Reverse(*args):
+	return TopOpeBRepBuild_Builder.Reverse(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_StringState(*args):
+	return TopOpeBRepBuild_Builder.StringState(*args)
+
+@deprecated
+def TopOpeBRepBuild_Builder_TopType(*args):
+	return TopOpeBRepBuild_Builder.TopType(*args)
+
+@deprecated
+def TopOpeBRepBuild_CorrectFace2d_CheckList(*args):
+	return TopOpeBRepBuild_CorrectFace2d.CheckList(*args)
+
+@deprecated
+def TopOpeBRepBuild_CorrectFace2d_GetP2dFL(*args):
+	return TopOpeBRepBuild_CorrectFace2d.GetP2dFL(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GComDiff(*args):
+	return TopOpeBRepBuild_GTool.GComDiff(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GComSame(*args):
+	return TopOpeBRepBuild_GTool.GComSame(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GComUnsh(*args):
+	return TopOpeBRepBuild_GTool.GComUnsh(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GCutDiff(*args):
+	return TopOpeBRepBuild_GTool.GCutDiff(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GCutSame(*args):
+	return TopOpeBRepBuild_GTool.GCutSame(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GCutUnsh(*args):
+	return TopOpeBRepBuild_GTool.GCutUnsh(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GFusDiff(*args):
+	return TopOpeBRepBuild_GTool.GFusDiff(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GFusSame(*args):
+	return TopOpeBRepBuild_GTool.GFusSame(*args)
+
+@deprecated
+def TopOpeBRepBuild_GTool_GFusUnsh(*args):
+	return TopOpeBRepBuild_GTool.GFusUnsh(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_CheckFaceClosed2d(*args):
+	return TopOpeBRepBuild_Tools.CheckFaceClosed2d(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_CorrectCurveOnSurface(*args):
+	return TopOpeBRepBuild_Tools.CorrectCurveOnSurface(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_CorrectFace2d(*args):
+	return TopOpeBRepBuild_Tools.CorrectFace2d(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_CorrectPointOnCurve(*args):
+	return TopOpeBRepBuild_Tools.CorrectPointOnCurve(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_CorrectTolerances(*args):
+	return TopOpeBRepBuild_Tools.CorrectTolerances(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_FindState(*args):
+	return TopOpeBRepBuild_Tools.FindState(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_FindState1(*args):
+	return TopOpeBRepBuild_Tools.FindState1(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_FindState2(*args):
+	return TopOpeBRepBuild_Tools.FindState2(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_FindStateThroughVertex(*args):
+	return TopOpeBRepBuild_Tools.FindStateThroughVertex(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_GetAdjacentFace(*args):
+	return TopOpeBRepBuild_Tools.GetAdjacentFace(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_GetNormalInNearestPoint(*args):
+	return TopOpeBRepBuild_Tools.GetNormalInNearestPoint(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_GetNormalToFaceOnEdge(*args):
+	return TopOpeBRepBuild_Tools.GetNormalToFaceOnEdge(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_GetTangentToEdge(*args):
+	return TopOpeBRepBuild_Tools.GetTangentToEdge(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_GetTangentToEdgeEdge(*args):
+	return TopOpeBRepBuild_Tools.GetTangentToEdgeEdge(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_IsDegEdgesTheSame(*args):
+	return TopOpeBRepBuild_Tools.IsDegEdgesTheSame(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_NormalizeFace(*args):
+	return TopOpeBRepBuild_Tools.NormalizeFace(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_PropagateState(*args):
+	return TopOpeBRepBuild_Tools.PropagateState(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_PropagateStateForWires(*args):
+	return TopOpeBRepBuild_Tools.PropagateStateForWires(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_SpreadStateToChild(*args):
+	return TopOpeBRepBuild_Tools.SpreadStateToChild(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_UpdateEdgeOnFace(*args):
+	return TopOpeBRepBuild_Tools.UpdateEdgeOnFace(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_UpdateEdgeOnPeriodicalFace(*args):
+	return TopOpeBRepBuild_Tools.UpdateEdgeOnPeriodicalFace(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools_UpdatePCurves(*args):
+	return TopOpeBRepBuild_Tools.UpdatePCurves(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools2d_DumpMapOfShapeVertexInfo(*args):
+	return TopOpeBRepBuild_Tools2d.DumpMapOfShapeVertexInfo(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools2d_MakeMapOfShapeVertexInfo(*args):
+	return TopOpeBRepBuild_Tools2d.MakeMapOfShapeVertexInfo(*args)
+
+@deprecated
+def TopOpeBRepBuild_Tools2d_Path(*args):
+	return TopOpeBRepBuild_Tools2d.Path(*args)
+
+@deprecated
+def TopOpeBRepBuild_Area1dBuilder_DumpList(*args):
+	return TopOpeBRepBuild_Area1dBuilder.DumpList(*args)
+
+@deprecated
+def TopOpeBRepBuild_PaveClassifier_AdjustCase(*args):
+	return TopOpeBRepBuild_PaveClassifier.AdjustCase(*args)
+
+@deprecated
+def TopOpeBRepBuild_PaveSet_SortPave(*args):
+	return TopOpeBRepBuild_PaveSet.SortPave(*args)
+
+@deprecated
+def TopOpeBRepBuild_WireEdgeSet_IsUVISO(*args):
+	return TopOpeBRepBuild_WireEdgeSet.IsUVISO(*args)
+
 }

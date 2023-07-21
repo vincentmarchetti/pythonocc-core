@@ -122,7 +122,7 @@ None
 
 Parameters
 ----------
-theValue: TCollection_AsciiString
+theValue: str
 
 Returns
 -------
@@ -244,7 +244,7 @@ BinObjMgt_Persistent
 
 Parameters
 ----------
-theValue: TCollection_ExtendedString
+theValue: str
 
 Returns
 -------
@@ -372,13 +372,12 @@ BinObjMgt_Persistent
 
 Parameters
 ----------
-theValue: Standard_ShortReal
 
 Returns
 -------
-BinObjMgt_Persistent
+theValue: float
 ") GetShortReal;
-		const BinObjMgt_Persistent & GetShortReal(Standard_ShortReal & theValue);
+		const BinObjMgt_Persistent & GetShortReal(Standard_ShortReal &OutValue);
 
 		/****************** GetShortRealArray ******************/
 		/**** md5 signature: 241f5c28d908b020dc86c79662d7f205 ****/
@@ -480,13 +479,13 @@ int
 
 Parameters
 ----------
-theValue: TCollection_AsciiString
+theValue: str
 
 Returns
 -------
 BinObjMgt_Persistent
 ") PutAsciiString;
-		BinObjMgt_Persistent & PutAsciiString(const TCollection_AsciiString & theValue);
+		BinObjMgt_Persistent & PutAsciiString(TCollection_AsciiString theValue);
 
 		/****************** PutBoolean ******************/
 		/**** md5 signature: 0bedf2debedf8187cd7303777159cfb0 ****/
@@ -541,13 +540,13 @@ BinObjMgt_Persistent
 
 Parameters
 ----------
-theValue: char *
+theValue: str
 
 Returns
 -------
 BinObjMgt_Persistent
 ") PutCString;
-		BinObjMgt_Persistent & PutCString(const char * theValue);
+		BinObjMgt_Persistent & PutCString(Standard_CString theValue);
 
 		/****************** PutCharArray ******************/
 		/**** md5 signature: 8048f0bf82735a8f2bf8b9ba58226a06 ****/
@@ -618,13 +617,13 @@ BinObjMgt_Persistent
 
 Parameters
 ----------
-theValue: TCollection_ExtendedString
+theValue: str
 
 Returns
 -------
 BinObjMgt_Persistent
 ") PutExtendedString;
-		BinObjMgt_Persistent & PutExtendedString(const TCollection_ExtendedString & theValue);
+		BinObjMgt_Persistent & PutExtendedString(TCollection_ExtendedString theValue);
 
 		/****************** PutGUID ******************/
 		/**** md5 signature: edc522528f33629d369a8c0ba78bee3d ****/
@@ -725,7 +724,7 @@ BinObjMgt_Persistent
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------

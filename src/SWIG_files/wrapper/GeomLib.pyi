@@ -119,10 +119,10 @@ class GeomLib_CheckCurveOnSurface:
     @overload
     def __init__(self) -> None: ...
     @overload
-    def __init__(self, theCurve: Adaptor3d_Curve, theTolRange: Optional[float] = precision_PConfusion()) -> None: ...
+    def __init__(self, theCurve: Adaptor3d_Curve, theTolRange: Optional[float] = Precision.PConfusion()) -> None: ...
     def ErrorStatus(self) -> int: ...
     @overload
-    def Init(self, theCurve: Adaptor3d_Curve, theTolRange: Optional[float] = precision_PConfusion()) -> None: ...
+    def Init(self, theCurve: Adaptor3d_Curve, theTolRange: Optional[float] = Precision.PConfusion()) -> None: ...
     @overload
     def Init(self) -> None: ...
     def IsDone(self) -> bool: ...
@@ -193,31 +193,3 @@ class GeomLib_Tool:
 # harray2 classes
 # hsequence classes
 
-geomlib_AdjustExtremity = geomlib.AdjustExtremity
-geomlib_AxeOfInertia = geomlib.AxeOfInertia
-geomlib_BuildCurve3d = geomlib.BuildCurve3d
-geomlib_CancelDenominatorDerivative = geomlib.CancelDenominatorDerivative
-geomlib_DensifyArray1OfReal = geomlib.DensifyArray1OfReal
-geomlib_EvalMaxDistanceAlongParameter = geomlib.EvalMaxDistanceAlongParameter
-geomlib_EvalMaxParametricDistance = geomlib.EvalMaxParametricDistance
-geomlib_ExtendCurveToPoint = geomlib.ExtendCurveToPoint
-geomlib_ExtendSurfByLength = geomlib.ExtendSurfByLength
-geomlib_FuseIntervals = geomlib.FuseIntervals
-geomlib_GTransform = geomlib.GTransform
-geomlib_Inertia = geomlib.Inertia
-geomlib_IsBSplUClosed = geomlib.IsBSplUClosed
-geomlib_IsBSplVClosed = geomlib.IsBSplVClosed
-geomlib_IsBzUClosed = geomlib.IsBzUClosed
-geomlib_IsBzVClosed = geomlib.IsBzVClosed
-geomlib_IsClosed = geomlib.IsClosed
-geomlib_NormEstim = geomlib.NormEstim
-geomlib_RemovePointsFromArray = geomlib.RemovePointsFromArray
-geomlib_SameRange = geomlib.SameRange
-geomlib_To3d = geomlib.To3d
-geomlib_buildC3dOnIsoLine = geomlib.buildC3dOnIsoLine
-geomlib_isIsoLine = geomlib.isIsoLine
-GeomLib_Tool_ComputeDeviation = GeomLib_Tool.ComputeDeviation
-GeomLib_Tool_ComputeDeviation = GeomLib_Tool.ComputeDeviation
-GeomLib_Tool_Parameter = GeomLib_Tool.Parameter
-GeomLib_Tool_Parameter = GeomLib_Tool.Parameter
-GeomLib_Tool_Parameters = GeomLib_Tool.Parameters

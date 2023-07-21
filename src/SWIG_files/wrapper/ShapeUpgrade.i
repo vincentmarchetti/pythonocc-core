@@ -1064,6 +1064,7 @@ None
 class ShapeUpgrade_UnifySameDomain : public Standard_Transient {
 	public:
 typedef NCollection_DataMap<TopoDS_Shape , opencascade ::handle<Geom_Plane>, TopTools_ShapeMapHasher> DataMapOfFacePlane;
+typedef NCollection_DataMap<TopoDS_Shape , TopTools_MapOfShape , TopTools_ShapeMapHasher> DataMapOfShapeMapOfShape;
 		/****************** ShapeUpgrade_UnifySameDomain ******************/
 		/**** md5 signature: 81e68dd91fd764ff95aa62b12dc88ed6 ****/
 		%feature("compactdefaultargs") ShapeUpgrade_UnifySameDomain;
@@ -4099,4 +4100,15 @@ None
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def shapeupgrade_C0BSplineToSequenceOfC1BSplineCurve(*args):
+	return shapeupgrade.C0BSplineToSequenceOfC1BSplineCurve(*args)
+
+@deprecated
+def shapeupgrade_C0BSplineToSequenceOfC1BSplineCurve(*args):
+	return shapeupgrade.C0BSplineToSequenceOfC1BSplineCurve(*args)
+
 }

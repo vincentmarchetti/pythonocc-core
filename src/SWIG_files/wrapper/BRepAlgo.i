@@ -921,6 +921,17 @@ None
 ") CutEdge;
 		void CutEdge(const TopoDS_Edge & E, const TopTools_ListOfShape & VonE, TopTools_ListOfShape & NE);
 
+		/****************** GetTolConf ******************/
+		/**** md5 signature: 7e9f7b87eb3b20edee9e3a86157928cd ****/
+		%feature("compactdefaultargs") GetTolConf;
+		%feature("autodoc", "Get maximal tolerance used for comparing distaces between vertices. .
+
+Returns
+-------
+float
+") GetTolConf;
+		Standard_Real GetTolConf();
+
 		/****************** GetVerticesForSubstitute ******************/
 		/**** md5 signature: 3b0ea732ecf076dde3f931f0997c07aa ****/
 		%feature("compactdefaultargs") GetVerticesForSubstitute;
@@ -1013,6 +1024,21 @@ Returns
 None
 ") SetImageVV;
 		void SetImageVV(const BRepAlgo_Image & theImageVV);
+
+		/****************** SetTolConf ******************/
+		/**** md5 signature: 1c312d5c00a3d856c91eb31857ae32c6 ****/
+		%feature("compactdefaultargs") SetTolConf;
+		%feature("autodoc", "Set maximal tolerance used for comparing distaces between vertices. .
+
+Parameters
+----------
+theTolConf: float
+
+Returns
+-------
+None
+") SetTolConf;
+		void SetTolConf(const Standard_Real theTolConf);
 
 		/****************** UpdateVEmap ******************/
 		/**** md5 signature: 491681c63af221fbd7247e01d389bbc0 ****/
@@ -1324,4 +1350,35 @@ None
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def brepalgo_ConcatenateWire(*args):
+	return brepalgo.ConcatenateWire(*args)
+
+@deprecated
+def brepalgo_ConcatenateWireC0(*args):
+	return brepalgo.ConcatenateWireC0(*args)
+
+@deprecated
+def brepalgo_ConvertFace(*args):
+	return brepalgo.ConvertFace(*args)
+
+@deprecated
+def brepalgo_ConvertWire(*args):
+	return brepalgo.ConvertWire(*args)
+
+@deprecated
+def brepalgo_IsTopologicallyValid(*args):
+	return brepalgo.IsTopologicallyValid(*args)
+
+@deprecated
+def brepalgo_IsValid(*args):
+	return brepalgo.IsValid(*args)
+
+@deprecated
+def brepalgo_IsValid(*args):
+	return brepalgo.IsValid(*args)
+
 }

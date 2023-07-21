@@ -2164,9 +2164,9 @@ int
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
 
 Returns
 -------
@@ -2265,12 +2265,12 @@ int
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
-theNX: Standard_ShortReal
-theNY: Standard_ShortReal
-theNZ: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
+theNX: float
+theNY: float
+theNZ: float
 
 Returns
 -------
@@ -2354,11 +2354,11 @@ int
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
-theTX: Standard_ShortReal
-theTY: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
+theTX: float
+theTY: float
 
 Returns
 -------
@@ -2412,14 +2412,14 @@ int
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
-theNX: Standard_ShortReal
-theNY: Standard_ShortReal
-theNZ: Standard_ShortReal
-theTX: Standard_ShortReal
-theTY: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
+theNX: float
+theNY: float
+theNZ: float
+theTX: float
+theTY: float
 
 Returns
 -------
@@ -2860,9 +2860,9 @@ None
 Parameters
 ----------
 theIndex: int
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
 
 Returns
 -------
@@ -2877,9 +2877,9 @@ None
 
 Returns
 -------
-char *
+str
 ") StringType;
-		const char * StringType();
+		Standard_CString StringType();
 
 		/****************** Type ******************/
 		/**** md5 signature: 766ba92896e370dd36bb18b553d14b69 ****/
@@ -3117,7 +3117,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") AlphaCutoff;
 		Standard_ShortReal AlphaCutoff();
 
@@ -3331,7 +3331,7 @@ Aspect_TypeOfLine
 
 Returns
 -------
-Standard_ShortReal
+float
 ") EdgeWidth;
 		Standard_ShortReal EdgeWidth();
 
@@ -3478,7 +3478,7 @@ Aspect_TypeOfLine
 
 Returns
 -------
-Standard_ShortReal
+float
 ") LineWidth;
 		Standard_ShortReal LineWidth();
 
@@ -3500,7 +3500,7 @@ opencascade::handle<Graphic3d_MarkerImage>
 
 Returns
 -------
-Standard_ShortReal
+float
 ") MarkerScale;
 		Standard_ShortReal MarkerScale();
 
@@ -3533,14 +3533,14 @@ Graphic3d_PolygonOffset
 
 Parameters
 ----------
-theFactor: Standard_ShortReal
-theUnits: Standard_ShortReal
 
 Returns
 -------
 theMode: int
+theFactor: float
+theUnits: float
 ") PolygonOffsets;
-		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & theFactor, Standard_ShortReal & theUnits);
+		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** SetAlphaMode ******************/
 		/**** md5 signature: b84cdd4cb6d53fa03454718b7ba18032 ****/
@@ -3550,7 +3550,7 @@ theMode: int
 Parameters
 ----------
 theMode: Graphic3d_AlphaMode
-theAlphaCutoff: Standard_ShortReal,optional
+theAlphaCutoff: float,optional
 	default value is 0.5f
 
 Returns
@@ -3955,7 +3955,7 @@ None
 
 Parameters
 ----------
-theWidth: Standard_ShortReal
+theWidth: float
 
 Returns
 -------
@@ -3985,7 +3985,7 @@ None
 
 Parameters
 ----------
-theScale: Standard_ShortReal
+theScale: float
 
 Returns
 -------
@@ -4031,9 +4031,9 @@ None
 Parameters
 ----------
 theMode: int
-theFactor: Standard_ShortReal,optional
+theFactor: float,optional
 	default value is 1.0f
-theUnits: Standard_ShortReal,optional
+theUnits: float,optional
 	default value is 0.0f
 
 Returns
@@ -4109,7 +4109,7 @@ None
 
 Parameters
 ----------
-theAngle: Standard_ShortReal
+theAngle: float
 
 Returns
 -------
@@ -4299,7 +4299,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") TextAngle;
 		Standard_ShortReal TextAngle();
 
@@ -4536,8 +4536,8 @@ Parameters
 ----------
 theWeight: Graphic3d_Vec3
 theAbsorptionColor: Graphic3d_Vec3
-theAbsorptionCoeff: Standard_ShortReal
-theRefractionIndex: Standard_ShortReal
+theAbsorptionCoeff: float
+theRefractionIndex: float
 
 Returns
 -------
@@ -4554,7 +4554,7 @@ Parameters
 ----------
 theWeight: Graphic3d_Vec3
 theFresnel: Graphic3d_Fresnel
-theRoughness: Standard_ShortReal
+theRoughness: float
 
 Returns
 -------
@@ -4586,7 +4586,7 @@ Parameters
 ----------
 theWeight: Graphic3d_Vec3
 theAbsorptionColor: Graphic3d_Vec3
-theAbsorptionCoeff: Standard_ShortReal
+theAbsorptionCoeff: float
 
 Returns
 -------
@@ -4923,7 +4923,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Angle;
 		Standard_ShortReal Angle();
 
@@ -4960,7 +4960,7 @@ Quantity_Color
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Concentration;
 		Standard_ShortReal Concentration();
 
@@ -4971,7 +4971,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") ConstAttenuation;
 		Standard_ShortReal ConstAttenuation();
 
@@ -5076,7 +5076,7 @@ bool
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Intensity;
 		Standard_ShortReal Intensity();
 
@@ -5109,7 +5109,7 @@ bool
 
 Returns
 -------
-Standard_ShortReal
+float
 ") LinearAttenuation;
 		Standard_ShortReal LinearAttenuation();
 
@@ -5202,7 +5202,7 @@ theZ: float
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Range;
 		Standard_ShortReal Range();
 
@@ -5224,7 +5224,7 @@ Standard_Size
 
 Parameters
 ----------
-theAngle: Standard_ShortReal
+theAngle: float
 
 Returns
 -------
@@ -5239,8 +5239,8 @@ None
 
 Parameters
 ----------
-theConstAttenuation: Standard_ShortReal
-theLinearAttenuation: Standard_ShortReal
+theConstAttenuation: float
+theLinearAttenuation: float
 
 Returns
 -------
@@ -5285,7 +5285,7 @@ None
 
 Parameters
 ----------
-theConcentration: Standard_ShortReal
+theConcentration: float
 
 Returns
 -------
@@ -5377,7 +5377,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -5392,13 +5392,13 @@ None
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 None
 ") SetName;
-		void SetName(const TCollection_AsciiString & theName);
+		void SetName(TCollection_AsciiString theName);
 
 		/****************** SetPosition ******************/
 		/**** md5 signature: 6cd7cdcecb59ee7f74eb9c342f464f4d ****/
@@ -5439,7 +5439,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -5454,7 +5454,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -5469,7 +5469,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -5484,7 +5484,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Smoothness;
 		Standard_ShortReal Smoothness();
 
@@ -8849,8 +8849,8 @@ None
 
 Parameters
 ----------
-theRefractionIndex: Standard_ShortReal
-theAbsorptionIndex: Standard_ShortReal
+theRefractionIndex: float
+theAbsorptionIndex: float
 
 Returns
 -------
@@ -8881,7 +8881,7 @@ Graphic3d_Fresnel
 
 Parameters
 ----------
-theReflection: Standard_ShortReal
+theReflection: float
 
 Returns
 -------
@@ -8896,7 +8896,7 @@ Graphic3d_Fresnel
 
 Parameters
 ----------
-theRefractionIndex: Standard_ShortReal
+theRefractionIndex: float
 
 Returns
 -------
@@ -8985,19 +8985,19 @@ class Graphic3d_GraduatedTrihedron {
 
 Parameters
 ----------
-theNamesFont: TCollection_AsciiString,optional
+theNamesFont: str,optional
 	default value is 'Arial'
 theNamesStyle: Font_FontAspect,optional
 	default value is Font_FA_Bold
 theNamesSize: int,optional
 	default value is 12
-theValuesFont: TCollection_AsciiString,optional
+theValuesFont: str,optional
 	default value is 'Arial'
 theValuesStyle: Font_FontAspect,optional
 	default value is Font_FA_Regular
 theValuesSize: int,optional
 	default value is 12
-theArrowsLength: Standard_ShortReal,optional
+theArrowsLength: float,optional
 	default value is 30.0f
 theGridColor: Quantity_Color,optional
 	default value is Quantity_NOC_WHITE
@@ -9010,7 +9010,7 @@ Returns
 -------
 None
 ") Graphic3d_GraduatedTrihedron;
-		 Graphic3d_GraduatedTrihedron(const TCollection_AsciiString & theNamesFont = "Arial", const Font_FontAspect & theNamesStyle = Font_FA_Bold, const Standard_Integer theNamesSize = 12, const TCollection_AsciiString & theValuesFont = "Arial", const Font_FontAspect & theValuesStyle = Font_FA_Regular, const Standard_Integer theValuesSize = 12, const Standard_ShortReal theArrowsLength = 30.0f, const Quantity_Color theGridColor = Quantity_NOC_WHITE, const Standard_Boolean theToDrawGrid = Standard_True, const Standard_Boolean theToDrawAxes = Standard_True);
+		 Graphic3d_GraduatedTrihedron(TCollection_AsciiString theNamesFont = "Arial", const Font_FontAspect & theNamesStyle = Font_FA_Bold, const Standard_Integer theNamesSize = 12, TCollection_AsciiString theValuesFont = "Arial", const Font_FontAspect & theValuesStyle = Font_FA_Regular, const Standard_Integer theValuesSize = 12, const Standard_ShortReal theArrowsLength = 30.0f, const Quantity_Color theGridColor = Quantity_NOC_WHITE, const Standard_Boolean theToDrawGrid = Standard_True, const Standard_Boolean theToDrawAxes = Standard_True);
 
 		/****************** ArrowsLength ******************/
 		/**** md5 signature: 436b8e7aca635cad334a456158318fd2 ****/
@@ -9019,7 +9019,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") ArrowsLength;
 		Standard_ShortReal ArrowsLength();
 
@@ -9152,7 +9152,7 @@ int
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -9212,13 +9212,13 @@ None
 
 Parameters
 ----------
-theFont: TCollection_AsciiString
+theFont: str
 
 Returns
 -------
 None
 ") SetNamesFont;
-		void SetNamesFont(const TCollection_AsciiString & theFont);
+		void SetNamesFont(TCollection_AsciiString theFont);
 
 		/****************** SetNamesFontAspect ******************/
 		/**** md5 signature: 95599011b4aa83f2326f3a73b956d72c ****/
@@ -9257,13 +9257,13 @@ None
 
 Parameters
 ----------
-theFont: TCollection_AsciiString
+theFont: str
 
 Returns
 -------
 None
 ") SetValuesFont;
-		void SetValuesFont(const TCollection_AsciiString & theFont);
+		void SetValuesFont(TCollection_AsciiString theFont);
 
 		/****************** SetValuesFontAspect ******************/
 		/**** md5 signature: d802052a96e2bd0dacd9adf90fe293cd ****/
@@ -9439,7 +9439,7 @@ opencascade::handle<Graphic3d_CView>
 
 Returns
 -------
-Standard_ShortReal
+float
 ") DefaultTextHeight;
 		virtual Standard_ShortReal DefaultTextHeight();
 
@@ -9578,7 +9578,7 @@ bool
 Parameters
 ----------
 theFreeBytes: Standard_Size
-theInfo: TCollection_AsciiString
+theInfo: str
 
 Returns
 -------
@@ -9696,17 +9696,16 @@ None
 Parameters
 ----------
 theView: Graphic3d_CView
-theText: char *
-theHeight: Standard_ShortReal
-theWidth: Standard_ShortReal
-theAscent: Standard_ShortReal
-theDescent: Standard_ShortReal
+theText: str
+theHeight: float
 
 Returns
 -------
-None
+theWidth: float
+theAscent: float
+theDescent: float
 ") TextSize;
-		virtual void TextSize(const opencascade::handle<Graphic3d_CView> & theView, const char * theText, const Standard_ShortReal theHeight, Standard_ShortReal & theWidth, Standard_ShortReal & theAscent, Standard_ShortReal & theDescent);
+		virtual void TextSize(const opencascade::handle<Graphic3d_CView> & theView, Standard_CString theText, const Standard_ShortReal theHeight, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** ViewExists ******************/
 		/**** md5 signature: af8cd22ce3ec7eb123e125bb1c41a940 ****/
@@ -9847,13 +9846,13 @@ None
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 None
 ") UnregisterFactory;
-		static void UnregisterFactory(const TCollection_AsciiString & theName);
+		static void UnregisterFactory(TCollection_AsciiString theName);
 
 };
 
@@ -10203,7 +10202,7 @@ None
 
 Parameters
 ----------
-AText: char *
+AText: str
 APoint: Graphic3d_Vertex
 AHeight: float
 AAngle: float
@@ -10217,7 +10216,7 @@ Returns
 -------
 None
 ") Text;
-		virtual void Text(const char * AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Real AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax = Standard_True);
+		virtual void Text(Standard_CString AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Real AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax = Standard_True);
 
 		/****************** Text ******************/
 		/**** md5 signature: be90bceed3d1f9ecfe73fb5d7eec2212 ****/
@@ -10226,7 +10225,7 @@ None
 
 Parameters
 ----------
-AText: char *
+AText: str
 APoint: Graphic3d_Vertex
 AHeight: float
 EvalMinMax: bool,optional
@@ -10236,7 +10235,7 @@ Returns
 -------
 None
 ") Text;
-		void Text(const char * AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax = Standard_True);
+		void Text(Standard_CString AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax = Standard_True);
 
 		/****************** Text ******************/
 		/**** md5 signature: 167eaea4dace1c338b0f703a2ac8d6fe ****/
@@ -10245,7 +10244,7 @@ None
 
 Parameters
 ----------
-AText: TCollection_ExtendedString
+AText: str
 APoint: Graphic3d_Vertex
 AHeight: float
 AAngle: float
@@ -10259,7 +10258,7 @@ Returns
 -------
 None
 ") Text;
-		void Text(const TCollection_ExtendedString & AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Real AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax = Standard_True);
+		void Text(TCollection_ExtendedString AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Real AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax = Standard_True);
 
 		/****************** Text ******************/
 		/**** md5 signature: f0783ae39f19a1a065467da9245f7532 ****/
@@ -10268,7 +10267,7 @@ None
 
 Parameters
 ----------
-AText: TCollection_ExtendedString
+AText: str
 APoint: Graphic3d_Vertex
 AHeight: float
 EvalMinMax: bool,optional
@@ -10278,7 +10277,7 @@ Returns
 -------
 None
 ") Text;
-		void Text(const TCollection_ExtendedString & AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax = Standard_True);
+		void Text(TCollection_ExtendedString AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax = Standard_True);
 
 		/****************** Text ******************/
 		/**** md5 signature: 812712c97896a87a2f25f26ff37669e8 ****/
@@ -10287,7 +10286,7 @@ None
 
 Parameters
 ----------
-theTextUtf: char *
+theTextUtf: str
 theOrientation: gp_Ax2
 theHeight: float
 theAngle: float
@@ -10303,7 +10302,7 @@ Returns
 -------
 None
 ") Text;
-		virtual void Text(const char * theTextUtf, const gp_Ax2 & theOrientation, const Standard_Real theHeight, const Standard_Real theAngle, const Graphic3d_TextPath theTp, const Graphic3d_HorizontalTextAlignment theHTA, const Graphic3d_VerticalTextAlignment theVTA, const Standard_Boolean theToEvalMinMax = Standard_True, const Standard_Boolean theHasOwnAnchor = Standard_True);
+		virtual void Text(Standard_CString theTextUtf, const gp_Ax2 & theOrientation, const Standard_Real theHeight, const Standard_Real theAngle, const Graphic3d_TextPath theTp, const Graphic3d_HorizontalTextAlignment theHTA, const Graphic3d_VerticalTextAlignment theVTA, const Standard_Boolean theToEvalMinMax = Standard_True, const Standard_Boolean theHasOwnAnchor = Standard_True);
 
 		/****************** Text ******************/
 		/**** md5 signature: 25f0d7834c7faf3babb07e3c6cec385f ****/
@@ -10312,7 +10311,7 @@ None
 
 Parameters
 ----------
-theText: TCollection_ExtendedString
+theText: str
 theOrientation: gp_Ax2
 theHeight: float
 theAngle: float
@@ -10328,7 +10327,7 @@ Returns
 -------
 None
 ") Text;
-		virtual void Text(const TCollection_ExtendedString & theText, const gp_Ax2 & theOrientation, const Standard_Real theHeight, const Standard_Real theAngle, const Graphic3d_TextPath theTp, const Graphic3d_HorizontalTextAlignment theHTA, const Graphic3d_VerticalTextAlignment theVTA, const Standard_Boolean theToEvalMinMax = Standard_True, const Standard_Boolean theHasOwnAnchor = Standard_True);
+		virtual void Text(TCollection_ExtendedString theText, const gp_Ax2 & theOrientation, const Standard_Real theHeight, const Standard_Real theAngle, const Graphic3d_TextPath theTp, const Graphic3d_HorizontalTextAlignment theHTA, const Graphic3d_VerticalTextAlignment theVTA, const Standard_Boolean theToEvalMinMax = Standard_True, const Standard_Boolean theHasOwnAnchor = Standard_True);
 
 		/****************** TransformPersistence ******************/
 		/**** md5 signature: f93fa6b8590ec0070c74ed0573b98382 ****/
@@ -11162,7 +11161,7 @@ bool
 Parameters
 ----------
 theMarkerType: Aspect_TypeOfMarker
-theScale: Standard_ShortReal
+theScale: float
 theColor: Graphic3d_Vec4
 
 Returns
@@ -11220,7 +11219,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Alpha;
 		Standard_ShortReal Alpha();
 
@@ -11294,7 +11293,7 @@ Quantity_Color
 
 Parameters
 ----------
-theDelta: Standard_ShortReal
+theDelta: float
 
 Returns
 -------
@@ -11339,13 +11338,13 @@ bool
 
 Parameters
 ----------
-theName: char *
+theName: str
 
 Returns
 -------
 theMat: Graphic3d_NameOfMaterial
 ") MaterialFromName;
-		static Standard_Boolean MaterialFromName(const char * theName, Graphic3d_NameOfMaterial &OutValue);
+		static Standard_Boolean MaterialFromName(Standard_CString theName, Graphic3d_NameOfMaterial &OutValue);
 
 		/****************** MaterialFromName ******************/
 		/**** md5 signature: 5208b8b1000547cce2f00804c81986c6 ****/
@@ -11354,13 +11353,13 @@ theMat: Graphic3d_NameOfMaterial
 
 Parameters
 ----------
-theName: char *
+theName: str
 
 Returns
 -------
 Graphic3d_NameOfMaterial
 ") MaterialFromName;
-		static Graphic3d_NameOfMaterial MaterialFromName(const char * theName);
+		static Graphic3d_NameOfMaterial MaterialFromName(Standard_CString theName);
 
 		/****************** MaterialName ******************/
 		/**** md5 signature: d372647674cf61e514d12db5cd3f1b18 ****/
@@ -11373,9 +11372,9 @@ theRank: int
 
 Returns
 -------
-char *
+str
 ") MaterialName;
-		static const char * MaterialName(const Standard_Integer theRank);
+		static Standard_CString MaterialName(const Standard_Integer theRank);
 
 		/****************** MaterialName ******************/
 		/**** md5 signature: 6e198d14926374db627e08901b3098c0 ****/
@@ -11384,9 +11383,9 @@ char *
 
 Returns
 -------
-char *
+str
 ") MaterialName;
-		const char * MaterialName();
+		Standard_CString MaterialName();
 
 		/****************** MaterialType ******************/
 		/**** md5 signature: 062008507cb52b85e69ad9189fb25451 ****/
@@ -11484,7 +11483,7 @@ bool
 
 Returns
 -------
-Standard_ShortReal
+float
 ") RefractionIndex;
 		Standard_ShortReal RefractionIndex();
 
@@ -11517,7 +11516,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -11607,13 +11606,13 @@ None
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 None
 ") SetMaterialName;
-		void SetMaterialName(const TCollection_AsciiString & theName);
+		void SetMaterialName(TCollection_AsciiString theName);
 
 		/****************** SetMaterialType ******************/
 		/**** md5 signature: ab421f4a4a9e8596a2d576bdcb2e892a ****/
@@ -11667,7 +11666,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -11682,7 +11681,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -11712,7 +11711,7 @@ None
 
 Parameters
 ----------
-theValue: Standard_ShortReal
+theValue: float
 
 Returns
 -------
@@ -11727,7 +11726,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Shininess;
 		Standard_ShortReal Shininess();
 
@@ -11760,7 +11759,7 @@ TCollection_AsciiString
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Transparency;
 		Standard_ShortReal Transparency();
 
@@ -11839,7 +11838,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Alpha;
 		Standard_ShortReal Alpha();
 
@@ -11897,7 +11896,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") IOR;
 		Standard_ShortReal IOR();
 
@@ -11908,7 +11907,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Metallic;
 		Standard_ShortReal Metallic();
 
@@ -11923,7 +11922,7 @@ theSpecular: Quantity_Color
 
 Returns
 -------
-Standard_ShortReal
+float
 ") MetallicFromSpecular;
 		static Standard_ShortReal MetallicFromSpecular(const Quantity_Color & theSpecular);
 
@@ -11934,7 +11933,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") MinRoughness;
 		static Standard_ShortReal MinRoughness();
 
@@ -11945,7 +11944,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") NormalizedRoughness;
 		Standard_ShortReal NormalizedRoughness();
 
@@ -11956,11 +11955,11 @@ Standard_ShortReal
 
 Parameters
 ----------
-theNormalizedRoughness: Standard_ShortReal
+theNormalizedRoughness: float
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Roughness;
 		static Standard_ShortReal Roughness(Standard_ShortReal theNormalizedRoughness);
 
@@ -11971,7 +11970,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Roughness;
 		Standard_ShortReal Roughness();
 
@@ -11987,7 +11986,7 @@ theShiness: float
 
 Returns
 -------
-Standard_ShortReal
+float
 ") RoughnessFromSpecular;
 		static Standard_ShortReal RoughnessFromSpecular(const Quantity_Color & theSpecular, const Standard_Real theShiness);
 
@@ -11998,7 +11997,7 @@ Standard_ShortReal
 
 Parameters
 ----------
-theAlpha: Standard_ShortReal
+theAlpha: float
 
 Returns
 -------
@@ -12073,7 +12072,7 @@ None
 
 Parameters
 ----------
-theIOR: Standard_ShortReal
+theIOR: float
 
 Returns
 -------
@@ -12088,7 +12087,7 @@ None
 
 Parameters
 ----------
-theMetallic: Standard_ShortReal
+theMetallic: float
 
 Returns
 -------
@@ -12103,7 +12102,7 @@ None
 
 Parameters
 ----------
-theRoughness: Standard_ShortReal
+theRoughness: float
 
 Returns
 -------
@@ -12118,12 +12117,12 @@ None
 
 Parameters
 ----------
-theProbability: Standard_ShortReal
-theRoughness: Standard_ShortReal
+theProbability: float
+theRoughness: float
 
 Returns
 -------
-Standard_ShortReal
+float
 ") SpecIBLMapSamplesFactor;
 		static Standard_ShortReal SpecIBLMapSamplesFactor(Standard_ShortReal theProbability, Standard_ShortReal theRoughness);
 
@@ -12156,8 +12155,8 @@ Standard_ShortReal
 class Graphic3d_PolygonOffset {
 	public:
 		Aspect_PolygonOffsetMode Mode;
-		Standard_ShortReal Factor;
-		Standard_ShortReal Units;
+		float Factor;
+		float Units;
 		/****************** Graphic3d_PolygonOffset ******************/
 		/**** md5 signature: d32d266ad893dbdf6f93b0afae8a9bb9 ****/
 		%feature("compactdefaultargs") Graphic3d_PolygonOffset;
@@ -12346,7 +12345,7 @@ None
 
 Parameters
 ----------
-theTranspCoef: Standard_ShortReal
+theTranspCoef: float
 
 Returns
 -------
@@ -12376,7 +12375,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Transparency;
 		Standard_ShortReal Transparency();
 
@@ -12513,18 +12512,18 @@ FrustumCulling_NoUpdate = FrustumCulling.FrustumCulling_NoUpdate
 		Graphic3d_RenderTransparentMethod TransparencyMethod;
 		unsigned int Resolution;
 		Font_Hinting FontHinting;
-		Standard_ShortReal LineFeather;
+		float LineFeather;
 		int PbrEnvPow2Size;
 		int PbrEnvSpecMapNbLevels;
 		int PbrEnvBakingDiffNbSamples;
 		int PbrEnvBakingSpecNbSamples;
-		Standard_ShortReal PbrEnvBakingProbability;
-		Standard_ShortReal OitDepthFactor;
+		float PbrEnvBakingProbability;
+		float OitDepthFactor;
 		int NbOitDepthPeelingLayers;
 		int NbMsaaSamples;
-		Standard_ShortReal RenderResolutionScale;
+		float RenderResolutionScale;
 		int ShadowMapResolution;
-		Standard_ShortReal ShadowMapBias;
+		float ShadowMapBias;
 		bool ToEnableDepthPrepass;
 		bool ToEnableAlphaToCoverage;
 		bool IsGlobalIlluminationEnabled;
@@ -12541,18 +12540,18 @@ FrustumCulling_NoUpdate = FrustumCulling.FrustumCulling_NoUpdate
 		bool AdaptiveScreenSamplingAtomic;
 		bool ShowSamplingTiles;
 		bool TwoSidedBsdfModels;
-		Standard_ShortReal RadianceClampingValue;
+		float RadianceClampingValue;
 		bool RebuildRayTracingShaders;
 		int RayTracingTileSize;
 		int NbRayTracingTiles;
-		Standard_ShortReal CameraApertureRadius;
-		Standard_ShortReal CameraFocalPlaneDist;
+		float CameraApertureRadius;
+		float CameraFocalPlaneDist;
 		FrustumCulling FrustumCullingState;
 		Graphic3d_ToneMappingMethod ToneMappingMethod;
-		Standard_ShortReal Exposure;
-		Standard_ShortReal WhitePoint;
+		float Exposure;
+		float WhitePoint;
 		Graphic3d_StereoMode StereoMode;
-		Standard_ShortReal HmdFov2d;
+		float HmdFov2d;
 		Anaglyph AnaglyphFilter;
 		Graphic3d_Mat4 AnaglyphLeft;
 		Graphic3d_Mat4 AnaglyphRight;
@@ -12563,10 +12562,10 @@ FrustumCulling_NoUpdate = FrustumCulling.FrustumCulling_NoUpdate
 		opencascade::handle<Graphic3d_TransformPers > ChartPosition;
 		Graphic3d_Vec2i ChartSize;
 		opencascade::handle<Graphic3d_AspectText3d > StatsTextAspect;
-		Standard_ShortReal StatsUpdateInterval;
+		float StatsUpdateInterval;
 		int StatsTextHeight;
 		int StatsNbFrames;
-		Standard_ShortReal StatsMaxChartTime;
+		float StatsMaxChartTime;
 		PerfCounters CollectedStats;
 		bool ToShowStats;
 		/****************** Graphic3d_RenderingParams ******************/
@@ -12595,7 +12594,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") ResolutionRatio;
 		Standard_ShortReal ResolutionRatio();
 
@@ -12771,14 +12770,14 @@ class Graphic3d_ShaderAttribute : public Standard_Transient {
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theLocation: int
 
 Returns
 -------
 None
 ") Graphic3d_ShaderAttribute;
-		 Graphic3d_ShaderAttribute(const TCollection_AsciiString & theName, const int theLocation);
+		 Graphic3d_ShaderAttribute(TCollection_AsciiString theName, const int theLocation);
 
 		/****************** Location ******************/
 		/**** md5 signature: fbf2df819f76398dfe948e6957cd938c ****/
@@ -13036,13 +13035,13 @@ typedef NCollection_Sequence<ShaderVariable> ShaderVariableList;
 Parameters
 ----------
 theType: Graphic3d_TypeOfShaderObject
-thePath: TCollection_AsciiString
+thePath: str
 
 Returns
 -------
 opencascade::handle<Graphic3d_ShaderObject>
 ") CreateFromFile;
-		static opencascade::handle<Graphic3d_ShaderObject> CreateFromFile(const Graphic3d_TypeOfShaderObject theType, const TCollection_AsciiString & thePath);
+		static opencascade::handle<Graphic3d_ShaderObject> CreateFromFile(const Graphic3d_TypeOfShaderObject theType, TCollection_AsciiString thePath);
 
 		/****************** CreateFromSource ******************/
 		/**** md5 signature: 89c8327f0382cb4ddac7df3854e7859f ****/
@@ -13052,13 +13051,13 @@ opencascade::handle<Graphic3d_ShaderObject>
 Parameters
 ----------
 theType: Graphic3d_TypeOfShaderObject
-theSource: TCollection_AsciiString
+theSource: str
 
 Returns
 -------
 opencascade::handle<Graphic3d_ShaderObject>
 ") CreateFromSource;
-		static opencascade::handle<Graphic3d_ShaderObject> CreateFromSource(const Graphic3d_TypeOfShaderObject theType, const TCollection_AsciiString & theSource);
+		static opencascade::handle<Graphic3d_ShaderObject> CreateFromSource(const Graphic3d_TypeOfShaderObject theType, TCollection_AsciiString theSource);
 
 		/****************** GetId ******************/
 		/**** md5 signature: 1df69bdce80fc1a96745f12b83255cb1 ****/
@@ -13149,13 +13148,13 @@ None
 
 Parameters
 ----------
-theHeaderLine: TCollection_AsciiString
+theHeaderLine: str
 
 Returns
 -------
 None
 ") AppendToHeader;
-		void AppendToHeader(const TCollection_AsciiString & theHeaderLine);
+		void AppendToHeader(TCollection_AsciiString theHeaderLine);
 
 		/****************** AttachShader ******************/
 		/**** md5 signature: 2ed7a5ea2e4cd4e4595f652b67432170 ****/
@@ -13326,14 +13325,14 @@ Graphic3d_RenderTransparentMethod
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: float
 
 Returns
 -------
 bool
 ") PushVariableFloat;
-		Standard_Boolean PushVariableFloat(const TCollection_AsciiString & theName, const float theValue);
+		Standard_Boolean PushVariableFloat(TCollection_AsciiString theName, const float theValue);
 
 		/****************** PushVariableInt ******************/
 		/**** md5 signature: bff478b182d9509a10882ce90419df79 ****/
@@ -13342,14 +13341,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: int
 
 Returns
 -------
 bool
 ") PushVariableInt;
-		Standard_Boolean PushVariableInt(const TCollection_AsciiString & theName, const int theValue);
+		Standard_Boolean PushVariableInt(TCollection_AsciiString theName, const int theValue);
 
 		/****************** PushVariableVec2 ******************/
 		/**** md5 signature: d02a003a9e11b722eacd37101ed0969b ****/
@@ -13358,14 +13357,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: Graphic3d_Vec2
 
 Returns
 -------
 bool
 ") PushVariableVec2;
-		Standard_Boolean PushVariableVec2(const TCollection_AsciiString & theName, const Graphic3d_Vec2 & theValue);
+		Standard_Boolean PushVariableVec2(TCollection_AsciiString theName, const Graphic3d_Vec2 & theValue);
 
 		/****************** PushVariableVec2i ******************/
 		/**** md5 signature: 231cdfeb088221c570d577a2e6af3ff2 ****/
@@ -13374,14 +13373,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: Graphic3d_Vec2i
 
 Returns
 -------
 bool
 ") PushVariableVec2i;
-		Standard_Boolean PushVariableVec2i(const TCollection_AsciiString & theName, const Graphic3d_Vec2i & theValue);
+		Standard_Boolean PushVariableVec2i(TCollection_AsciiString theName, const Graphic3d_Vec2i & theValue);
 
 		/****************** PushVariableVec3 ******************/
 		/**** md5 signature: 1e87fc6f4bed1bc59e32f075b299547f ****/
@@ -13390,14 +13389,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: Graphic3d_Vec3
 
 Returns
 -------
 bool
 ") PushVariableVec3;
-		Standard_Boolean PushVariableVec3(const TCollection_AsciiString & theName, const Graphic3d_Vec3 & theValue);
+		Standard_Boolean PushVariableVec3(TCollection_AsciiString theName, const Graphic3d_Vec3 & theValue);
 
 		/****************** PushVariableVec3i ******************/
 		/**** md5 signature: 76fcf0dab680077a9b9928f249715893 ****/
@@ -13406,14 +13405,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: Graphic3d_Vec3i
 
 Returns
 -------
 bool
 ") PushVariableVec3i;
-		Standard_Boolean PushVariableVec3i(const TCollection_AsciiString & theName, const Graphic3d_Vec3i & theValue);
+		Standard_Boolean PushVariableVec3i(TCollection_AsciiString theName, const Graphic3d_Vec3i & theValue);
 
 		/****************** PushVariableVec4 ******************/
 		/**** md5 signature: f48a6fd2b2fd4d2432e7e4555e958e8b ****/
@@ -13422,14 +13421,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: Graphic3d_Vec4
 
 Returns
 -------
 bool
 ") PushVariableVec4;
-		Standard_Boolean PushVariableVec4(const TCollection_AsciiString & theName, const Graphic3d_Vec4 & theValue);
+		Standard_Boolean PushVariableVec4(TCollection_AsciiString theName, const Graphic3d_Vec4 & theValue);
 
 		/****************** PushVariableVec4i ******************/
 		/**** md5 signature: 9cdd0cf7f8b36932596f084b1b32b4be ****/
@@ -13438,14 +13437,14 @@ bool
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 theValue: Graphic3d_Vec4i
 
 Returns
 -------
 bool
 ") PushVariableVec4i;
-		Standard_Boolean PushVariableVec4i(const TCollection_AsciiString & theName, const Graphic3d_Vec4i & theValue);
+		Standard_Boolean PushVariableVec4i(TCollection_AsciiString theName, const Graphic3d_Vec4i & theValue);
 
 		/****************** SetAlphaTest ******************/
 		/**** md5 signature: 0c8337e06f013097bf7fc3735dfd4764 ****/
@@ -13484,13 +13483,13 @@ None
 
 Parameters
 ----------
-theHeader: TCollection_AsciiString
+theHeader: str
 
 Returns
 -------
 None
 ") SetHeader;
-		void SetHeader(const TCollection_AsciiString & theHeader);
+		void SetHeader(TCollection_AsciiString theHeader);
 
 		/****************** SetId ******************/
 		/**** md5 signature: 64840b5ae68646959ed97ec8254f3d04 ****/
@@ -13499,13 +13498,13 @@ None
 
 Parameters
 ----------
-theId: TCollection_AsciiString
+theId: str
 
 Returns
 -------
 None
 ") SetId;
-		void SetId(const TCollection_AsciiString & theId);
+		void SetId(TCollection_AsciiString theId);
 
 		/****************** SetNbClipPlanesMax ******************/
 		/**** md5 signature: 8f90ee3fa5faecc284bd831b0a828a6a ****/
@@ -15205,7 +15204,7 @@ class Graphic3d_Text : public Standard_Transient {
 
 Parameters
 ----------
-theHeight: Standard_ShortReal
+theHeight: float
 
 Returns
 -------
@@ -15242,7 +15241,7 @@ bool
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Height;
 		Standard_ShortReal Height();
 
@@ -15297,7 +15296,7 @@ None
 
 Parameters
 ----------
-theHeight: Standard_ShortReal
+theHeight: float
 
 Returns
 -------
@@ -15387,13 +15386,13 @@ None
 
 Parameters
 ----------
-theText: TCollection_AsciiString
+theText: str
 
 Returns
 -------
 None
 ") SetText;
-		void SetText(const TCollection_AsciiString & theText);
+		void SetText(TCollection_AsciiString theText);
 
 		/****************** SetText ******************/
 		/**** md5 signature: b3558520ae610ca542b0fb6b77a0768d ****/
@@ -15402,13 +15401,13 @@ None
 
 Parameters
 ----------
-theText: char *
+theText: str
 
 Returns
 -------
 None
 ") SetText;
-		void SetText(const char * theText);
+		void SetText(Standard_CString theText);
 
 		/****************** SetTextFormatter ******************/
 		/**** md5 signature: 69d92dbd5b2f2ec93859c8dcc0b4f585 ****/
@@ -15606,7 +15605,7 @@ int
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Rotation;
 		Standard_ShortReal Rotation();
 
@@ -15733,7 +15732,7 @@ None
 
 Parameters
 ----------
-theAngleDegrees: Standard_ShortReal
+theAngleDegrees: float
 
 Returns
 -------
@@ -16495,9 +16494,9 @@ None
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
 
 Returns
 -------
@@ -16529,15 +16528,14 @@ None
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
 
 Returns
 -------
-None
+theX: float
+theY: float
+theZ: float
 ") Coord;
-		void Coord(Standard_ShortReal & theX, Standard_ShortReal & theY, Standard_ShortReal & theZ);
+		void Coord(Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** Coord ******************/
 		/**** md5 signature: 5ef85c73f9c80cea4d8dc9bec59c3e4d ****/
@@ -16566,7 +16564,7 @@ theOther: Graphic3d_Vertex
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Distance;
 		Standard_ShortReal Distance(const Graphic3d_Vertex & theOther);
 
@@ -16585,9 +16583,9 @@ Standard_ShortReal
 
 Parameters
 ----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
+theX: float
+theY: float
+theZ: float
 
 Returns
 -------
@@ -16619,7 +16617,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") X;
 		Standard_ShortReal X();
 
@@ -16630,7 +16628,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Y;
 		Standard_ShortReal Y();
 
@@ -16641,7 +16639,7 @@ Standard_ShortReal
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Z;
 		Standard_ShortReal Z();
 
@@ -17242,13 +17240,13 @@ None
 
 Parameters
 ----------
-theName: TCollection_AsciiString
+theName: str
 
 Returns
 -------
 None
 ") SetName;
-		void SetName(const TCollection_AsciiString & theName);
+		void SetName(TCollection_AsciiString theName);
 
 		/****************** SetOrigin ******************/
 		/**** md5 signature: 4e4636f1039090357f364099b018aa8c ****/
@@ -18028,7 +18026,7 @@ None
 
 Parameters
 ----------
-theWidth: Standard_ShortReal
+theWidth: float
 
 Returns
 -------
@@ -18054,7 +18052,7 @@ Aspect_TypeOfLine
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Width;
 		Standard_ShortReal Width();
 
@@ -18168,7 +18166,7 @@ theHeight: int
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Scale;
 		Standard_ShortReal Scale();
 
@@ -18196,7 +18194,7 @@ None
 
 Parameters
 ----------
-theScale: Standard_ShortReal
+theScale: float
 
 Returns
 -------
@@ -18280,7 +18278,7 @@ None
 Parameters
 ----------
 theColor: Quantity_Color
-theFont: char *
+theFont: str
 theExpansionFactor: float
 theSpace: float
 theStyle: Aspect_TypeOfStyleText,optional
@@ -18292,7 +18290,7 @@ Returns
 -------
 None
 ") Graphic3d_AspectText3d;
-		 Graphic3d_AspectText3d(const Quantity_Color & theColor, const char * theFont, Standard_Real theExpansionFactor, Standard_Real theSpace, Aspect_TypeOfStyleText theStyle = Aspect_TOST_NORMAL, Aspect_TypeOfDisplayText theDisplayType = Aspect_TODT_NORMAL);
+		 Graphic3d_AspectText3d(const Quantity_Color & theColor, Standard_CString theFont, Standard_Real theExpansionFactor, Standard_Real theSpace, Aspect_TypeOfStyleText theStyle = Aspect_TOST_NORMAL, Aspect_TypeOfDisplayText theDisplayType = Aspect_TODT_NORMAL);
 
 		/****************** Color ******************/
 		/**** md5 signature: 7cec116411eb20e52d1fabf3015346da ****/
@@ -18353,7 +18351,7 @@ TCollection_AsciiString
 
 Returns
 -------
-Standard_ShortReal
+float
 ") GetTextAngle;
 		Standard_ShortReal GetTextAngle();
 
@@ -18431,13 +18429,13 @@ None
 
 Parameters
 ----------
-theFont: TCollection_AsciiString
+theFont: str
 
 Returns
 -------
 None
 ") SetFont;
-		void SetFont(const TCollection_AsciiString & theFont);
+		void SetFont(TCollection_AsciiString theFont);
 
 		/****************** SetFont ******************/
 		/**** md5 signature: 61d12f4a548c85ea1d3fd6a76e34b6f6 ****/
@@ -18446,13 +18444,13 @@ None
 
 Parameters
 ----------
-theFont: char *
+theFont: str
 
 Returns
 -------
 None
 ") SetFont;
-		void SetFont(const char * theFont);
+		void SetFont(Standard_CString theFont);
 
 		/****************** SetStyle ******************/
 		/**** md5 signature: 79f0871ccb7f1986360bdd74fe84ff94 ****/
@@ -20570,14 +20568,14 @@ None
 
 Parameters
 ----------
-thePath: TCollection_AsciiString
+thePath: str
 theToWait: bool
 
 Returns
 -------
 None
 ") OpenInput;
-		void OpenInput(const TCollection_AsciiString & thePath, Standard_Boolean theToWait);
+		void OpenInput(TCollection_AsciiString thePath, Standard_Boolean theToWait);
 
 		/****************** PlayerContext ******************/
 		/**** md5 signature: 5fc0e0cbec11700279e3e8631feee60b ****/
@@ -20650,13 +20648,13 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 
 Parameters
 ----------
-theFileName: TCollection_AsciiString
+theFileName: str
 
 Returns
 -------
 None
 ") Graphic3d_TextureEnv;
-		 Graphic3d_TextureEnv(const TCollection_AsciiString & theFileName);
+		 Graphic3d_TextureEnv(TCollection_AsciiString theFileName);
 
 		/****************** Graphic3d_TextureEnv ******************/
 		/**** md5 signature: ceed081a5b5bebc2038ab1db122c6085 ****/
@@ -21243,13 +21241,13 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 
 Parameters
 ----------
-theFileName: TCollection_AsciiString
+theFileName: str
 
 Returns
 -------
 None
 ") Graphic3d_Texture2D;
-		 Graphic3d_Texture2D(const TCollection_AsciiString & theFileName);
+		 Graphic3d_Texture2D(TCollection_AsciiString theFileName);
 
 		/****************** Graphic3d_Texture2D ******************/
 		/**** md5 signature: 1148eac074475874ab0ee8fd1f12cc0c ****/
@@ -21356,13 +21354,13 @@ class Graphic3d_Texture3D : public Graphic3d_TextureMap {
 
 Parameters
 ----------
-theFileName: TCollection_AsciiString
+theFileName: str
 
 Returns
 -------
 None
 ") Graphic3d_Texture3D;
-		 Graphic3d_Texture3D(const TCollection_AsciiString & theFileName);
+		 Graphic3d_Texture3D(TCollection_AsciiString theFileName);
 
 		/****************** Graphic3d_Texture3D ******************/
 		/**** md5 signature: 12b8a332dec18b02096d54770852207e ****/
@@ -21637,13 +21635,13 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 
 Parameters
 ----------
-theFileName: TCollection_AsciiString
+theFileName: str
 
 Returns
 -------
 None
 ") Graphic3d_Texture1Dmanual;
-		 Graphic3d_Texture1Dmanual(const TCollection_AsciiString & theFileName);
+		 Graphic3d_Texture1Dmanual(TCollection_AsciiString theFileName);
 
 		/****************** Graphic3d_Texture1Dmanual ******************/
 		/**** md5 signature: 523b409c896dd67bb73e53f0713b5b88 ****/
@@ -21698,13 +21696,13 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 
 Parameters
 ----------
-theFileName: TCollection_AsciiString
+theFileName: str
 
 Returns
 -------
 None
 ") Graphic3d_Texture1Dsegment;
-		 Graphic3d_Texture1Dsegment(const TCollection_AsciiString & theFileName);
+		 Graphic3d_Texture1Dsegment(TCollection_AsciiString theFileName);
 
 		/****************** Graphic3d_Texture1Dsegment ******************/
 		/**** md5 signature: a05398d4cb31cf6396ad390a24ec4de7 ****/
@@ -21743,18 +21741,17 @@ None
 
 Parameters
 ----------
-theX1: Standard_ShortReal
-theY1: Standard_ShortReal
-theZ1: Standard_ShortReal
-theX2: Standard_ShortReal
-theY2: Standard_ShortReal
-theZ2: Standard_ShortReal
 
 Returns
 -------
-None
+theX1: float
+theY1: float
+theZ1: float
+theX2: float
+theY2: float
+theZ2: float
 ") Segment;
-		void Segment(Standard_ShortReal & theX1, Standard_ShortReal & theY1, Standard_ShortReal & theZ1, Standard_ShortReal & theX2, Standard_ShortReal & theY2, Standard_ShortReal & theZ2);
+		void Segment(Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** SetSegment ******************/
 		/**** md5 signature: 9bdaf54faa2c28520a6560abbbfcb0b5 ****/
@@ -21763,12 +21760,12 @@ None
 
 Parameters
 ----------
-theX1: Standard_ShortReal
-theY1: Standard_ShortReal
-theZ1: Standard_ShortReal
-theX2: Standard_ShortReal
-theY2: Standard_ShortReal
-theZ2: Standard_ShortReal
+theX1: float
+theY1: float
+theZ1: float
+theX2: float
+theY2: float
+theZ2: float
 
 Returns
 -------
@@ -21799,13 +21796,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 
 Parameters
 ----------
-theFileName: TCollection_AsciiString
+theFileName: str
 
 Returns
 -------
 None
 ") Graphic3d_Texture2Dplane;
-		 Graphic3d_Texture2Dplane(const TCollection_AsciiString & theFileName);
+		 Graphic3d_Texture2Dplane(TCollection_AsciiString theFileName);
 
 		/****************** Graphic3d_Texture2Dplane ******************/
 		/**** md5 signature: aea36b4535b2f3f95d113fe310be496a ****/
@@ -21855,16 +21852,15 @@ Graphic3d_NameOfTexturePlane
 
 Parameters
 ----------
-A: Standard_ShortReal
-B: Standard_ShortReal
-C: Standard_ShortReal
-D: Standard_ShortReal
 
 Returns
 -------
-None
+A: float
+B: float
+C: float
+D: float
 ") PlaneS;
-		void PlaneS(Standard_ShortReal & A, Standard_ShortReal & B, Standard_ShortReal & C, Standard_ShortReal & D);
+		void PlaneS(Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** PlaneT ******************/
 		/**** md5 signature: 0f64deb688509a59d7d495773093d9b1 ****/
@@ -21873,16 +21869,15 @@ None
 
 Parameters
 ----------
-A: Standard_ShortReal
-B: Standard_ShortReal
-C: Standard_ShortReal
-D: Standard_ShortReal
 
 Returns
 -------
-None
+A: float
+B: float
+C: float
+D: float
 ") PlaneT;
-		void PlaneT(Standard_ShortReal & A, Standard_ShortReal & B, Standard_ShortReal & C, Standard_ShortReal & D);
+		void PlaneT(Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue, Standard_ShortReal &OutValue);
 
 		/****************** Rotation ******************/
 		/**** md5 signature: 340e4ac958aa75f22cf9693956702cf3 ****/
@@ -21891,13 +21886,12 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
 
 Returns
 -------
-None
+theVal: float
 ") Rotation;
-		void Rotation(Standard_ShortReal & theVal);
+		void Rotation(Standard_ShortReal &OutValue);
 
 		/****************** ScaleS ******************/
 		/**** md5 signature: e3176db3295b91f7337ec77e06b297fe ****/
@@ -21906,13 +21900,12 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
 
 Returns
 -------
-None
+theVal: float
 ") ScaleS;
-		void ScaleS(Standard_ShortReal & theVal);
+		void ScaleS(Standard_ShortReal &OutValue);
 
 		/****************** ScaleT ******************/
 		/**** md5 signature: 2181a84eae66e0185f0f40f06a9e33aa ****/
@@ -21921,13 +21914,12 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
 
 Returns
 -------
-None
+theVal: float
 ") ScaleT;
-		void ScaleT(Standard_ShortReal & theVal);
+		void ScaleT(Standard_ShortReal &OutValue);
 
 		/****************** SetPlane ******************/
 		/**** md5 signature: 5813f7058833e3ba0aacb0bc8ba39472 ****/
@@ -21951,10 +21943,10 @@ None
 
 Parameters
 ----------
-A: Standard_ShortReal
-B: Standard_ShortReal
-C: Standard_ShortReal
-D: Standard_ShortReal
+A: float
+B: float
+C: float
+D: float
 
 Returns
 -------
@@ -21969,10 +21961,10 @@ None
 
 Parameters
 ----------
-A: Standard_ShortReal
-B: Standard_ShortReal
-C: Standard_ShortReal
-D: Standard_ShortReal
+A: float
+B: float
+C: float
+D: float
 
 Returns
 -------
@@ -21987,7 +21979,7 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
+theVal: float
 
 Returns
 -------
@@ -22002,7 +21994,7 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
+theVal: float
 
 Returns
 -------
@@ -22017,7 +22009,7 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
+theVal: float
 
 Returns
 -------
@@ -22032,7 +22024,7 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
+theVal: float
 
 Returns
 -------
@@ -22047,7 +22039,7 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
+theVal: float
 
 Returns
 -------
@@ -22062,13 +22054,12 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
 
 Returns
 -------
-None
+theVal: float
 ") TranslateS;
-		void TranslateS(Standard_ShortReal & theVal);
+		void TranslateS(Standard_ShortReal &OutValue);
 
 		/****************** TranslateT ******************/
 		/**** md5 signature: 9fc4f8423a49d11a60255baa317fbaf1 ****/
@@ -22077,13 +22068,12 @@ None
 
 Parameters
 ----------
-theVal: Standard_ShortReal
 
 Returns
 -------
-None
+theVal: float
 ") TranslateT;
-		void TranslateT(Standard_ShortReal & theVal);
+		void TranslateT(Standard_ShortReal &OutValue);
 
 };
 
@@ -22142,4 +22132,199 @@ class Graphic3d_BvhCStructureSetTrsfPers:
 /* class aliases */
 %pythoncode {
 Graphic3d_Texture2Dmanual=Graphic3d_Texture2D
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def Graphic3d_ArrayOfPrimitives_CreateArray(*args):
+	return Graphic3d_ArrayOfPrimitives.CreateArray(*args)
+
+@deprecated
+def Graphic3d_ArrayOfPrimitives_CreateArray(*args):
+	return Graphic3d_ArrayOfPrimitives.CreateArray(*args)
+
+@deprecated
+def Graphic3d_Aspects_DefaultLinePatternForType(*args):
+	return Graphic3d_Aspects.DefaultLinePatternForType(*args)
+
+@deprecated
+def Graphic3d_Aspects_DefaultLineTypeForPattern(*args):
+	return Graphic3d_Aspects.DefaultLineTypeForPattern(*args)
+
+@deprecated
+def Graphic3d_Attribute_Stride(*args):
+	return Graphic3d_Attribute.Stride(*args)
+
+@deprecated
+def Graphic3d_BSDF_CreateDiffuse(*args):
+	return Graphic3d_BSDF.CreateDiffuse(*args)
+
+@deprecated
+def Graphic3d_BSDF_CreateGlass(*args):
+	return Graphic3d_BSDF.CreateGlass(*args)
+
+@deprecated
+def Graphic3d_BSDF_CreateMetallic(*args):
+	return Graphic3d_BSDF.CreateMetallic(*args)
+
+@deprecated
+def Graphic3d_BSDF_CreateMetallicRoughness(*args):
+	return Graphic3d_BSDF.CreateMetallicRoughness(*args)
+
+@deprecated
+def Graphic3d_BSDF_CreateTransparent(*args):
+	return Graphic3d_BSDF.CreateTransparent(*args)
+
+@deprecated
+def Graphic3d_Camera_Interpolate(*args):
+	return Graphic3d_Camera.Interpolate(*args)
+
+@deprecated
+def Graphic3d_Fresnel_CreateConductor(*args):
+	return Graphic3d_Fresnel.CreateConductor(*args)
+
+@deprecated
+def Graphic3d_Fresnel_CreateConductor(*args):
+	return Graphic3d_Fresnel.CreateConductor(*args)
+
+@deprecated
+def Graphic3d_Fresnel_CreateConstant(*args):
+	return Graphic3d_Fresnel.CreateConstant(*args)
+
+@deprecated
+def Graphic3d_Fresnel_CreateDielectric(*args):
+	return Graphic3d_Fresnel.CreateDielectric(*args)
+
+@deprecated
+def Graphic3d_Fresnel_CreateSchlick(*args):
+	return Graphic3d_Fresnel.CreateSchlick(*args)
+
+@deprecated
+def Graphic3d_GraphicDriverFactory_DefaultDriverFactory(*args):
+	return Graphic3d_GraphicDriverFactory.DefaultDriverFactory(*args)
+
+@deprecated
+def Graphic3d_GraphicDriverFactory_DriverFactories(*args):
+	return Graphic3d_GraphicDriverFactory.DriverFactories(*args)
+
+@deprecated
+def Graphic3d_GraphicDriverFactory_RegisterFactory(*args):
+	return Graphic3d_GraphicDriverFactory.RegisterFactory(*args)
+
+@deprecated
+def Graphic3d_GraphicDriverFactory_UnregisterFactory(*args):
+	return Graphic3d_GraphicDriverFactory.UnregisterFactory(*args)
+
+@deprecated
+def Graphic3d_MarkerImage_StandardMarker(*args):
+	return Graphic3d_MarkerImage.StandardMarker(*args)
+
+@deprecated
+def Graphic3d_MaterialAspect_MaterialFromName(*args):
+	return Graphic3d_MaterialAspect.MaterialFromName(*args)
+
+@deprecated
+def Graphic3d_MaterialAspect_MaterialFromName(*args):
+	return Graphic3d_MaterialAspect.MaterialFromName(*args)
+
+@deprecated
+def Graphic3d_MaterialAspect_MaterialName(*args):
+	return Graphic3d_MaterialAspect.MaterialName(*args)
+
+@deprecated
+def Graphic3d_MaterialAspect_MaterialType(*args):
+	return Graphic3d_MaterialAspect.MaterialType(*args)
+
+@deprecated
+def Graphic3d_MaterialAspect_NumberOfMaterials(*args):
+	return Graphic3d_MaterialAspect.NumberOfMaterials(*args)
+
+@deprecated
+def Graphic3d_PBRMaterial_GenerateEnvLUT(*args):
+	return Graphic3d_PBRMaterial.GenerateEnvLUT(*args)
+
+@deprecated
+def Graphic3d_PBRMaterial_MetallicFromSpecular(*args):
+	return Graphic3d_PBRMaterial.MetallicFromSpecular(*args)
+
+@deprecated
+def Graphic3d_PBRMaterial_MinRoughness(*args):
+	return Graphic3d_PBRMaterial.MinRoughness(*args)
+
+@deprecated
+def Graphic3d_PBRMaterial_Roughness(*args):
+	return Graphic3d_PBRMaterial.Roughness(*args)
+
+@deprecated
+def Graphic3d_PBRMaterial_RoughnessFromSpecular(*args):
+	return Graphic3d_PBRMaterial.RoughnessFromSpecular(*args)
+
+@deprecated
+def Graphic3d_PBRMaterial_SpecIBLMapSamplesFactor(*args):
+	return Graphic3d_PBRMaterial.SpecIBLMapSamplesFactor(*args)
+
+@deprecated
+def Graphic3d_ShaderObject_CreateFromFile(*args):
+	return Graphic3d_ShaderObject.CreateFromFile(*args)
+
+@deprecated
+def Graphic3d_ShaderObject_CreateFromSource(*args):
+	return Graphic3d_ShaderObject.CreateFromSource(*args)
+
+@deprecated
+def Graphic3d_ShaderProgram_ShadersFolder(*args):
+	return Graphic3d_ShaderProgram.ShadersFolder(*args)
+
+@deprecated
+def Graphic3d_Structure_AcceptConnection(*args):
+	return Graphic3d_Structure.AcceptConnection(*args)
+
+@deprecated
+def Graphic3d_Structure_Network(*args):
+	return Graphic3d_Structure.Network(*args)
+
+@deprecated
+def Graphic3d_Structure_PrintNetwork(*args):
+	return Graphic3d_Structure.PrintNetwork(*args)
+
+@deprecated
+def Graphic3d_Structure_Transforms(*args):
+	return Graphic3d_Structure.Transforms(*args)
+
+@deprecated
+def Graphic3d_TextureRoot_TexturesFolder(*args):
+	return Graphic3d_TextureRoot.TexturesFolder(*args)
+
+@deprecated
+def Graphic3d_TransformPers_IsTrihedronOr2d(*args):
+	return Graphic3d_TransformPers.IsTrihedronOr2d(*args)
+
+@deprecated
+def Graphic3d_TransformPers_IsZoomOrRotate(*args):
+	return Graphic3d_TransformPers.IsZoomOrRotate(*args)
+
+@deprecated
+def Graphic3d_TextureEnv_NumberOfTextures(*args):
+	return Graphic3d_TextureEnv.NumberOfTextures(*args)
+
+@deprecated
+def Graphic3d_TextureEnv_TextureName(*args):
+	return Graphic3d_TextureEnv.TextureName(*args)
+
+@deprecated
+def Graphic3d_Texture1D_NumberOfTextures(*args):
+	return Graphic3d_Texture1D.NumberOfTextures(*args)
+
+@deprecated
+def Graphic3d_Texture1D_TextureName(*args):
+	return Graphic3d_Texture1D.TextureName(*args)
+
+@deprecated
+def Graphic3d_Texture2D_NumberOfTextures(*args):
+	return Graphic3d_Texture2D.NumberOfTextures(*args)
+
+@deprecated
+def Graphic3d_Texture2D_TextureName(*args):
+	return Graphic3d_Texture2D.TextureName(*args)
+
 }

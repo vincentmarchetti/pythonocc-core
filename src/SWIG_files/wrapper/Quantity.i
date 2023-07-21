@@ -1842,14 +1842,14 @@ theARGB: int
 
 Parameters
 ----------
-theHexColorString: char *
+theHexColorString: str
 theColor: Quantity_Color
 
 Returns
 -------
 bool
 ") ColorFromHex;
-		static bool ColorFromHex(const char * theHexColorString, Quantity_Color & theColor);
+		static bool ColorFromHex(Standard_CString theHexColorString, Quantity_Color & theColor);
 
 		/****************** ColorFromName ******************/
 		/**** md5 signature: 52336467154f50ffb70349ec504d092e ****/
@@ -1858,13 +1858,13 @@ bool
 
 Parameters
 ----------
-theName: char *
+theName: str
 
 Returns
 -------
 theColor: Quantity_NameOfColor
 ") ColorFromName;
-		static Standard_Boolean ColorFromName(const char * theName, Quantity_NameOfColor &OutValue);
+		static Standard_Boolean ColorFromName(Standard_CString theName, Quantity_NameOfColor &OutValue);
 
 		/****************** ColorFromName ******************/
 		/**** md5 signature: 22de797bd27b14fa445f1fc6383d0e84 ****/
@@ -1873,14 +1873,14 @@ theColor: Quantity_NameOfColor
 
 Parameters
 ----------
-theColorNameString: char *
+theColorNameString: str
 theColor: Quantity_Color
 
 Returns
 -------
 bool
 ") ColorFromName;
-		static Standard_Boolean ColorFromName(const char * theColorNameString, Quantity_Color & theColor);
+		static Standard_Boolean ColorFromName(Standard_CString theColorNameString, Quantity_Color & theColor);
 
 		/****************** ColorToHex ******************/
 		/**** md5 signature: bca5c2e992e444dd039bba70d7834eaf ****/
@@ -2455,9 +2455,9 @@ theColor: Quantity_NameOfColor
 
 Returns
 -------
-char *
+str
 ") StringName;
-		static const char * StringName(const Quantity_NameOfColor theColor);
+		static Standard_CString StringName(const Quantity_NameOfColor theColor);
 
 		/****************** Values ******************/
 		/**** md5 signature: 3f9d5570eba07c52e9a8fcd90e25871c ****/
@@ -2646,7 +2646,7 @@ None
 
 Returns
 -------
-Standard_ShortReal
+float
 ") Alpha;
 		Standard_ShortReal Alpha();
 
@@ -2686,14 +2686,14 @@ bool
 
 Parameters
 ----------
-theColorNameString: char *
+theColorNameString: str
 theColor: Quantity_ColorRGBA
 
 Returns
 -------
 bool
 ") ColorFromName;
-		static Standard_Boolean ColorFromName(const char * theColorNameString, Quantity_ColorRGBA & theColor);
+		static Standard_Boolean ColorFromName(Standard_CString theColorNameString, Quantity_ColorRGBA & theColor);
 
 		/****************** ColorToHex ******************/
 		/**** md5 signature: 2ddaf7ca0d632cd7bd0bafa4a9a275e3 ****/
@@ -2813,7 +2813,7 @@ bool
 
 Parameters
 ----------
-theAlpha: Standard_ShortReal
+theAlpha: float
 
 Returns
 -------
@@ -3592,4 +3592,99 @@ class Quantity_HArray1OfColor : public Quantity_Array1OfColor, public Standard_T
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def Quantity_Color_Argb2color(*args):
+	return Quantity_Color.Argb2color(*args)
+
+@deprecated
+def Quantity_Color_Color2argb(*args):
+	return Quantity_Color.Color2argb(*args)
+
+@deprecated
+def Quantity_Color_ColorFromHex(*args):
+	return Quantity_Color.ColorFromHex(*args)
+
+@deprecated
+def Quantity_Color_ColorFromName(*args):
+	return Quantity_Color.ColorFromName(*args)
+
+@deprecated
+def Quantity_Color_ColorFromName(*args):
+	return Quantity_Color.ColorFromName(*args)
+
+@deprecated
+def Quantity_Color_ColorToHex(*args):
+	return Quantity_Color.ColorToHex(*args)
+
+@deprecated
+def Quantity_Color_Epsilon(*args):
+	return Quantity_Color.Epsilon(*args)
+
+@deprecated
+def Quantity_Color_HlsRgb(*args):
+	return Quantity_Color.HlsRgb(*args)
+
+@deprecated
+def Quantity_Color_Name(*args):
+	return Quantity_Color.Name(*args)
+
+@deprecated
+def Quantity_Color_RgbHls(*args):
+	return Quantity_Color.RgbHls(*args)
+
+@deprecated
+def Quantity_Color_SetEpsilon(*args):
+	return Quantity_Color.SetEpsilon(*args)
+
+@deprecated
+def Quantity_Color_StringName(*args):
+	return Quantity_Color.StringName(*args)
+
+@deprecated
+def Quantity_ColorHasher_HashCode(*args):
+	return Quantity_ColorHasher.HashCode(*args)
+
+@deprecated
+def Quantity_ColorHasher_IsEqual(*args):
+	return Quantity_ColorHasher.IsEqual(*args)
+
+@deprecated
+def Quantity_ColorRGBA_ColorFromHex(*args):
+	return Quantity_ColorRGBA.ColorFromHex(*args)
+
+@deprecated
+def Quantity_ColorRGBA_ColorFromName(*args):
+	return Quantity_ColorRGBA.ColorFromName(*args)
+
+@deprecated
+def Quantity_ColorRGBA_ColorToHex(*args):
+	return Quantity_ColorRGBA.ColorToHex(*args)
+
+@deprecated
+def Quantity_ColorRGBAHasher_HashCode(*args):
+	return Quantity_ColorRGBAHasher.HashCode(*args)
+
+@deprecated
+def Quantity_ColorRGBAHasher_IsEqual(*args):
+	return Quantity_ColorRGBAHasher.IsEqual(*args)
+
+@deprecated
+def Quantity_Date_IsLeap(*args):
+	return Quantity_Date.IsLeap(*args)
+
+@deprecated
+def Quantity_Date_IsValid(*args):
+	return Quantity_Date.IsValid(*args)
+
+@deprecated
+def Quantity_Period_IsValid(*args):
+	return Quantity_Period.IsValid(*args)
+
+@deprecated
+def Quantity_Period_IsValid(*args):
+	return Quantity_Period.IsValid(*args)
+
 }

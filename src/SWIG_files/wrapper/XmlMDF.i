@@ -318,13 +318,13 @@ None
 
 Parameters
 ----------
-theDerivedType: char *
+theDerivedType: str
 
 Returns
 -------
 opencascade::handle<Standard_Type>
 ") AddDerivedDriver;
-		const opencascade::handle<Standard_Type> & AddDerivedDriver(const char * theDerivedType);
+		const opencascade::handle<Standard_Type> & AddDerivedDriver(Standard_CString theDerivedType);
 
 		/****************** AddDriver ******************/
 		/**** md5 signature: a1862a3b70afac69a2082adfc7eb62a0 ****/
@@ -628,4 +628,19 @@ None
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def xmlmdf_AddDrivers(*args):
+	return xmlmdf.AddDrivers(*args)
+
+@deprecated
+def xmlmdf_FromTo(*args):
+	return xmlmdf.FromTo(*args)
+
+@deprecated
+def xmlmdf_FromTo(*args):
+	return xmlmdf.FromTo(*args)
+
 }

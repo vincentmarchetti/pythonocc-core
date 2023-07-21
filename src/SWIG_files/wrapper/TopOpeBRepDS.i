@@ -435,16 +435,16 @@ Parameters
 ----------
 K: TopOpeBRepDS_Kind
 I: int
-B: TCollection_AsciiString,optional
+B: str,optional
 	default value is ""
-A: TCollection_AsciiString,optional
+A: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SPrint;
-		static TCollection_AsciiString SPrint(const TopOpeBRepDS_Kind K, const Standard_Integer I, const TCollection_AsciiString & B = "", const TCollection_AsciiString & A = "");
+		static TCollection_AsciiString SPrint(const TopOpeBRepDS_Kind K, const Standard_Integer I, TCollection_AsciiString B = "", TCollection_AsciiString A = "");
 
 		/****************** SPrint ******************/
 		/**** md5 signature: bfdba83544259d7a60db9ed56c313822 ****/
@@ -3666,14 +3666,14 @@ TCollection_AsciiString
 Parameters
 ----------
 S: TopoDS_Shape
-B: TCollection_AsciiString,optional
+B: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SPrintShapeRefOri;
-		TCollection_AsciiString SPrintShapeRefOri(const TopoDS_Shape & S, const TCollection_AsciiString & B = "");
+		TCollection_AsciiString SPrintShapeRefOri(const TopoDS_Shape & S, TCollection_AsciiString B = "");
 
 		/****************** SPrintShapeRefOri ******************/
 		/**** md5 signature: 54da13540540d3a734590ba936839e14 ****/
@@ -3683,14 +3683,14 @@ TCollection_AsciiString
 Parameters
 ----------
 L: TopTools_ListOfShape
-B: TCollection_AsciiString,optional
+B: str,optional
 	default value is ""
 
 Returns
 -------
 TCollection_AsciiString
 ") SPrintShapeRefOri;
-		TCollection_AsciiString SPrintShapeRefOri(const TopTools_ListOfShape & L, const TCollection_AsciiString & B = "");
+		TCollection_AsciiString SPrintShapeRefOri(const TopTools_ListOfShape & L, TCollection_AsciiString B = "");
 
 };
 
@@ -6680,16 +6680,16 @@ None
 
 Parameters
 ----------
-s1: TCollection_AsciiString,optional
+s1: str,optional
 	default value is ""
-s2: TCollection_AsciiString,optional
+s2: str,optional
 	default value is ""
 
 Returns
 -------
 None
 ") DumpTKIIterator;
-		void DumpTKIIterator(const TCollection_AsciiString & s1 = "", const TCollection_AsciiString & s2 = "");
+		void DumpTKIIterator(TCollection_AsciiString s1 = "", TCollection_AsciiString s2 = "");
 
 		/****************** FillOnGeometry ******************/
 		/**** md5 signature: bc57c0884bf6423d13a2fa1a0ba316da ****/
@@ -8145,4 +8145,107 @@ class TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public TopOpeBR
 /* hsequence classes */
 /* class aliases */
 %pythoncode {
+}
+/* deprecated methods */
+%pythoncode {
+@deprecated
+def topopebrepds_IsGeometry(*args):
+	return topopebrepds.IsGeometry(*args)
+
+@deprecated
+def topopebrepds_IsTopology(*args):
+	return topopebrepds.IsTopology(*args)
+
+@deprecated
+def topopebrepds_KindToShape(*args):
+	return topopebrepds.KindToShape(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_SPrint(*args):
+	return topopebrepds.SPrint(*args)
+
+@deprecated
+def topopebrepds_ShapeToKind(*args):
+	return topopebrepds.ShapeToKind(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_DuplicateCurvePointInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.DuplicateCurvePointInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_MakeCurveInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.MakeCurveInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_MakeEdgeInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.MakeEdgeInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_MakeEdgeVertexInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.MakeEdgeVertexInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_MakeFaceCurveInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.MakeFaceCurveInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_MakeFaceEdgeInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.MakeFaceEdgeInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_MakeSolidSurfaceInterference(*args):
+	return TopOpeBRepDS_InterferenceTool.MakeSolidSurfaceInterference(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_Parameter(*args):
+	return TopOpeBRepDS_InterferenceTool.Parameter(*args)
+
+@deprecated
+def TopOpeBRepDS_InterferenceTool_Parameter(*args):
+	return TopOpeBRepDS_InterferenceTool.Parameter(*args)
+
+@deprecated
+def TopOpeBRepDS_TOOL_EShareG(*args):
+	return TopOpeBRepDS_TOOL.EShareG(*args)
+
+@deprecated
+def TopOpeBRepDS_TOOL_GetConfig(*args):
+	return TopOpeBRepDS_TOOL.GetConfig(*args)
+
+@deprecated
+def TopOpeBRepDS_TOOL_GetEsd(*args):
+	return TopOpeBRepDS_TOOL.GetEsd(*args)
+
+@deprecated
+def TopOpeBRepDS_TOOL_ShareG(*args):
+	return TopOpeBRepDS_TOOL.ShareG(*args)
+
+@deprecated
+def TopOpeBRepDS_TOOL_ShareSplitON(*args):
+	return TopOpeBRepDS_TOOL.ShareSplitON(*args)
+
 }
