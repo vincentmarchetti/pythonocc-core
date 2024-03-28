@@ -3,7 +3,6 @@ parameters:
   vmImage: 'Ubuntu-18.04'
   py_maj: '3'
   py_min: '6'
-  conda_bld: '3.16.3'
 
 jobs:
 - job: ${{ parameters.name }}
@@ -31,17 +30,6 @@ jobs:
         sudo apt remove swig swig4.0
       displayName: 'Install OpenGL headers'
 
-  # macOS ownership workaround and fix osx sdk
-  # - ${{ if contains(parameters.vmImage, 'macOS') }}:
-  #   - bash: |
-  #       sudo chown -R $USER $CONDA && \
-  #       curl -o MacOSX10.9.sdk.tar.xz -L https://github.com/phracker/MacOSX-SDKs/releases/download/10.13/MacOSX10.9.sdk.tar.xz && \
-  #       tar xf MacOSX10.9.sdk.tar.xz && \
-  #       sudo mkdir -p /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs && \
-  #       sudo mv -v MacOSX10.9.sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/ && \
-  #       ls /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
-  #     displayName: 'MacOS ownership workaround and installation of MacOSX10.9 sdk'
- 
   - bash: |
         conda config --set always_yes yes --set changeps1 no && \
         conda update -q conda && \
@@ -56,12 +44,12 @@ jobs:
         conda config --env --set subdir win-32
       displayName: 'Windows force 32 bit build'
 
-  - bash: conda create --yes --quiet --name build_env conda-build=${{ parameters.conda_bld }} conda-verify libarchive python=${{ parameters.py_maj }}.${{ parameters.py_min }} anaconda-client
+  - bash: conda create --yes --quiet --name build_env conda-build conda-verify libarchive python=${{ parameters.py_maj }}.${{ parameters.py_min }} anaconda-client
     displayName: Create Anaconda environment
     
   - bash: |
       source activate build_env && \
-      conda build --no-remove-work-dir --dirty ci/conda
+      conda-build --no-remove-work-dir --dirty ci/conda
     displayName: 'Run conda build'
     failOnStderr: false
     env:

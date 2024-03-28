@@ -7,10 +7,10 @@ from OCC.Core.Adaptor3d import *
 from OCC.Core.TopoDS import *
 from OCC.Core.TopTools import *
 
-#the following typedef cannot be wrapped as is
-BRepCheck_HListOfStatus = NewType('BRepCheck_HListOfStatus', Any)
-#the following typedef cannot be wrapped as is
-BRepCheck_IndexedDataMapOfShapeResult = NewType('BRepCheck_IndexedDataMapOfShapeResult', Any)
+# the following typedef cannot be wrapped as is
+BRepCheck_HListOfStatus = NewType("BRepCheck_HListOfStatus", Any)
+# the following typedef cannot be wrapped as is
+BRepCheck_IndexedDataMapOfShapeResult = NewType("BRepCheck_IndexedDataMapOfShapeResult", Any)
 
 class BRepCheck_ListOfStatus:
     def __init__(self) -> None: ...
@@ -110,6 +110,8 @@ class brepcheck:
     def PrecCurve(aAC3D: Adaptor3d_Curve) -> float: ...
     @staticmethod
     def PrecSurface(aAHSurf: Adaptor3d_Surface) -> float: ...
+    @staticmethod
+    def Print(Stat: BRepCheck_Status) -> str: ...
     @staticmethod
     def SelfIntersection(W: TopoDS_Wire, F: TopoDS_Face, E1: TopoDS_Edge, E2: TopoDS_Edge) -> bool: ...
 

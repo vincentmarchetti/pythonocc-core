@@ -20,15 +20,15 @@ from OCC.Core.TCollection import *
 from OCC.Core.GeomAbs import *
 from OCC.Core.Extrema import *
 
-#the following typedef cannot be wrapped as is
-TopOpeBRepTool_IndexedDataMapOfShapeBox = NewType('TopOpeBRepTool_IndexedDataMapOfShapeBox', Any)
-#the following typedef cannot be wrapped as is
-TopOpeBRepTool_IndexedDataMapOfShapeBox2d = NewType('TopOpeBRepTool_IndexedDataMapOfShapeBox2d', Any)
-#the following typedef cannot be wrapped as is
-TopOpeBRepTool_IndexedDataMapOfShapeconnexity = NewType('TopOpeBRepTool_IndexedDataMapOfShapeconnexity', Any)
-TopOpeBRepTool_PShapeClassifier = NewType('TopOpeBRepTool_PShapeClassifier', TopOpeBRepTool_ShapeClassifier)
-TopOpeBRepTool_PSoClassif = NewType('TopOpeBRepTool_PSoClassif', BRepClass3d_SolidClassifier)
-TopOpeBRepTool_Plos = NewType('TopOpeBRepTool_Plos', TopTools_ListOfShape)
+# the following typedef cannot be wrapped as is
+TopOpeBRepTool_IndexedDataMapOfShapeBox = NewType("TopOpeBRepTool_IndexedDataMapOfShapeBox", Any)
+# the following typedef cannot be wrapped as is
+TopOpeBRepTool_IndexedDataMapOfShapeBox2d = NewType("TopOpeBRepTool_IndexedDataMapOfShapeBox2d", Any)
+# the following typedef cannot be wrapped as is
+TopOpeBRepTool_IndexedDataMapOfShapeconnexity = NewType("TopOpeBRepTool_IndexedDataMapOfShapeconnexity", Any)
+TopOpeBRepTool_PShapeClassifier = NewType("TopOpeBRepTool_PShapeClassifier", TopOpeBRepTool_ShapeClassifier)
+TopOpeBRepTool_PSoClassif = NewType("TopOpeBRepTool_PSoClassif", BRepClass3d_SolidClassifier)
+TopOpeBRepTool_Plos = NewType("TopOpeBRepTool_Plos", TopTools_ListOfShape)
 
 class TopOpeBRepTool_ListOfC2DF:
     def __init__(self) -> None: ...
@@ -58,6 +58,8 @@ class topopebreptool:
     def CorrectONUVISO(F: TopoDS_Face, Fsp: TopoDS_Face) -> bool: ...
     @staticmethod
     def MakeFaces(F: TopoDS_Face, LOF: TopTools_ListOfShape, MshNOK: TopTools_IndexedMapOfOrientedShape, LOFF: TopTools_ListOfShape) -> bool: ...
+    @staticmethod
+    def Print(OCT: TopOpeBRepTool_OutCurveType) -> Tuple[Standard_OStream, str]: ...
     @overload
     @staticmethod
     def PurgeClosingEdges(F: TopoDS_Face, FF: TopoDS_Face, MWisOld: TopTools_DataMapOfShapeInteger, MshNOK: TopTools_IndexedMapOfOrientedShape) -> bool: ...
@@ -308,6 +310,7 @@ class TopOpeBRepTool_ShapeExplorer(TopExp_Explorer):
     def __init__(self) -> None: ...
     @overload
     def __init__(self, S: TopoDS_Shape, ToFind: TopAbs_ShapeEnum, ToAvoid: Optional[TopAbs_ShapeEnum] = TopAbs_SHAPE) -> None: ...
+    def DumpCurrent(self) -> Tuple[Standard_OStream, str]: ...
     def Index(self) -> int: ...
     def Init(self, S: TopoDS_Shape, ToFind: TopAbs_ShapeEnum, ToAvoid: Optional[TopAbs_ShapeEnum] = TopAbs_SHAPE) -> None: ...
     def Next(self) -> None: ...

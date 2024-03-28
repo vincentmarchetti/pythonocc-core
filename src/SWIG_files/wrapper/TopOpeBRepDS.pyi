@@ -13,17 +13,17 @@ from OCC.Core.TopTools import *
 from OCC.Core.gp import *
 from OCC.Core.TColStd import *
 
-#the following typedef cannot be wrapped as is
-TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape = NewType('TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape', Any)
-#the following typedef cannot be wrapped as is
-TopOpeBRepDS_DoubleMapOfIntegerShape = NewType('TopOpeBRepDS_DoubleMapOfIntegerShape', Any)
-#the following typedef cannot be wrapped as is
-TopOpeBRepDS_IndexedDataMapOfShapeWithState = NewType('TopOpeBRepDS_IndexedDataMapOfShapeWithState', Any)
-#the following typedef cannot be wrapped as is
-TopOpeBRepDS_IndexedDataMapOfVertexPoint = NewType('TopOpeBRepDS_IndexedDataMapOfVertexPoint', Any)
-#the following typedef cannot be wrapped as is
-TopOpeBRepDS_MapOfShapeData = NewType('TopOpeBRepDS_MapOfShapeData', Any)
-TopOpeBRepDS_PDataStructure = NewType('TopOpeBRepDS_PDataStructure', TopOpeBRepDS_DataStructure)
+# the following typedef cannot be wrapped as is
+TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape = NewType("TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape", Any)
+# the following typedef cannot be wrapped as is
+TopOpeBRepDS_DoubleMapOfIntegerShape = NewType("TopOpeBRepDS_DoubleMapOfIntegerShape", Any)
+# the following typedef cannot be wrapped as is
+TopOpeBRepDS_IndexedDataMapOfShapeWithState = NewType("TopOpeBRepDS_IndexedDataMapOfShapeWithState", Any)
+# the following typedef cannot be wrapped as is
+TopOpeBRepDS_IndexedDataMapOfVertexPoint = NewType("TopOpeBRepDS_IndexedDataMapOfVertexPoint", Any)
+# the following typedef cannot be wrapped as is
+TopOpeBRepDS_MapOfShapeData = NewType("TopOpeBRepDS_MapOfShapeData", Any)
+TopOpeBRepDS_PDataStructure = NewType("TopOpeBRepDS_PDataStructure", TopOpeBRepDS_DataStructure)
 
 class TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference:
     @overload
@@ -63,6 +63,13 @@ class TopOpeBRepDS_ListOfInterference:
     def Value(self, theIndex: int) -> False: ...
     def SetValue(self, theIndex: int, theValue: False) -> None: ...
 
+class TopOpeBRepDS_CheckStatus(IntEnum):
+    TopOpeBRepDS_OK: int = ...
+    TopOpeBRepDS_NOK: int = ...
+
+TopOpeBRepDS_OK = TopOpeBRepDS_CheckStatus.TopOpeBRepDS_OK
+TopOpeBRepDS_NOK = TopOpeBRepDS_CheckStatus.TopOpeBRepDS_NOK
+
 class TopOpeBRepDS_Config(IntEnum):
     TopOpeBRepDS_UNSHGEOMETRY: int = ...
     TopOpeBRepDS_SAMEORIENTED: int = ...
@@ -71,13 +78,6 @@ class TopOpeBRepDS_Config(IntEnum):
 TopOpeBRepDS_UNSHGEOMETRY = TopOpeBRepDS_Config.TopOpeBRepDS_UNSHGEOMETRY
 TopOpeBRepDS_SAMEORIENTED = TopOpeBRepDS_Config.TopOpeBRepDS_SAMEORIENTED
 TopOpeBRepDS_DIFFORIENTED = TopOpeBRepDS_Config.TopOpeBRepDS_DIFFORIENTED
-
-class TopOpeBRepDS_CheckStatus(IntEnum):
-    TopOpeBRepDS_OK: int = ...
-    TopOpeBRepDS_NOK: int = ...
-
-TopOpeBRepDS_OK = TopOpeBRepDS_CheckStatus.TopOpeBRepDS_OK
-TopOpeBRepDS_NOK = TopOpeBRepDS_CheckStatus.TopOpeBRepDS_NOK
 
 class TopOpeBRepDS_Kind(IntEnum):
     TopOpeBRepDS_POINT: int = ...
@@ -113,6 +113,21 @@ class topopebrepds:
     def IsTopology(K: TopOpeBRepDS_Kind) -> bool: ...
     @staticmethod
     def KindToShape(K: TopOpeBRepDS_Kind) -> TopAbs_ShapeEnum: ...
+    @overload
+    @staticmethod
+    def Print(S: TopAbs_State) -> Tuple[Standard_OStream, str]: ...
+    @overload
+    @staticmethod
+    def Print(K: TopOpeBRepDS_Kind) -> Tuple[Standard_OStream, str]: ...
+    @overload
+    @staticmethod
+    def Print(K: TopOpeBRepDS_Kind, I: int, B: Optional[str] = "", A: Optional[str] = "") -> Tuple[Standard_OStream, str]: ...
+    @overload
+    @staticmethod
+    def Print(T: TopAbs_ShapeEnum, I: int) -> Tuple[Standard_OStream, str]: ...
+    @overload
+    @staticmethod
+    def Print(C: TopOpeBRepDS_Config) -> Tuple[Standard_OStream, str]: ...
     @overload
     @staticmethod
     def SPrint(S: TopAbs_State) -> str: ...
@@ -228,6 +243,12 @@ class TopOpeBRepDS_Check(Standard_Transient):
     def ChkIntgSamDom(self) -> bool: ...
     def HDS(self) -> TopOpeBRepDS_HDataStructure: ...
     def OneVertexOnPnt(self) -> bool: ...
+    def Print(self, stat: TopOpeBRepDS_CheckStatus) -> Tuple[Standard_OStream, str]: ...
+    def PrintIntg(self) -> Tuple[Standard_OStream, str]: ...
+    @overload
+    def PrintShape(self, SE: TopAbs_ShapeEnum) -> Tuple[Standard_OStream, str]: ...
+    @overload
+    def PrintShape(self, index: int) -> Tuple[Standard_OStream, str]: ...
 
 class TopOpeBRepDS_Curve:
     @overload

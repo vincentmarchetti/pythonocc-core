@@ -10,8 +10,8 @@ from OCC.Core.TDocStd import *
 from OCC.Core.Bnd import *
 from OCC.Core.Quantity import *
 
-#the following typedef cannot be wrapped as is
-VrmlData_MapOfNode = NewType('VrmlData_MapOfNode', Any)
+# the following typedef cannot be wrapped as is
+VrmlData_MapOfNode = NewType("VrmlData_MapOfNode", Any)
 
 class VrmlData_ListOfNode:
     def __init__(self) -> None: ...
@@ -90,6 +90,7 @@ class VrmlData_Node(Standard_Transient):
 class VrmlData_Scene:
     def AddNode(self, theN: VrmlData_Node, isTopLevel: Optional[bool] = True) -> VrmlData_Node: ...
     def Allocator(self) -> NCollection_IncAllocator: ...
+    def Dump(self) -> str: ...
     @overload
     def FindNode(self, theName: str, theType: Optional[Standard_Type] = 0) -> VrmlData_Node: ...
     @overload

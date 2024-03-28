@@ -15,11 +15,11 @@ from OCC.Core.TopoDS import *
 from OCC.Core.TPrsStd import *
 from OCC.Core.Image import *
 
-#the following typedef cannot be wrapped as is
-XCAFPrs_DataMapIteratorOfIndexedDataMapOfShapeStyle = NewType('XCAFPrs_DataMapIteratorOfIndexedDataMapOfShapeStyle', Any)
-XCAFPrs_DocumentExplorerFlags = NewType('XCAFPrs_DocumentExplorerFlags', Standard_Integer)
-#the following typedef cannot be wrapped as is
-XCAFPrs_IndexedDataMapOfShapeStyle = NewType('XCAFPrs_IndexedDataMapOfShapeStyle', Any)
+# the following typedef cannot be wrapped as is
+XCAFPrs_DataMapIteratorOfIndexedDataMapOfShapeStyle = NewType("XCAFPrs_DataMapIteratorOfIndexedDataMapOfShapeStyle", Any)
+XCAFPrs_DocumentExplorerFlags = NewType("XCAFPrs_DocumentExplorerFlags", Standard_Integer)
+# the following typedef cannot be wrapped as is
+XCAFPrs_IndexedDataMapOfShapeStyle = NewType("XCAFPrs_IndexedDataMapOfShapeStyle", Any)
 
 
 class xcafprs:
@@ -90,6 +90,7 @@ class XCAFPrs_Driver(TPrsStd_Driver):
 class XCAFPrs_Style:
     def __init__(self) -> None: ...
     def BaseColorTexture(self) -> Image_Texture: ...
+    def DumpJson(self, depth: Optional[int]=-1) -> str: ...
     def GetColorCurv(self) -> Quantity_Color: ...
     def GetColorSurf(self) -> Quantity_Color: ...
     def GetColorSurfRGBA(self) -> Quantity_ColorRGBA: ...
