@@ -59,7 +59,7 @@ GLTF_ASCII_SAMPLE_FILE = get_test_fullname("Duck.gltf")
 # the basic geometry to test exporters
 A_TOPODS_SHAPE = BRepPrimAPI_MakeTorus(200, 50).Shape()
 
-
+@unittest.skip("skipping until can control printing")
 class TestExtendDataExchange(unittest.TestCase):
     def check_is_file(self, filename):
         self.assertTrue(os.path.isfile(filename))

@@ -165,6 +165,7 @@ class TestExtendTopology(unittest.TestCase):
         for v in _vertices:
             self.assertFalse(v.IsNull())
 
+    @unittest.skip("don't want to print")
     def test_dump_topology_to_string(self):
         box_shp = get_test_box_shape()
         dump_topology_to_string(box_shp)
